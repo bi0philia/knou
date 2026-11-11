@@ -1,4 +1,4 @@
-/* Custom styles for Smart Mobile Study Lab */
+/* Custom styles for Smart Science Study Lab */
 
 :root {
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
@@ -15,28 +15,56 @@ input, textarea {
   user-select: text;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling & typography */
 html {
   scroll-behavior: smooth;
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard Variable", Pretendard, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 body {
-  padding-bottom: calc(4.5rem + var(--safe-area-bottom));
   padding-top: var(--safe-area-top);
   min-height: 100vh;
 }
 
-/* Touch active animations */
+/* Safe area padding for mobile bottom bar */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: calc(5rem + var(--safe-area-bottom));
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 3rem;
+  }
+}
+
+/* Touch active & hover animations */
 .touch-card {
-  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
 }
 
 .touch-card:active {
-  transform: scale(0.985);
+  transform: scale(0.988);
 }
 
-/* Hide scrollbar for clean horizontal chips */
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.8);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 85, 105, 1);
+}
+
+/* Hide scrollbar for horizontal chips */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -45,12 +73,12 @@ body {
   scrollbar-width: none;
 }
 
-/* KaTeX equations in mobile typography */
+/* KaTeX equations responsive rendering */
 .katex-display {
-  margin: 0.6em 0 !important;
+  margin: 0.75em 0 !important;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0.25rem 0;
+  padding: 0.35rem 0;
 }
 
 .katex {
@@ -58,23 +86,13 @@ body {
   text-rendering: auto;
 }
 
-/* Shimmer animation for card highlights */
-@keyframes pulse-subtle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.85; }
-}
-
-.animate-subtle {
-  animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Custom modal backdrop blur */
+/* Modal backdrop blur */
 .modal-backdrop {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Bottom Nav Safe Area */
+/* Mobile Safe Bottom */
 .safe-pb {
   padding-bottom: calc(0.5rem + var(--safe-area-bottom));
 }

@@ -50,328 +50,442 @@
 <body class="bg-slate-900 text-slate-100 min-h-screen transition-colors duration-200 text-base">
 
   <!-- ================= TOP APP BAR ================= -->
-  <header class="sticky top-0 z-30 bg-slate-900/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-3 flex items-center justify-between">
-    <div class="flex items-center space-x-2.5">
-      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-md shadow-emerald-500/20 text-white font-black text-lg">
-        S
+  <header class="sticky top-0 z-30 bg-slate-900/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 sm:px-6 lg:px-8 py-3">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo & Title -->
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-md shadow-emerald-500/20 text-white font-black text-lg">
+          S
+        </div>
+        <div>
+          <h1 class="text-base sm:text-lg font-bold leading-tight flex items-center gap-1.5">
+            <span>스터디 랩</span>
+            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5 rounded-full font-medium">SCIENCE</span>
+          </h1>
+          <p id="topSubjectBadge" class="text-xs text-slate-400 font-medium truncate max-w-[200px] sm:max-w-none">환경화학 (기초/심화)</p>
+        </div>
       </div>
-      <div>
-        <h1 class="text-base font-bold leading-tight flex items-center gap-1.5">
-          <span>스터디 랩</span>
-          <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5 rounded-full font-medium">SCIENCE</span>
-        </h1>
-        <p id="topSubjectBadge" class="text-xs text-slate-400 font-medium truncate max-w-[170px]">환경화학 (기초/심화)</p>
+
+      <!-- Desktop Nav Tabs (Hidden on mobile, visible on tablet/PC) -->
+      <nav class="hidden md:flex items-center gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/70 text-xs font-semibold">
+        <button id="deskTabQuiz" class="px-3.5 py-2 rounded-lg bg-emerald-600 text-white shadow-sm flex items-center gap-1.5 transition">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span>문제 풀기</span>
+        </button>
+        <button id="deskTabConcepts" class="px-3.5 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/60 flex items-center gap-1.5 transition">
+          <i data-lucide="book-text" class="w-4 h-4"></i>
+          <span>핵심 개념</span>
+        </button>
+        <button id="deskTabSaved" class="px-3.5 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/60 flex items-center gap-1.5 transition relative">
+          <i data-lucide="bookmark" class="w-4 h-4"></i>
+          <span>오답/북마크</span>
+          <span id="deskSavedBadge" class="hidden w-2 h-2 rounded-full bg-amber-400 ml-0.5"></span>
+        </button>
+        <button id="deskTabStats" class="px-3.5 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/60 flex items-center gap-1.5 transition">
+          <i data-lucide="pie-chart" class="w-4 h-4"></i>
+          <span>통계/설정</span>
+        </button>
+      </nav>
+
+      <!-- Quick Action Controls (Right) -->
+      <div class="flex items-center space-x-2">
+        <!-- Exam Timer Badge -->
+        <div id="examTimerBadge" class="hidden items-center gap-1.5 bg-red-500/20 border border-red-500/40 text-red-400 text-xs sm:text-sm px-3 py-1.5 rounded-full font-mono font-bold animate-pulse">
+          <i data-lucide="clock" class="w-4 h-4"></i>
+          <span id="timerText">25:00</span>
+        </div>
+
+        <!-- Font Size Button -->
+        <button id="btnFontSize" class="p-2 sm:px-2.5 sm:py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700/60 transition flex items-center gap-1 text-xs" title="글자 크기 변경">
+          <i data-lucide="type" class="w-4 h-4"></i>
+          <span class="hidden sm:inline font-medium">크기</span>
+        </button>
+
+        <!-- Dark/Light Theme Toggle -->
+        <button id="btnThemeToggle" class="p-2 sm:px-2.5 sm:py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700/60 transition flex items-center gap-1 text-xs" title="다크/라이트 모드">
+          <i id="themeIcon" data-lucide="moon" class="w-4 h-4"></i>
+          <span class="hidden sm:inline font-medium">테마</span>
+        </button>
       </div>
-    </div>
 
-    <!-- Quick action buttons -->
-    <div class="flex items-center space-x-1.5">
-      <!-- Font Size Button -->
-      <button id="btnFontSize" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition" title="글자 크기 변경">
-        <i data-lucide="type" class="w-4 h-4"></i>
-      </button>
-
-      <!-- Dark/Light Theme Toggle -->
-      <button id="btnThemeToggle" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition" title="다크/라이트 모드">
-        <i id="themeIcon" data-lucide="moon" class="w-4 h-4"></i>
-      </button>
-
-      <!-- Exam Timer Badge (Hidden in study mode) -->
-      <div id="examTimerBadge" class="hidden items-center gap-1 bg-red-500/20 border border-red-500/40 text-red-400 text-xs px-2.5 py-1 rounded-full font-mono font-bold animate-pulse">
-        <i data-lucide="clock" class="w-3.5 h-3.5"></i>
-        <span id="timerText">25:00</span>
-      </div>
     </div>
   </header>
 
   <!-- ================= MAIN CONTAINER ================= -->
-  <main class="max-w-md mx-auto px-4 pt-3 pb-8">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12">
 
     <!-- ----------------- VIEW 1: QUIZ VIEW ----------------- -->
     <section id="viewQuiz" class="space-y-4">
       
-      <!-- Subject Chips (Horizontal Scrollable) -->
-      <div class="space-y-2">
-        <div class="flex items-center justify-between text-xs text-slate-400 font-semibold px-0.5">
-          <span>학습 주제 선택</span>
-          <span id="questionCountSummary" class="text-emerald-400">415문항 탑재</span>
+      <!-- Top Filters Bar: Subject Chips & Scope / Mode Settings -->
+      <div class="bg-slate-850/80 rounded-2xl border border-slate-800 p-3 sm:p-4 space-y-3 shadow-md">
+        
+        <!-- Subject Selection -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/80 pb-2.5">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1">
+              <i data-lucide="compass" class="w-3.5 h-3.5 text-emerald-400"></i>
+              학습 주제
+            </span>
+            <span id="questionCountSummary" class="text-xs text-emerald-400 font-semibold">(415문항 탑재)</span>
+          </div>
+          <!-- Subject Chips -->
+          <div id="subjectChips" class="flex gap-2 overflow-x-auto pb-1 sm:pb-0 no-scrollbar sm:flex-wrap">
+            <!-- Dynamically populated chips -->
+          </div>
         </div>
-        <div id="subjectChips" class="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
-          <!-- Dynamically populated chips -->
-        </div>
-      </div>
 
-      <!-- Scope / Range Filter -->
-      <div id="scopeFilterContainer" class="bg-slate-800/80 p-2.5 rounded-2xl border border-slate-700/60 flex flex-col gap-2">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-semibold text-slate-300 flex items-center gap-1">
-            <i data-lucide="layers" class="w-3.5 h-3.5 text-emerald-400"></i>
-            학습 단계 / 범위
-          </span>
-          <div class="flex items-center gap-1 text-xs">
-            <label class="cursor-pointer flex items-center gap-1 text-slate-400 hover:text-slate-200">
-              <input type="checkbox" id="checkShuffle" class="rounded border-slate-700 text-emerald-500 focus:ring-emerald-400">
+        <!-- Scope & Mode Filter Row -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+          
+          <!-- Scope Pills -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-semibold text-slate-400 flex items-center gap-1">
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-teal-400"></i>
+              단계 / 범위:
+            </span>
+            <div id="rangePills" class="flex gap-1.5 flex-wrap">
+              <!-- Injected dynamically -->
+            </div>
+          </div>
+
+          <!-- Mode Toggle & Shuffle -->
+          <div class="flex items-center gap-3 justify-between sm:justify-end">
+            <!-- Shuffle Checkbox -->
+            <label class="cursor-pointer flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-200">
+              <input type="checkbox" id="checkShuffle" class="rounded border-slate-700 bg-slate-800 text-emerald-500 focus:ring-emerald-400 w-3.5 h-3.5">
               <span>무작위 셔플</span>
             </label>
-          </div>
-        </div>
-        <div id="rangePills" class="flex gap-1.5 flex-wrap">
-          <!-- Dynamically populated range pills -->
-        </div>
-      </div>
 
-      <!-- Study Mode vs Exam Mode Toggle -->
-      <div class="grid grid-cols-2 p-1 bg-slate-800 rounded-xl border border-slate-700/80 text-xs font-bold text-center">
-        <button id="btnModeStudy" class="py-2 rounded-lg bg-emerald-600 text-white shadow-sm transition-all flex items-center justify-center gap-1.5">
-          <i data-lucide="book-open-check" class="w-3.5 h-3.5"></i>
-          <span>즉시 학습 모드</span>
-        </button>
-        <button id="btnModeExam" class="py-2 rounded-lg text-slate-400 hover:text-white transition-all flex items-center justify-center gap-1.5">
-          <i data-lucide="timer" class="w-3.5 h-3.5"></i>
-          <span>실전 테스트</span>
-        </button>
-      </div>
-
-      <!-- Quiz Card Area -->
-      <div id="quizContainer" class="space-y-3">
-        <!-- Progress Bar & Indicator -->
-        <div class="flex items-center justify-between text-xs text-slate-400 px-1">
-          <div class="flex items-center gap-2">
-            <span id="quizProgressText" class="font-bold text-slate-200">문항 1 / 25</span>
-            <span id="quizAccuracyRate" class="text-emerald-400 font-medium">정답률 100%</span>
-          </div>
-          <button id="btnOpenGridDrawer" class="text-slate-400 hover:text-emerald-400 flex items-center gap-1 font-medium transition">
-            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
-            <span>문항 번호판</span>
-          </button>
-        </div>
-        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden border border-slate-700/50">
-          <div id="quizProgressBar" class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full w-0 transition-all duration-300"></div>
-        </div>
-
-        <!-- Question Card -->
-        <div class="bg-slate-800/90 rounded-2xl p-4 border border-slate-700/70 shadow-lg space-y-3.5">
-          <!-- Question Meta Header -->
-          <div class="flex items-center justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-            <div class="flex items-center gap-1.5 flex-wrap">
-              <span id="qBadgeSubject" class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">환경화학</span>
-              <span id="qBadgeYear" class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">실전문항</span>
-              <span id="qBadgeRange" class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-300">기초 핵심</span>
+            <!-- Mode Buttons -->
+            <div class="flex p-0.5 bg-slate-800 rounded-xl border border-slate-700/80 text-xs font-bold text-center">
+              <button id="btnModeStudy" class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white shadow-sm transition-all flex items-center gap-1.5">
+                <i data-lucide="book-open-check" class="w-3.5 h-3.5"></i>
+                <span>학습 모드</span>
+              </button>
+              <button id="btnModeExam" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all flex items-center gap-1.5">
+                <i data-lucide="timer" class="w-3.5 h-3.5"></i>
+                <span>실전 테스트</span>
+              </button>
             </div>
-            <button id="btnBookmark" class="p-1.5 rounded-lg text-slate-400 hover:text-amber-400 hover:bg-slate-700/60 transition" title="북마크">
-              <i id="bookmarkIcon" data-lucide="star" class="w-5 h-5"></i>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Desktop 2-Column Responsive Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left / Main Column: Question Card & Controls -->
+        <div class="lg:col-span-8 xl:col-span-9 space-y-4">
+          
+          <!-- Progress & Quick Jump Row -->
+          <div class="flex items-center justify-between text-xs sm:text-sm text-slate-400 px-1">
+            <div class="flex items-center gap-3">
+              <span id="quizProgressText" class="font-bold text-slate-100 text-sm sm:text-base">문항 1 / 25</span>
+              <span id="quizAccuracyRate" class="text-emerald-400 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">정답률 100%</span>
+            </div>
+            <!-- Mobile-only jump button -->
+            <button id="btnOpenGridDrawer" class="lg:hidden text-slate-400 hover:text-emerald-400 flex items-center gap-1 font-medium transition bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">
+              <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+              <span>문항 번호판</span>
             </button>
           </div>
 
-          <!-- Question Body Text -->
-          <div class="space-y-2">
-            <h2 id="qText" class="text-base font-semibold leading-relaxed text-slate-100">
-              문제 로딩 중...
-            </h2>
+          <!-- Progress Bar -->
+          <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden border border-slate-700/60 shadow-inner">
+            <div id="quizProgressBar" class="bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-400 h-full w-0 transition-all duration-300"></div>
+          </div>
 
-            <!-- Optional Example Box / Passage -->
-            <div id="qExampleBox" class="hidden bg-slate-900/80 p-3 rounded-xl border border-slate-700/60 text-sm text-slate-300 leading-normal font-mono">
+          <!-- Main Question Card -->
+          <div class="bg-slate-800/90 rounded-2xl p-5 sm:p-7 border border-slate-700/70 shadow-xl space-y-5">
+            
+            <!-- Question Meta Header -->
+            <div class="flex items-center justify-between gap-3 border-b border-slate-700/60 pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span id="qBadgeSubject" class="text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">환경화학</span>
+                <span id="qBadgeYear" class="text-xs font-medium px-2.5 py-1 rounded-lg bg-slate-700 text-slate-200">실전문항</span>
+                <span id="qBadgeRange" class="text-xs font-medium px-2.5 py-1 rounded-lg bg-teal-500/10 text-teal-300 border border-teal-500/20">기초 핵심</span>
+              </div>
+              <button id="btnBookmark" class="p-2 rounded-xl text-slate-400 hover:text-amber-400 hover:bg-slate-700/60 border border-transparent hover:border-slate-600 transition flex items-center gap-1.5 text-xs" title="북마크">
+                <i id="bookmarkIcon" data-lucide="star" class="w-5 h-5"></i>
+                <span class="hidden sm:inline font-medium">북마크</span>
+              </button>
             </div>
 
-            <!-- Optional Question Diagram Image -->
-            <div id="qImageBox" class="hidden relative rounded-xl overflow-hidden border border-slate-700/60 bg-black/40">
-              <img id="qImage" src="" alt="참고 다이어그램" class="w-full max-h-56 object-contain cursor-pointer">
-              <div class="absolute bottom-2 right-2 bg-slate-900/80 text-[11px] text-slate-300 px-2 py-1 rounded-md flex items-center gap-1 pointer-events-none">
-                <i data-lucide="zoom-in" class="w-3 h-3"></i>
-                <span>터치하여 확대</span>
+            <!-- Question Body Text -->
+            <div class="space-y-3">
+              <h2 id="qText" class="text-base sm:text-lg font-semibold leading-relaxed text-slate-100">
+                문제 로딩 중...
+              </h2>
+
+              <!-- Optional Example Box / Passage -->
+              <div id="qExampleBox" class="hidden bg-slate-900/90 p-4 rounded-xl border border-slate-700/70 text-sm sm:text-base text-slate-300 leading-relaxed font-mono">
+              </div>
+
+              <!-- Optional Question Diagram Image -->
+              <div id="qImageBox" class="hidden relative rounded-xl overflow-hidden border border-slate-700/60 bg-black/50 p-2 text-center">
+                <img id="qImage" src="" alt="참고 다이어그램" class="max-h-72 mx-auto object-contain cursor-pointer rounded-lg hover:opacity-95 transition">
+                <div class="mt-2 text-xs text-slate-400 flex items-center justify-center gap-1 pointer-events-none">
+                  <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i>
+                  <span>이미지 클릭 시 전체화면 확대</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Choices (1~4) -->
-          <div id="qChoices" class="space-y-2.5 pt-1">
-            <!-- Choice buttons injected here -->
-          </div>
+            <!-- Choices (1~4) -->
+            <div id="qChoices" class="space-y-3 pt-2">
+              <!-- Choice buttons injected dynamically -->
+            </div>
 
-          <!-- Immediate Feedback & Explanation Drawer -->
-          <div id="qExplanationBox" class="hidden pt-3 border-t border-slate-700/70 space-y-2.5 animate-fadeIn">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1.5">
-                <span id="qResultBadge" class="text-xs font-bold px-2.5 py-1 rounded-lg">정답</span>
-                <span id="qCorrectChoiceText" class="text-xs font-semibold text-slate-300">정답: 2번</span>
+            <!-- Immediate Feedback & Explanation Drawer -->
+            <div id="qExplanationBox" class="hidden pt-4 border-t border-slate-700/70 space-y-3 animate-fadeIn">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span id="qResultBadge" class="text-xs sm:text-sm font-bold px-3 py-1 rounded-lg">정답</span>
+                  <span id="qCorrectChoiceText" class="text-xs sm:text-sm font-semibold text-slate-200">정답: 2번</span>
+                </div>
+                <span class="text-xs text-slate-400 font-medium">상세 해설 & 분석</span>
               </div>
-              <span class="text-[11px] text-slate-400">상세 풀이</span>
+              <div id="qExplanationContent" class="text-sm sm:text-base text-slate-200 leading-relaxed bg-slate-900/80 p-4 rounded-xl border border-slate-700/60">
+              </div>
+              <div id="qConceptTags" class="flex flex-wrap gap-1.5 pt-1">
+              </div>
             </div>
-            <div id="qExplanationContent" class="text-sm text-slate-200 leading-relaxed bg-slate-900/70 p-3.5 rounded-xl border border-slate-700/50">
-            </div>
-            <div id="qConceptTags" class="flex flex-wrap gap-1.5 pt-1">
-            </div>
+
           </div>
+
+          <!-- Question Navigation Controls -->
+          <div class="flex items-center justify-between gap-3 pt-1">
+            <button id="btnPrevQ" class="flex-1 sm:flex-none sm:min-w-[140px] py-3.5 px-4 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 border border-slate-700 font-bold text-sm flex items-center justify-center gap-1.5 transition touch-card disabled:opacity-40 disabled:cursor-not-allowed">
+              <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              <span>이전 문항</span>
+            </button>
+            
+            <button id="btnSubmitExam" class="hidden py-3.5 px-6 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm items-center justify-center gap-1.5 shadow-lg shadow-red-600/30 transition touch-card">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>답안 최종 제출</span>
+            </button>
+
+            <button id="btnNextQ" class="flex-1 sm:flex-none sm:min-w-[140px] py-3.5 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-1.5 transition shadow-lg shadow-emerald-600/20 touch-card">
+              <span>다음 문항</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
         </div>
 
-        <!-- Question Navigation Controls -->
-        <div class="flex items-center justify-between gap-2 pt-1">
-          <button id="btnPrevQ" class="flex-1 py-3 px-3 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 font-semibold text-sm flex items-center justify-center gap-1 transition touch-card disabled:opacity-40 disabled:cursor-not-allowed">
-            <i data-lucide="chevron-left" class="w-4 h-4"></i>
-            <span>이전 문항</span>
-          </button>
+        <!-- Right Column / Sidebar (Visible on Desktop lg+) -->
+        <aside class="hidden lg:block lg:col-span-4 xl:col-span-3 space-y-4 sticky top-20">
           
-          <button id="btnSubmitExam" class="hidden py-3 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm items-center justify-center gap-1 shadow-md transition touch-card">
-            <i data-lucide="send" class="w-4 h-4"></i>
-            <span>답안 제출</span>
-          </button>
+          <!-- Persistent Desktop Question Board -->
+          <div class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/70 shadow-lg space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-700/60 pb-3">
+              <div class="flex items-center gap-2">
+                <i data-lucide="layout-grid" class="w-4 h-4 text-emerald-400"></i>
+                <h3 class="text-sm font-bold text-slate-100">문항 현황판</h3>
+              </div>
+              <span id="deskAnsweredRatio" class="text-xs font-semibold text-emerald-400">0 / 25</span>
+            </div>
 
-          <button id="btnNextQ" class="flex-1 py-3 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-1 transition shadow-md shadow-emerald-600/20 touch-card">
-            <span>다음 문항</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-        </div>
+            <!-- Legend -->
+            <div class="grid grid-cols-3 gap-1 text-[11px] text-slate-400 text-center pb-1 border-b border-slate-700/40">
+              <span class="flex items-center justify-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span> 완료</span>
+              <span class="flex items-center justify-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-slate-700 inline-block"></span> 미답</span>
+              <span class="flex items-center justify-center gap-1"><span class="w-2.5 h-2.5 rounded-full border-2 border-emerald-400 inline-block"></span> 현재</span>
+            </div>
+
+            <!-- Question Jump Grid -->
+            <div id="desktopQuestionGrid" class="grid grid-cols-5 gap-2 max-h-[360px] overflow-y-auto pr-1">
+              <!-- Injected dynamically -->
+            </div>
+          </div>
+
+          <!-- Study Quick Widget -->
+          <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/60 text-xs text-slate-300 space-y-2.5">
+            <div class="font-bold text-slate-200 flex items-center gap-1.5">
+              <i data-lucide="info" class="w-4 h-4 text-emerald-400"></i>
+              <span>단축키 안내</span>
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              키보드 좌우 방향키(← / →)로 이전/다음 문항 이동이 가능하며, 숫자키 1~4로 보기를 선택할 수 있습니다.
+            </p>
+          </div>
+
+        </aside>
+
       </div>
+
     </section>
 
     <!-- ----------------- VIEW 2: CONCEPTS VIEW ----------------- -->
-    <section id="viewConcepts" class="hidden space-y-4">
-      <div class="space-y-1">
-        <h2 class="text-lg font-bold flex items-center gap-2 text-slate-100">
-          <i data-lucide="book-bookmark" class="w-5 h-5 text-emerald-400"></i>
-          <span>핵심 개념 & 공식 아카이브</span>
-        </h2>
-        <p class="text-xs text-slate-400">빈출 핵심 테마, 계산 공식 치트시트 및 전범위 요약 노트</p>
-      </div>
+    <section id="viewConcepts" class="hidden space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="space-y-1">
+          <h2 class="text-xl sm:text-2xl font-bold flex items-center gap-2 text-slate-100">
+            <i data-lucide="book-bookmark" class="w-6 h-6 text-emerald-400"></i>
+            <span>핵심 개념 & 공식 아카이브</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">빈출 핵심 테마, 계산 공식 치트시트 및 전 과목 요점 정리</p>
+        </div>
 
-      <!-- Search Box -->
-      <div class="relative">
-        <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-400"></i>
-        <input type="text" id="conceptSearchInput" placeholder="공식, 용어, 테마 검색 (예: 몰농도, 르샤틀리에, SI)..." class="w-full pl-10 pr-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        <!-- Search Box -->
+        <div class="relative w-full sm:w-80">
+          <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-400"></i>
+          <input type="text" id="conceptSearchInput" placeholder="공식, 용어, 테마 검색..." class="w-full pl-10 pr-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        </div>
       </div>
 
       <!-- Concept Subject Filter -->
-      <div id="conceptSubjectFilter" class="flex gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+      <div id="conceptSubjectFilter" class="flex gap-2 overflow-x-auto pb-1 no-scrollbar sm:flex-wrap">
         <!-- Injected dynamically -->
       </div>
 
-      <!-- Concept Cards Accordion -->
-      <div id="conceptCardsList" class="space-y-3">
+      <!-- Responsive Grid for Concept Cards (1 col on mobile, 2 col on tablet, 3 col on wide desktop) -->
+      <div id="conceptCardsList" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 items-start">
         <!-- Concept items injected here -->
       </div>
     </section>
 
     <!-- ----------------- VIEW 3: SAVED (BOOKMARKS & MISTAKES) VIEW ----------------- -->
-    <section id="viewSaved" class="hidden space-y-4">
-      <div class="space-y-1">
-        <h2 class="text-lg font-bold flex items-center gap-2 text-slate-100">
-          <i data-lucide="bookmark-check" class="w-5 h-5 text-amber-400"></i>
-          <span>오답노트 & 북마크</span>
-        </h2>
-        <p class="text-xs text-slate-400">오답 문항과 별표 표시한 중요 문항을 집중적으로 복습하세요.</p>
+    <section id="viewSaved" class="hidden space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="space-y-1">
+          <h2 class="text-xl sm:text-2xl font-bold flex items-center gap-2 text-slate-100">
+            <i data-lucide="bookmark-check" class="w-6 h-6 text-amber-400"></i>
+            <span>오답노트 & 북마크</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">오답 문항과 별표 표시한 중요 문항을 집중적으로 복습하세요.</p>
+        </div>
+
+        <!-- Sub Tabs: Bookmarks vs Mistakes -->
+        <div class="grid grid-cols-2 p-1 bg-slate-800 rounded-xl border border-slate-700 text-xs font-bold text-center w-full sm:w-64">
+          <button id="btnSavedBookmarksTab" class="py-2 rounded-lg bg-amber-500 text-slate-900 shadow-sm flex items-center justify-center gap-1.5 transition">
+            <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+            <span id="savedBookmarksCountLabel">북마크 (0)</span>
+          </button>
+          <button id="btnSavedMistakesTab" class="py-2 rounded-lg text-slate-400 hover:text-white flex items-center justify-center gap-1.5 transition">
+            <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i>
+            <span id="savedMistakesCountLabel">오답노트 (0)</span>
+          </button>
+        </div>
       </div>
 
-      <!-- Sub Tabs: Bookmarks vs Mistakes -->
-      <div class="grid grid-cols-2 p-1 bg-slate-800 rounded-xl border border-slate-700 text-xs font-bold text-center">
-        <button id="btnSavedBookmarksTab" class="py-2 rounded-lg bg-amber-500 text-slate-900 shadow-sm flex items-center justify-center gap-1.5 transition">
-          <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
-          <span id="savedBookmarksCountLabel">북마크 (0)</span>
-        </button>
-        <button id="btnSavedMistakesTab" class="py-2 rounded-lg text-slate-400 hover:text-white flex items-center justify-center gap-1.5 transition">
-          <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i>
-          <span id="savedMistakesCountLabel">오답노트 (0)</span>
-        </button>
-      </div>
-
-      <!-- Quick Action: Review All Saved -->
-      <div class="flex items-center justify-between gap-2">
-        <button id="btnPracticeSaved" class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-600 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-md">
-          <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+      <!-- Quick Action Controls -->
+      <div class="flex items-center justify-between gap-3 bg-slate-800/80 p-3 rounded-2xl border border-slate-700/60">
+        <button id="btnPracticeSaved" class="py-2.5 px-5 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-600 text-slate-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md touch-card">
+          <i data-lucide="play" class="w-4 h-4 fill-current"></i>
           <span>선택 항목 모아 풀기</span>
         </button>
-        <button id="btnClearSavedCategory" class="py-2.5 px-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-400 hover:text-red-400 text-xs flex items-center gap-1">
-          <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+        <button id="btnClearSavedCategory" class="py-2.5 px-4 rounded-xl bg-slate-700 hover:bg-slate-600 text-slate-300 hover:text-red-400 text-xs font-semibold flex items-center gap-1.5 transition">
+          <i data-lucide="trash-2" class="w-4 h-4"></i>
           <span>비우기</span>
         </button>
       </div>
 
-      <!-- Saved Questions List -->
-      <div id="savedListContainer" class="space-y-3">
+      <!-- Responsive Saved Questions Grid (1 col on mobile, 2 col on tablet, 3 col on PC) -->
+      <div id="savedListContainer" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4.5 items-start">
         <!-- Injected dynamically -->
       </div>
     </section>
 
     <!-- ----------------- VIEW 4: STATS & SETTINGS VIEW ----------------- -->
-    <section id="viewStats" class="hidden space-y-4">
+    <section id="viewStats" class="hidden space-y-6">
       <div class="space-y-1">
-        <h2 class="text-lg font-bold flex items-center gap-2 text-slate-100">
-          <i data-lucide="bar-chart-2" class="w-5 h-5 text-indigo-400"></i>
+        <h2 class="text-xl sm:text-2xl font-bold flex items-center gap-2 text-slate-100">
+          <i data-lucide="bar-chart-2" class="w-6 h-6 text-indigo-400"></i>
           <span>학습 통계 및 설정</span>
         </h2>
-        <p class="text-xs text-slate-400">나의 누적 학습 진행 상황 및 데이터 관리</p>
+        <p class="text-xs sm:text-sm text-slate-400">나의 누적 학습 진행 상황 및 데이터 관리</p>
       </div>
 
-      <!-- Summary KPI Cards -->
-      <div class="grid grid-cols-2 gap-2.5">
-        <div class="bg-slate-800/90 p-3.5 rounded-2xl border border-slate-700 flex flex-col justify-between">
+      <!-- Summary KPI Cards (Responsive 4-col on desktop) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-slate-800/90 p-4 rounded-2xl border border-slate-700 flex flex-col justify-between shadow-md">
           <span class="text-xs text-slate-400 font-medium">총 풀이 문항</span>
-          <div class="mt-2 flex items-baseline gap-1">
-            <span id="statTotalSolved" class="text-2xl font-black text-slate-100">0</span>
-            <span class="text-xs text-slate-500">/ 415</span>
+          <div class="mt-3 flex items-baseline gap-1.5">
+            <span id="statTotalSolved" class="text-3xl font-black text-slate-100">0</span>
+            <span class="text-xs text-slate-400">/ 415</span>
           </div>
         </div>
-        <div class="bg-slate-800/90 p-3.5 rounded-2xl border border-slate-700 flex flex-col justify-between">
+        <div class="bg-slate-800/90 p-4 rounded-2xl border border-slate-700 flex flex-col justify-between shadow-md">
           <span class="text-xs text-slate-400 font-medium">전체 정답률</span>
-          <div class="mt-2 flex items-baseline gap-1">
-            <span id="statAccuracy" class="text-2xl font-black text-emerald-400">0%</span>
+          <div class="mt-3 flex items-baseline gap-1.5">
+            <span id="statAccuracy" class="text-3xl font-black text-emerald-400">0%</span>
           </div>
         </div>
-        <div class="bg-slate-800/90 p-3.5 rounded-2xl border border-slate-700 flex flex-col justify-between">
+        <div class="bg-slate-800/90 p-4 rounded-2xl border border-slate-700 flex flex-col justify-between shadow-md">
           <span class="text-xs text-slate-400 font-medium">저장된 북마크</span>
-          <div class="mt-2 flex items-baseline gap-1">
-            <span id="statBookmarks" class="text-2xl font-black text-amber-400">0</span>
-            <span class="text-xs text-slate-500">개</span>
+          <div class="mt-3 flex items-baseline gap-1.5">
+            <span id="statBookmarks" class="text-3xl font-black text-amber-400">0</span>
+            <span class="text-xs text-slate-400">개</span>
           </div>
         </div>
-        <div class="bg-slate-800/90 p-3.5 rounded-2xl border border-slate-700 flex flex-col justify-between">
+        <div class="bg-slate-800/90 p-4 rounded-2xl border border-slate-700 flex flex-col justify-between shadow-md">
           <span class="text-xs text-slate-400 font-medium">오답 누적</span>
-          <div class="mt-2 flex items-baseline gap-1">
-            <span id="statMistakes" class="text-2xl font-black text-rose-400">0</span>
-            <span class="text-xs text-slate-500">개</span>
+          <div class="mt-3 flex items-baseline gap-1.5">
+            <span id="statMistakes" class="text-3xl font-black text-rose-400">0</span>
+            <span class="text-xs text-slate-400">개</span>
           </div>
         </div>
       </div>
 
-      <!-- Subject Breakdown Table -->
-      <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700 space-y-3">
-        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">과목별 학습 진행률</h3>
-        <div id="statSubjectBreakdown" class="space-y-3">
-          <!-- Injected dynamically -->
+      <!-- Desktop 2-Column: Progress breakdown on Left, Management on Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        
+        <!-- Subject Breakdown Table -->
+        <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700 space-y-4 shadow-md">
+          <h3 class="text-sm font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+            <i data-lucide="layers" class="w-4 h-4 text-emerald-400"></i>
+            과목별 학습 진행률
+          </h3>
+          <div id="statSubjectBreakdown" class="space-y-3.5">
+            <!-- Injected dynamically -->
+          </div>
         </div>
+
+        <!-- Data Backup & Reset Actions -->
+        <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700 space-y-4 shadow-md">
+          <h3 class="text-sm font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+            <i data-lucide="database" class="w-4 h-4 text-indigo-400"></i>
+            데이터 백업 및 초기화
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            학습 진행 데이터는 현재 브라우저의 로컬 스토리지에 안전하게 보관됩니다. 다른 기기나 PC로 데이터를 옮기려면 아래 버튼을 이용하세요.
+          </p>
+          <div class="flex gap-3">
+            <button id="btnExportData" class="flex-1 py-3 px-4 bg-slate-700 hover:bg-slate-600 rounded-xl text-xs sm:text-sm font-semibold text-slate-200 flex items-center justify-center gap-2 transition">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>학습기록 내보내기</span>
+            </button>
+            <button id="btnImportData" class="flex-1 py-3 px-4 bg-slate-700 hover:bg-slate-600 rounded-xl text-xs sm:text-sm font-semibold text-slate-200 flex items-center justify-center gap-2 transition">
+              <i data-lucide="upload" class="w-4 h-4"></i>
+              <span>기록 가져오기</span>
+            </button>
+          </div>
+          <input type="file" id="importFileInput" accept=".json" class="hidden">
+          <button id="btnResetAllData" class="w-full py-3 px-4 bg-red-950/40 hover:bg-red-900/60 border border-red-800/60 rounded-xl text-xs sm:text-sm font-semibold text-red-400 flex items-center justify-center gap-2 transition">
+            <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+            <span>모든 학습 기록 초기화</span>
+          </button>
+        </div>
+
       </div>
 
-      <!-- Data Backup & Reset Actions -->
-      <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700 space-y-3">
-        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">데이터 백업 및 초기화</h3>
-        <div class="flex gap-2">
-          <button id="btnExportData" class="flex-1 py-2.5 px-3 bg-slate-700 hover:bg-slate-600 rounded-xl text-xs font-semibold text-slate-200 flex items-center justify-center gap-1.5 transition">
-            <i data-lucide="download" class="w-3.5 h-3.5"></i>
-            <span>학습기록 내보내기</span>
-          </button>
-          <button id="btnImportData" class="flex-1 py-2.5 px-3 bg-slate-700 hover:bg-slate-600 rounded-xl text-xs font-semibold text-slate-200 flex items-center justify-center gap-1.5 transition">
-            <i data-lucide="upload" class="w-3.5 h-3.5"></i>
-            <span>기록 가져오기</span>
-          </button>
-        </div>
-        <input type="file" id="importFileInput" accept=".json" class="hidden">
-        <button id="btnResetAllData" class="w-full py-2.5 px-3 bg-red-950/40 hover:bg-red-900/60 border border-red-800/60 rounded-xl text-xs font-semibold text-red-400 flex items-center justify-center gap-1.5 transition">
-          <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
-          <span>모든 학습 기록 초기화</span>
-        </button>
-      </div>
-
-      <!-- App Info -->
-      <div class="text-center text-xs text-slate-400 space-y-1 pt-2">
+      <!-- App Info Footer -->
+      <div class="text-center text-xs text-slate-400 space-y-1.5 pt-4">
         <p class="font-medium text-slate-300">Science Study Lab v1.0</p>
         <p>환경화학 · 농업생태학 · 생물통계학 · 생명과학 전문 아카이브</p>
-        <p class="text-[11px] text-slate-400">환경화학 기초 핵심(1~6강) & 심화 종합(7~15강) 단계별 마스터</p>
+        <p class="text-[11px] text-slate-400">기초 핵심 평가(1~6강) & 심화 종합 평가(7~15강) 단계별 마스터</p>
       </div>
     </section>
 
   </main>
 
-  <!-- ================= FIXED BOTTOM NAVIGATION ================= -->
-  <nav class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 safe-pb">
+  <!-- ================= FIXED BOTTOM NAVIGATION (MOBILE ONLY) ================= -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 safe-pb">
     <div class="max-w-md mx-auto grid grid-cols-4 px-2 py-1.5 text-center">
       
       <!-- Tab 1: Quiz -->
@@ -402,7 +516,7 @@
     </div>
   </nav>
 
-  <!-- ================= MODAL: QUESTION GRID SHEET ================= -->
+  <!-- ================= MODAL: MOBILE QUESTION GRID SHEET ================= -->
   <div id="modalGridDrawer" class="hidden fixed inset-0 z-50 modal-backdrop bg-black/60 flex items-end sm:items-center justify-center p-0 sm:p-4 animate-fadeIn">
     <div class="bg-slate-900 w-full sm:max-w-md rounded-t-3xl sm:rounded-2xl border border-slate-800 p-5 space-y-4 max-h-[85vh] flex flex-col">
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
@@ -472,7 +586,7 @@
     <button id="btnCloseImageZoom" class="absolute top-4 right-4 p-2 rounded-full bg-slate-800 text-white">
       <i data-lucide="x" class="w-6 h-6"></i>
     </button>
-    <img id="zoomImageTarget" src="" alt="확대 이미지" class="max-w-full max-h-[80vh] object-contain rounded-xl">
+    <img id="zoomImageTarget" src="" alt="확대 이미지" class="max-w-full max-h-[85vh] object-contain rounded-xl">
   </div>
 
   <!-- Data & Application Script -->

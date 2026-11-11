@@ -42,12 +42,23 @@
 
   // ================= DOM ELEMENTS =================
   const els = {
-    // Nav tabs
+    // Nav tabs (Mobile)
     navTabQuiz: document.getElementById('navTabQuiz'),
     navTabConcepts: document.getElementById('navTabConcepts'),
     navTabSaved: document.getElementById('navTabSaved'),
     navTabStats: document.getElementById('navTabStats'),
     navSavedBadge: document.getElementById('navSavedBadge'),
+
+    // Nav tabs (Desktop)
+    deskTabQuiz: document.getElementById('deskTabQuiz'),
+    deskTabConcepts: document.getElementById('deskTabConcepts'),
+    deskTabSaved: document.getElementById('deskTabSaved'),
+    deskTabStats: document.getElementById('deskTabStats'),
+    deskSavedBadge: document.getElementById('deskSavedBadge'),
+
+    // Desktop Question Board
+    desktopQuestionGrid: document.getElementById('desktopQuestionGrid'),
+    deskAnsweredRatio: document.getElementById('deskAnsweredRatio'),
 
     // Views
     viewQuiz: document.getElementById('viewQuiz'),
@@ -217,26 +228,38 @@
     els.viewSaved.classList.add('hidden');
     els.viewStats.classList.add('hidden');
 
-    // Reset tab button colors
-    const navButtons = [els.navTabQuiz, els.navTabConcepts, els.navTabSaved, els.navTabStats];
-    navButtons.forEach(btn => {
-      btn.className = 'flex flex-col items-center py-1 text-slate-400 hover:text-slate-200 font-medium transition';
+    // Reset mobile tab button colors
+    const mobileNavButtons = [els.navTabQuiz, els.navTabConcepts, els.navTabSaved, els.navTabStats];
+    mobileNavButtons.forEach(btn => {
+      if (btn) btn.className = 'flex flex-col items-center py-1 text-slate-400 hover:text-slate-200 font-medium transition';
     });
+
+    // Reset desktop tab button colors
+    const desktopNavButtons = [els.deskTabQuiz, els.deskTabConcepts, els.deskTabSaved, els.deskTabStats];
+    desktopNavButtons.forEach(btn => {
+      if (btn) btn.className = 'px-3.5 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/60 flex items-center gap-1.5 transition';
+    });
+
+    const deskActiveClasses = 'px-3.5 py-2 rounded-lg bg-emerald-600 text-white shadow-sm flex items-center gap-1.5 transition';
 
     if (tabId === 'quiz') {
       els.viewQuiz.classList.remove('hidden');
-      els.navTabQuiz.className = 'flex flex-col items-center py-1 text-emerald-400 font-bold transition';
+      if (els.navTabQuiz) els.navTabQuiz.className = 'flex flex-col items-center py-1 text-emerald-400 font-bold transition';
+      if (els.deskTabQuiz) els.deskTabQuiz.className = deskActiveClasses;
     } else if (tabId === 'concepts') {
       els.viewConcepts.classList.remove('hidden');
-      els.navTabConcepts.className = 'flex flex-col items-center py-1 text-emerald-400 font-bold transition';
+      if (els.navTabConcepts) els.navTabConcepts.className = 'flex flex-col items-center py-1 text-emerald-400 font-bold transition';
+      if (els.deskTabConcepts) els.deskTabConcepts.className = deskActiveClasses;
       renderConcepts();
     } else if (tabId === 'saved') {
       els.viewSaved.classList.remove('hidden');
-      els.navTabSaved.className = 'flex flex-col items-center py-1 text-emerald-400 font-bold transition relative';
+      if (els.navTabSaved) els.navTabSaved.className = 'flex flex-col items-center py-1 text-emerald-400 font-bold transition relative';
+      if (els.deskTabSaved) els.deskTabSaved.className = deskActiveClasses + ' relative';
       renderSavedList();
     } else if (tabId === 'stats') {
       els.viewStats.classList.remove('hidden');
-      els.navTabStats.className = 'flex flex-col items-center py-1 text-emerald-400 font-bold transition';
+      if (els.navTabStats) els.navTabStats.className = 'flex flex-col items-center py-1 text-emerald-400 font-bold transition';
+      if (els.deskTabStats) els.deskTabStats.className = deskActiveClasses;
       renderStats();
     }
 
@@ -404,6 +427,9 @@
       els.btnSubmitExam.classList.add('hidden');
       els.btnSubmitExam.classList.remove('flex');
     }
+
+    // Render persistent desktop question grid
+    renderDesktopQuestionGrid();
 
     // Trigger KaTeX rendering on text and choices
     renderMath();
@@ -587,9 +613,11 @@
     els.savedMistakesCountLabel.innerText = `오답노트 (${mCount})`;
 
     if (bCount > 0 || mCount > 0) {
-      els.navSavedBadge.classList.remove('hidden');
+      if (els.navSavedBadge) els.navSavedBadge.classList.remove('hidden');
+      if (els.deskSavedBadge) els.deskSavedBadge.classList.remove('hidden');
     } else {
-      els.navSavedBadge.classList.add('hidden');
+      if (els.navSavedBadge) els.navSavedBadge.classList.add('hidden');
+      if (els.deskSavedBadge) els.deskSavedBadge.classList.add('hidden');
     }
   }
 
@@ -728,6 +756,47 @@
     }
 
     els.modalGridDrawer.classList.remove('hidden');
+  }
+
+  // ================= DESKTOP PERSISTENT QUESTION GRID =================
+  function renderDesktopQuestionGrid() {
+    if (!els.desktopQuestionGrid) return;
+    els.desktopQuestionGrid.innerHTML = '';
+    const total = state.activeQuestions.length;
+    let answeredCount = 0;
+
+    for (let i = 0; i < total; i++) {
+      const q = state.activeQuestions[i];
+      const hasAnswered = state.userAnswers[q.id] !== undefined;
+      const isCurrent = state.currentIndex === i;
+      if (hasAnswered) answeredCount += 1;
+
+      const btn = document.createElement('button');
+      let classes = 'h-9 rounded-xl font-bold text-xs flex items-center justify-center transition-all touch-card ';
+
+      if (isCurrent) {
+        classes += 'ring-2 ring-emerald-400 bg-emerald-600/30 text-emerald-300 font-black ';
+      }
+
+      if (hasAnswered) {
+        classes += 'bg-emerald-600 text-white shadow-sm';
+      } else {
+        classes += 'bg-slate-700/60 text-slate-400 border border-slate-700 hover:text-white hover:bg-slate-700';
+      }
+
+      btn.className = classes;
+      btn.innerText = i + 1;
+      btn.onclick = () => {
+        state.currentIndex = i;
+        renderCurrentQuestion();
+      };
+
+      els.desktopQuestionGrid.appendChild(btn);
+    }
+
+    if (els.deskAnsweredRatio) {
+      els.deskAnsweredRatio.innerText = `${answeredCount} / ${total}`;
+    }
   }
 
   // ================= CONCEPTS VIEW =================
@@ -986,11 +1055,17 @@
 
   // ================= EVENT LISTENERS =================
   function attachEventListeners() {
-    // Nav Tabs
-    els.navTabQuiz.onclick = () => switchTab('quiz');
-    els.navTabConcepts.onclick = () => switchTab('concepts');
-    els.navTabSaved.onclick = () => switchTab('saved');
-    els.navTabStats.onclick = () => switchTab('stats');
+    // Nav Tabs (Mobile)
+    if (els.navTabQuiz) els.navTabQuiz.onclick = () => switchTab('quiz');
+    if (els.navTabConcepts) els.navTabConcepts.onclick = () => switchTab('concepts');
+    if (els.navTabSaved) els.navTabSaved.onclick = () => switchTab('saved');
+    if (els.navTabStats) els.navTabStats.onclick = () => switchTab('stats');
+
+    // Nav Tabs (Desktop)
+    if (els.deskTabQuiz) els.deskTabQuiz.onclick = () => switchTab('quiz');
+    if (els.deskTabConcepts) els.deskTabConcepts.onclick = () => switchTab('concepts');
+    if (els.deskTabSaved) els.deskTabSaved.onclick = () => switchTab('saved');
+    if (els.deskTabStats) els.deskTabStats.onclick = () => switchTab('stats');
 
     // Theme & Font
     els.btnThemeToggle.onclick = toggleTheme;
@@ -1114,10 +1189,38 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `knou_study_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      a.download = `study_lab_backup_${new Date().toISOString().slice(0, 10)}.json`;
       a.click();
       URL.revokeObjectURL(url);
     };
+
+    // Keyboard Shortcuts for Desktop Users
+    document.addEventListener('keydown', (e) => {
+      // Do not trigger shortcuts when user is typing in search input
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+        return;
+      }
+
+      if (state.currentTab === 'quiz') {
+        if (e.key === 'ArrowLeft') {
+          if (state.currentIndex > 0) {
+            state.currentIndex -= 1;
+            renderCurrentQuestion();
+          }
+        } else if (e.key === 'ArrowRight') {
+          if (state.currentIndex < state.activeQuestions.length - 1) {
+            state.currentIndex += 1;
+            renderCurrentQuestion();
+          }
+        } else if (['1', '2', '3', '4'].includes(e.key)) {
+          const choiceNum = parseInt(e.key);
+          const q = state.activeQuestions[state.currentIndex];
+          if (q && q.choices.some(c => c.number === choiceNum)) {
+            handleChoiceSelect(q, choiceNum);
+          }
+        }
+      }
+    });
 
     els.btnImportData.onclick = () => {
       els.importFileInput.click();
