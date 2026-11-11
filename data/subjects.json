@@ -1,0 +1,93 @@
+[
+  {
+    "id": "환경화학",
+    "name": "환경화학",
+    "code": "ENV-CHEM",
+    "grade": "1학년 / 3학년 2학기",
+    "icon": "flask-conical",
+    "color": "emerald",
+    "bgGradient": "from-emerald-500 to-teal-700",
+    "description": "물질의 기본 구조, 화학반응식, 기체/용액, 평형, 산-염기, 대기·수질 환경화학",
+    "ranges": [
+      "전체",
+      "중간 출석대체(1~6강)",
+      "기말고사(7~15강)"
+    ],
+    "hasMidterm": true
+  },
+  {
+    "id": "환경친화형농업",
+    "name": "환경친화형농업",
+    "code": "ECO-AGRI",
+    "grade": "3학년 2학기",
+    "icon": "sprout",
+    "color": "green",
+    "bgGradient": "from-green-500 to-emerald-700",
+    "description": "친환경 농업 기준, 토양생태계, 윤작, 병해충 종합관리(IPM), 천적 및 유기자재",
+    "ranges": [
+      "전체",
+      "기말고사"
+    ],
+    "hasMidterm": false
+  },
+  {
+    "id": "생물통계학",
+    "name": "생물통계학",
+    "code": "BIO-STAT",
+    "grade": "3학년 2학기",
+    "icon": "chart-column-increasing",
+    "color": "blue",
+    "bgGradient": "from-blue-500 to-indigo-700",
+    "description": "기술통계량, 정규분포, 가설검정(Z/t/F/카이제곱), 분산분석(ANOVA), 상관/회귀",
+    "ranges": [
+      "전체",
+      "기말고사"
+    ],
+    "hasMidterm": false
+  },
+  {
+    "id": "생물과학",
+    "name": "생물과학",
+    "code": "BIO-SCI",
+    "grade": "3학년 2학기",
+    "icon": "dna",
+    "color": "purple",
+    "bgGradient": "from-purple-500 to-violet-700",
+    "description": "세포 소기관, 광합성/세포호흡, 멘델 유전법칙, 분자생물학(DNA/RNA/단백질)",
+    "ranges": [
+      "전체",
+      "기말고사"
+    ],
+    "hasMidterm": false
+  },
+  {
+    "id": "식물분류학",
+    "name": "식물분류학",
+    "code": "PLANT-TAX",
+    "grade": "3학년 2학기",
+    "icon": "flower-2",
+    "color": "amber",
+    "bgGradient": "from-amber-500 to-orange-700",
+    "description": "식물 분류체계(APG/크론퀴스트), 학명 명명법, 영양/생식기관, 주요 과의 특성",
+    "ranges": [
+      "전체",
+      "기말고사"
+    ],
+    "hasMidterm": false
+  },
+  {
+    "id": "환경미생물학",
+    "name": "환경미생물학",
+    "code": "ENV-MICR",
+    "grade": "3학년 2학기",
+    "icon": "bug",
+    "color": "rose",
+    "bgGradient": "from-rose-500 to-pink-700",
+    "description": "미생물 분류·생장곡선, 활성슬러지 공정, 질소·인 순환, 생물학적 환경정화",
+    "ranges": [
+      "전체",
+      "기말고사"
+    ],
+    "hasMidterm": false
+  }
+]
