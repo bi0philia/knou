@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0f172a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="description" content="방송통신대학교 기출문제 퀴즈, 풀이 및 과목별 핵심 개념 완벽 정리 모바일 웹앱">
-  <title>KNOU 스마트 스터디 - 기출문제 퀴즈 & 개념정리</title>
+  <meta name="description" content="바이오·환경 과학 아카이브 & 스마트 스터디 랩 - 실전문항 퀴즈, 풀이 및 과목별 핵심 개념 완벽 정리">
+  <title>스마트 스터디 랩 - 실전문항 퀴즈 & 핵심 개념노트</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -53,14 +53,14 @@
   <header class="sticky top-0 z-30 bg-slate-900/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-3 flex items-center justify-between">
     <div class="flex items-center space-x-2.5">
       <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-md shadow-emerald-500/20 text-white font-black text-lg">
-        Q
+        S
       </div>
       <div>
         <h1 class="text-base font-bold leading-tight flex items-center gap-1.5">
-          <span>KNOU 스터디</span>
-          <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5 rounded-full font-medium">2026-2</span>
+          <span>스터디 랩</span>
+          <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5 rounded-full font-medium">SCIENCE</span>
         </h1>
-        <p id="topSubjectBadge" class="text-xs text-slate-400 font-medium truncate max-w-[170px]">환경화학 (중간/기말)</p>
+        <p id="topSubjectBadge" class="text-xs text-slate-400 font-medium truncate max-w-[170px]">환경화학 (기초/심화)</p>
       </div>
     </div>
 
@@ -93,7 +93,7 @@
       <!-- Subject Chips (Horizontal Scrollable) -->
       <div class="space-y-2">
         <div class="flex items-center justify-between text-xs text-slate-400 font-semibold px-0.5">
-          <span>과목 선택</span>
+          <span>학습 주제 선택</span>
           <span id="questionCountSummary" class="text-emerald-400">415문항 탑재</span>
         </div>
         <div id="subjectChips" class="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
@@ -101,12 +101,12 @@
         </div>
       </div>
 
-      <!-- Scope / Range Filter (Especially for 환경화학 중간 vs 기말) -->
+      <!-- Scope / Range Filter -->
       <div id="scopeFilterContainer" class="bg-slate-800/80 p-2.5 rounded-2xl border border-slate-700/60 flex flex-col gap-2">
         <div class="flex items-center justify-between">
           <span class="text-xs font-semibold text-slate-300 flex items-center gap-1">
             <i data-lucide="layers" class="w-3.5 h-3.5 text-emerald-400"></i>
-            시험 범위 선택
+            학습 단계 / 범위
           </span>
           <div class="flex items-center gap-1 text-xs">
             <label class="cursor-pointer flex items-center gap-1 text-slate-400 hover:text-slate-200">
@@ -128,7 +128,7 @@
         </button>
         <button id="btnModeExam" class="py-2 rounded-lg text-slate-400 hover:text-white transition-all flex items-center justify-center gap-1.5">
           <i data-lucide="timer" class="w-3.5 h-3.5"></i>
-          <span>실전 모의고사</span>
+          <span>실전 테스트</span>
         </button>
       </div>
 
@@ -155,8 +155,8 @@
           <div class="flex items-center justify-between gap-2 border-b border-slate-700/60 pb-2.5">
             <div class="flex items-center gap-1.5 flex-wrap">
               <span id="qBadgeSubject" class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">환경화학</span>
-              <span id="qBadgeYear" class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">2019 기출</span>
-              <span id="qBadgeRange" class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-300">중간 출석대체</span>
+              <span id="qBadgeYear" class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">실전문항</span>
+              <span id="qBadgeRange" class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-300">기초 핵심</span>
             </div>
             <button id="btnBookmark" class="p-1.5 rounded-lg text-slate-400 hover:text-amber-400 hover:bg-slate-700/60 transition" title="북마크">
               <i id="bookmarkIcon" data-lucide="star" class="w-5 h-5"></i>
@@ -175,7 +175,7 @@
 
             <!-- Optional Question Diagram Image -->
             <div id="qImageBox" class="hidden relative rounded-xl overflow-hidden border border-slate-700/60 bg-black/40">
-              <img id="qImage" src="" alt="문제 참고 이미지" class="w-full max-h-56 object-contain cursor-pointer">
+              <img id="qImage" src="" alt="참고 다이어그램" class="w-full max-h-56 object-contain cursor-pointer">
               <div class="absolute bottom-2 right-2 bg-slate-900/80 text-[11px] text-slate-300 px-2 py-1 rounded-md flex items-center gap-1 pointer-events-none">
                 <i data-lucide="zoom-in" class="w-3 h-3"></i>
                 <span>터치하여 확대</span>
@@ -213,7 +213,7 @@
           
           <button id="btnSubmitExam" class="hidden py-3 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm items-center justify-center gap-1 shadow-md transition touch-card">
             <i data-lucide="send" class="w-4 h-4"></i>
-            <span>시험 제출</span>
+            <span>답안 제출</span>
           </button>
 
           <button id="btnNextQ" class="flex-1 py-3 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-1 transition shadow-md shadow-emerald-600/20 touch-card">
@@ -229,9 +229,9 @@
       <div class="space-y-1">
         <h2 class="text-lg font-bold flex items-center gap-2 text-slate-100">
           <i data-lucide="book-bookmark" class="w-5 h-5 text-emerald-400"></i>
-          <span>핵심 개념 & 공식 요약</span>
+          <span>핵심 개념 & 공식 아카이브</span>
         </h2>
-        <p class="text-xs text-slate-400">시험 직전 핵심 출제 족보, 계산 공식 치트시트 및 전범위 요약</p>
+        <p class="text-xs text-slate-400">빈출 핵심 테마, 계산 공식 치트시트 및 전범위 요약 노트</p>
       </div>
 
       <!-- Search Box -->
@@ -258,7 +258,7 @@
           <i data-lucide="bookmark-check" class="w-5 h-5 text-amber-400"></i>
           <span>오답노트 & 북마크</span>
         </h2>
-        <p class="text-xs text-slate-400">내가 틀렸던 문제와 별표 표시한 중요 문제를 복습하세요.</p>
+        <p class="text-xs text-slate-400">오답 문항과 별표 표시한 중요 문항을 집중적으로 복습하세요.</p>
       </div>
 
       <!-- Sub Tabs: Bookmarks vs Mistakes -->
@@ -275,9 +275,9 @@
 
       <!-- Quick Action: Review All Saved -->
       <div class="flex items-center justify-between gap-2">
-        <button id="btnPracticeSaved" class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-600 text-slate-900 font-bold text-xs flex items-center justify-center gap-1.5 shadow-md">
+        <button id="btnPracticeSaved" class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-600 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-md">
           <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
-          <span>선택한 항목 모아 풀기</span>
+          <span>선택 항목 모아 풀기</span>
         </button>
         <button id="btnClearSavedCategory" class="py-2.5 px-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-400 hover:text-red-400 text-xs flex items-center gap-1">
           <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
@@ -362,9 +362,9 @@
 
       <!-- App Info -->
       <div class="text-center text-xs text-slate-400 space-y-1 pt-2">
-        <p class="font-medium text-slate-300">KNOU Mobile Study WebApp v1.0</p>
-        <p>한국방송통신대학교 농학과 / 보건환경안전학과 시험 대비</p>
-        <p class="text-[11px] text-slate-400">환경화학 (중간 출석대체 1~6강 & 기말 7~15강) 특화</p>
+        <p class="font-medium text-slate-300">Science Study Lab v1.0</p>
+        <p>환경화학 · 농업생태학 · 생물통계학 · 생명과학 전문 아카이브</p>
+        <p class="text-[11px] text-slate-400">환경화학 기초 핵심(1~6강) & 심화 종합(7~15강) 단계별 마스터</p>
       </div>
     </section>
 
@@ -377,7 +377,7 @@
       <!-- Tab 1: Quiz -->
       <button id="navTabQuiz" class="flex flex-col items-center py-1 text-emerald-400 font-bold transition">
         <i data-lucide="sparkles" class="w-5 h-5 mb-0.5"></i>
-        <span class="text-[11px]">퀴즈 풀기</span>
+        <span class="text-[11px]">문제 풀기</span>
       </button>
 
       <!-- Tab 2: Concepts -->
@@ -440,8 +440,8 @@
       </div>
 
       <div class="space-y-1">
-        <h3 class="text-xl font-black text-slate-100">모의고사 채점 결과</h3>
-        <p id="reportSubTitle" class="text-xs text-slate-400">환경화학 실전 모의고사</p>
+        <h3 class="text-xl font-black text-slate-100">테스트 결과 리포트</h3>
+        <p id="reportSubTitle" class="text-xs text-slate-400">환경화학 실전 모의평가</p>
       </div>
 
       <div class="bg-slate-800/80 p-4 rounded-2xl border border-slate-700/60 space-y-2">
@@ -475,7 +475,7 @@
     <img id="zoomImageTarget" src="" alt="확대 이미지" class="max-w-full max-h-[80vh] object-contain rounded-xl">
   </div>
 
-  <!-- KNOU Data & Application Script -->
+  <!-- Data & Application Script -->
   <script src="data/bundle.js"></script>
   <script src="app.js"></script>
 </body>

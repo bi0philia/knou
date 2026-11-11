@@ -144,10 +144,11 @@
     initFontSize();
 
     // Load Data
-    if (window.KNOU_DATA) {
-      state.subjects = window.KNOU_DATA.subjects;
-      state.questions = window.KNOU_DATA.questions;
-      state.concepts = window.KNOU_DATA.concepts;
+    const dataset = window.STUDY_DATA || window.KNOU_DATA;
+    if (dataset) {
+      state.subjects = dataset.subjects;
+      state.questions = dataset.questions;
+      state.concepts = dataset.concepts;
     } else {
       try {
         const [subRes, qRes, cRes] = await Promise.all([
@@ -346,8 +347,8 @@
 
     // Badges
     els.qBadgeSubject.innerText = q.subject;
-    els.qBadgeYear.innerText = q.examType === '출석대체' ? '출석대체 족보' : `${q.year} 기출 ${q.number}번`;
-    els.qBadgeRange.innerText = q.range || '전범위';
+    els.qBadgeYear.innerText = q.examType === '기초평가' ? '기초 핵심 문항' : `${q.year} 실전 ${q.number}번`;
+    els.qBadgeRange.innerText = q.range || '전체';
 
     // Bookmark status
     const isBookmarked = state.bookmarks.has(q.id);
@@ -869,7 +870,7 @@
         <div class="flex items-center justify-between gap-2 border-b border-slate-700/60 pb-2">
           <div class="flex items-center gap-1.5 flex-wrap">
             <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400">${q.subject}</span>
-            <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">${q.year} 기출 ${q.number}번</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">${q.year} 실전 ${q.number}번</span>
           </div>
           <button class="btn-remove-saved p-1 text-slate-400 hover:text-red-400 transition" title="항목 삭제">
             <i data-lucide="trash-2" class="w-4 h-4"></i>
