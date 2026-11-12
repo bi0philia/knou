@@ -8,11 +8,18 @@
 /* Base resets & tap highlights */
 * {
   -webkit-tap-highlight-color: transparent;
-  user-select: none;
 }
 
-input, textarea {
+/* Prevent accidental text selection only on UI controls, buttons, and badges */
+button, nav, .btn, [role="button"], .badge, .no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Ensure text selection is fully enabled everywhere else */
+body, p, span, div, h1, h2, h3, h4, h5, h6, input, textarea, pre, code, .katex {
   user-select: text;
+  -webkit-user-select: text;
 }
 
 /* Smooth scrolling & typography */
