@@ -332,7 +332,14 @@
       let filtered = state.questions.filter(q => q.subject === state.currentSubject);
 
       if (state.currentRange !== '전체') {
-        filtered = filtered.filter(q => q.range === state.currentRange);
+        filtered = filtered.filter(q => {
+          if (q.range === state.currentRange) return true;
+          if (q.range && state.currentRange.startsWith(q.range)) return true;
+          if (state.currentRange.includes('1~5강') && q.range === '1~5강') return true;
+          if (state.currentRange.includes('6~10강') && q.range === '6~10강') return true;
+          if (state.currentRange.includes('11~15강') && q.range === '11~15강') return true;
+          return false;
+        });
       }
 
       if (state.isShuffled) {
@@ -372,7 +379,7 @@
     // Badges
     els.qBadgeSubject.innerText = q.subject;
     els.qBadgeYear.innerText = q.examType === '기초평가' ? '기초 핵심 문항' : `${q.year} 실전 ${q.number}번`;
-    els.qBadgeRange.innerText = q.range || '전체';
+    els.qBadgeRange.innerText = q.lectureTitle ? `${q.lecture}강 · ${q.range}` : (q.range || '전체');
 
     // Bookmark status
     const isBookmarked = state.bookmarks.has(q.id);
@@ -573,6 +580,22 @@
     els.qExplanationContent.innerHTML = q.explanation
       ? q.explanation.replace(/\n/g, '<br>')
       : '상세 해설이 등록되어 있지 않습니다.';
+
+    // Concept Link Button
+    if (q.conceptId) {
+      const linkDiv = document.createElement('div');
+      linkDiv.className = 'mt-3 pt-3 border-t border-slate-700/60';
+      linkDiv.innerHTML = `
+        <button class="btn-jump-concept inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 text-xs font-semibold border border-emerald-500/40 transition">
+          <span>📖 관련 핵심 개념: <b>${q.conceptTitle || '핵심 정리'}</b> 보기</span>
+          <span>→</span>
+        </button>
+      `;
+      linkDiv.querySelector('.btn-jump-concept').onclick = () => {
+        openConceptById(q.conceptId, q.subject);
+      };
+      els.qExplanationContent.appendChild(linkDiv);
+    }
 
     // Tags
     els.qConceptTags.innerHTML = '';
@@ -841,6 +864,7 @@
     filtered.forEach((card, idx) => {
       const cardEl = document.createElement('div');
       cardEl.className = 'bg-slate-800/90 rounded-2xl border border-slate-700/80 overflow-hidden shadow-md transition';
+      cardEl.setAttribute('data-concept-id', card.id);
 
       const itemsHtml = card.items.map(it => `
         <div class="py-2.5 border-b border-slate-700/40 last:border-0">
@@ -853,6 +877,55 @@
           <p class="text-xs text-slate-200 mt-1 leading-relaxed">${it.desc}</p>
         </div>
       `).join('');
+
+      let practiceHtml = '';
+      if (card.practiceQuestions && card.practiceQuestions.length > 0) {
+        const pList = card.practiceQuestions.map((pq, pidx) => `
+          <div class="mt-3 p-3.5 bg-slate-900/85 rounded-xl border border-slate-700/70">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-amber-400">✍️ 실전 연습문제 ${pidx + 1}</span>
+            </div>
+            <p class="text-xs text-slate-100 font-medium leading-relaxed">${pq.question}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mt-2.5">
+              ${pq.choices.map((ch, chIdx) => `
+                <div class="text-[11px] p-2 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-300">
+                  <span class="font-bold text-slate-400 mr-1">${chIdx + 1}.</span> ${ch}
+                </div>
+              `).join('')}
+            </div>
+            <div class="mt-2.5 pt-2 border-t border-slate-800/80 flex flex-col gap-1.5">
+              <button class="btn-toggle-practice text-xs text-emerald-400 hover:text-emerald-300 font-semibold text-left inline-flex items-center gap-1 transition">
+                <span>💡 정답 및 상세 풀이 확인</span>
+              </button>
+              <div class="practice-ans-box hidden p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-xs text-emerald-200 leading-relaxed">
+                <div class="font-bold text-emerald-300 mb-1">정답: ${pq.answer}번</div>
+                <div>${pq.explanation}</div>
+              </div>
+            </div>
+          </div>
+        `).join('');
+
+        practiceHtml = `
+          <div class="mt-4 pt-3 border-t border-slate-700/80">
+            <h4 class="text-xs font-bold text-amber-300 flex items-center gap-1.5 mb-2">
+              <span>📝 단원 핵심 실전 연습문제</span>
+            </h4>
+            ${pList}
+          </div>
+        `;
+      }
+
+      let relatedBtnHtml = '';
+      if (card.relatedQuestionIds && card.relatedQuestionIds.length > 0) {
+        relatedBtnHtml = `
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between flex-wrap gap-2">
+            <span class="text-[11px] text-slate-400">연계 기출: ${card.relatedQuestionIds.length}문항</span>
+            <button class="btn-jump-to-quiz px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center gap-1" data-subject="${card.subject}">
+              <span>🎯 관련 기출문제 풀러가기</span> →
+            </button>
+          </div>
+        `;
+      }
 
       cardEl.innerHTML = `
         <div class="p-4 cursor-pointer flex items-center justify-between gap-3 concept-header">
@@ -869,6 +942,8 @@
         </div>
         <div class="px-4 pb-4 pt-1 border-t border-slate-700/60 concept-body">
           ${itemsHtml}
+          ${practiceHtml}
+          ${relatedBtnHtml}
         </div>
       `;
 
@@ -878,7 +953,7 @@
       const icon = cardEl.querySelector('.chevron-icon');
 
       header.onclick = (e) => {
-        if (e.target.closest('.btn-copy-formula')) return;
+        if (e.target.closest('.btn-copy-formula') || e.target.closest('.btn-toggle-practice') || e.target.closest('.btn-jump-to-quiz')) return;
         const isHidden = body.classList.toggle('hidden');
         if (isHidden) {
           icon.style.transform = 'rotate(0deg)';
@@ -886,6 +961,32 @@
           icon.style.transform = 'rotate(180deg)';
         }
       };
+
+      // Toggle practice question answer
+      cardEl.querySelectorAll('.btn-toggle-practice').forEach(btn => {
+        btn.onclick = (e) => {
+          e.stopPropagation();
+          const ansBox = btn.nextElementSibling;
+          if (ansBox) {
+            ansBox.classList.toggle('hidden');
+          }
+        };
+      });
+
+      // Jump to quiz from concept card
+      const jumpBtn = cardEl.querySelector('.btn-jump-to-quiz');
+      if (jumpBtn) {
+        jumpBtn.onclick = (e) => {
+          e.stopPropagation();
+          state.currentSubject = card.subject;
+          state.currentRange = '전체';
+          switchTab('quiz');
+          renderSubjects();
+          renderRangePills();
+          filterAndPrepareQuestions();
+          renderCurrentQuestion();
+        };
+      }
 
       els.conceptCardsList.appendChild(cardEl);
     });
@@ -926,6 +1027,22 @@
       };
       els.conceptSubjectFilter.appendChild(btn);
     });
+  }
+
+  function openConceptById(conceptId, subject) {
+    if (subject) state.conceptSubjectFilter = subject;
+    switchTab('concepts');
+    renderConcepts();
+    setTimeout(() => {
+      const targetCard = document.querySelector(`[data-concept-id="${conceptId}"]`);
+      if (targetCard) {
+        const body = targetCard.querySelector('.concept-body');
+        const icon = targetCard.querySelector('.chevron-icon');
+        if (body) body.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 150);
   }
 
   // ================= SAVED LIST (BOOKMARKS & MISTAKES) =================

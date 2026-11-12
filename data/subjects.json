@@ -2,92 +2,85 @@
   {
     "id": "환경화학",
     "name": "환경화학",
-    "code": "ENV-CHEM",
-    "grade": "기초 및 심화 과정",
+    "badge": "화학·분석",
     "icon": "flask-conical",
     "color": "emerald",
-    "bgGradient": "from-emerald-500 to-teal-700",
-    "description": "물질의 기본 구조, 화학반응식, 기체/용액, 평형, 산-염기, 대기·수질 환경화학",
+    "description": "일반화학 기초부터 반응속도론, 산염기 평형, 산화환원, 대기·수질환경화학까지",
     "ranges": [
       "전체",
-      "기초 핵심(1~6강)",
-      "심화 종합(7~15강)"
-    ],
-    "hasMidterm": true
+      "1~5강 (물질·원자·기체·상평형)",
+      "6~10강 (용액·열역학·평형·반응속도·산염기)",
+      "11~15강 (산화환원·유기물·분석기기·대기·수질)"
+    ]
   },
   {
     "id": "환경친화형농업",
     "name": "환경친화형농업",
-    "code": "ECO-AGRI",
-    "grade": "기초 및 심화 과정",
+    "badge": "농생태·토양",
     "icon": "sprout",
     "color": "green",
-    "bgGradient": "from-green-500 to-emerald-700",
-    "description": "친환경 농업 기준, 토양생태계, 윤작, 병해충 종합관리(IPM), 천적 및 유기자재",
+    "description": "농업생태계 보전, 토양 삼상 및 양분종합관리(INM), 병해충종합관리(IPM), 유기농업 기준",
     "ranges": [
       "전체",
-      "종합 평가"
-    ],
-    "hasMidterm": false
+      "1~5강 (농업생태계·토양관리·INM·IPM)",
+      "6~10강 (정밀농업·유기농업·윤작녹비·수도작)",
+      "11~15강 (시설원예·유기축산·자재·인증제도)"
+    ]
   },
   {
     "id": "생물통계학",
     "name": "생물통계학",
-    "code": "BIO-STAT",
-    "grade": "기초 및 심화 과정",
-    "icon": "chart-column-increasing",
+    "badge": "데이터·검정",
+    "icon": "bar-chart-3",
     "color": "blue",
-    "bgGradient": "from-blue-500 to-indigo-700",
-    "description": "기술통계량, 정규분포, 가설검정(Z/t/F/카이제곱), 분산분석(ANOVA), 상관/회귀",
+    "description": "기술통계, 확률분포, 가설검정, t-검정, 분산분석(ANOVA), 회귀·상관분석, 실험계획법",
     "ranges": [
       "전체",
-      "종합 평가"
-    ],
-    "hasMidterm": false
+      "1~5강 (통계기초·자료정리·대푯값·산포도)",
+      "6~10강 (표본분포·신뢰구간·가설검정·분산분석)",
+      "11~15강 (사후검정·회귀상관·카이제곱·실험계획)"
+    ]
   },
   {
     "id": "생물과학",
     "name": "생물과학",
-    "code": "BIO-SCI",
-    "grade": "기초 및 심화 과정",
+    "badge": "세포·생명",
     "icon": "dna",
-    "color": "purple",
-    "bgGradient": "from-purple-500 to-violet-700",
-    "description": "세포 소기관, 광합성/세포호흡, 멘델 유전법칙, 분자생물학(DNA/RNA/단백질)",
+    "color": "teal",
+    "description": "생명체의 구성 물질, 세포 구조, 광합성 및 세포호흡, 유전자 발현, 동식물 생리, 생태계",
     "ranges": [
       "전체",
-      "종합 평가"
-    ],
-    "hasMidterm": false
+      "1~5강 (생명체탄생·구성물질·세포·광합성·호흡)",
+      "6~10강 (DNA복제·전사조절·RNA·변이·식물생식)",
+      "11~15강 (동물분류·발생·생리통합·항상성·생태계)"
+    ]
   },
   {
     "id": "식물분류학",
     "name": "식물분류학",
-    "code": "PLANT-TAX",
-    "grade": "기초 및 심화 과정",
-    "icon": "flower-2",
+    "badge": "식물·계통",
+    "icon": "tree-pine",
     "color": "amber",
-    "bgGradient": "from-amber-500 to-orange-700",
-    "description": "식물 분류체계(APG/크론퀴스트), 학명 명명법, 영양/생식기관, 주요 과의 특성",
+    "description": "식물분류학 발달사, 영양·생식분류형질, 목련아강부터 장미아강, 국화아강, 단자엽식물까지",
     "ranges": [
       "전체",
-      "종합 평가"
-    ],
-    "hasMidterm": false
+      "1~5강 (분류학개론·발달사·영양형질·생식형질)",
+      "6~10강 (목련아강·석죽아강·조록나무·오아과·장미I)",
+      "11~15강 (장미II·국화아강I·II·단자엽식물I·II)"
+    ]
   },
   {
     "id": "환경미생물학",
     "name": "환경미생물학",
-    "code": "ENV-MICR",
-    "grade": "기초 및 심화 과정",
-    "icon": "bug",
-    "color": "rose",
-    "bgGradient": "from-rose-500 to-pink-700",
-    "description": "미생물 분류·생장곡선, 활성슬러지 공정, 질소·인 순환, 생물학적 환경정화",
+    "badge": "미생물·공정",
+    "icon": "microscope",
+    "color": "purple",
+    "description": "미생물 분류와 대사, 성장동역학, 활성슬러지 및 슬러지 처리, 미생물 연료전지, 환경유전공학",
     "ranges": [
       "전체",
-      "종합 평가"
-    ],
-    "hasMidterm": false
+      "1~5강 (미생물기초·지구환경·성장동역학·질병)",
+      "6~10강 (하수처리·슬러지소화·연료전지·유전공학I)",
+      "11~15강 (분자유전기술II·환경정화·신기술)"
+    ]
   }
 ]
