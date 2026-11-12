@@ -94,6 +94,7 @@
     bookmarkIcon: document.getElementById('bookmarkIcon'),
     qText: document.getElementById('qText'),
     qExampleBox: document.getElementById('qExampleBox'),
+    qDiagramBox: document.getElementById('qDiagramBox'),
     qImageBox: document.getElementById('qImageBox'),
     qImage: document.getElementById('qImage'),
     qChoices: document.getElementById('qChoices'),
@@ -392,10 +393,22 @@
       els.qExampleBox.classList.add('hidden');
     }
 
-    // Image
+    // Vector SVG Diagram
+    if (q.svg && els.qDiagramBox) {
+      els.qDiagramBox.classList.remove('hidden');
+      els.qDiagramBox.innerHTML = q.svg;
+    } else if (els.qDiagramBox) {
+      els.qDiagramBox.classList.add('hidden');
+      els.qDiagramBox.innerHTML = '';
+    }
+
+    // Image (if local or remote image exists)
     if (q.imageUrls && q.imageUrls.length > 0 && q.imageUrls[0]) {
       els.qImageBox.classList.remove('hidden');
       els.qImage.src = q.imageUrls[0];
+      els.qImage.onerror = () => {
+        els.qImageBox.classList.add('hidden');
+      };
       els.qImage.onclick = () => {
         els.zoomImageTarget.src = q.imageUrls[0];
         els.modalImageZoom.classList.remove('hidden');

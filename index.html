@@ -225,9 +225,13 @@
               <div id="qExampleBox" class="hidden bg-slate-900/90 p-4 rounded-xl border border-slate-700/70 text-sm sm:text-base text-slate-300 leading-relaxed font-mono">
               </div>
 
+              <!-- Optional Vector SVG Diagram Box -->
+              <div id="qDiagramBox" class="hidden text-center my-3">
+              </div>
+
               <!-- Optional Question Diagram Image -->
               <div id="qImageBox" class="hidden relative rounded-xl overflow-hidden border border-slate-700/60 bg-black/50 p-2 text-center">
-                <img id="qImage" src="" alt="참고 다이어그램" class="max-h-72 mx-auto object-contain cursor-pointer rounded-lg hover:opacity-95 transition">
+                <img id="qImage" src="" alt="참고 다이어그램" class="max-h-72 mx-auto object-contain cursor-pointer rounded-lg hover:opacity-95 transition" onerror="this.closest('#qImageBox').classList.add('hidden')">
                 <div class="mt-2 text-xs text-slate-400 flex items-center justify-center gap-1 pointer-events-none">
                   <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i>
                   <span>이미지 클릭 시 전체화면 확대</span>
