@@ -395,7 +395,7 @@
     // Example Box / Passage
     if (q.example || q.sharedExample) {
       els.qExampleBox.classList.remove('hidden');
-      els.qExampleBox.innerText = q.example || q.sharedExample;
+      els.qExampleBox.innerHTML = formatMarkdown(q.example || q.sharedExample);
     } else {
       els.qExampleBox.classList.add('hidden');
     }
@@ -578,8 +578,8 @@
     els.qCorrectChoiceText.innerText = `정답: ${correctNum}번 (${correctChoice ? correctChoice.text : ''})`;
 
     els.qExplanationContent.innerHTML = q.explanation
-      ? q.explanation.replace(/\n/g, '<br>')
-      : '상세 해설이 등록되어 있지 않습니다.';
+      ? formatMarkdown(q.explanation)
+      : '<span class="text-slate-400">상세 해설이 등록되어 있지 않습니다.</span>';
 
     // Concept Link Button
     if (q.conceptId) {
@@ -607,6 +607,9 @@
         els.qConceptTags.appendChild(tagEl);
       });
     }
+
+    // Immediate KaTeX formula rendering for the explanation box
+    renderMath();
   }
 
   function updateAccuracyIndicator() {
@@ -874,7 +877,7 @@
               복사
             </button>
           </div>
-          <p class="text-xs text-slate-200 mt-1 leading-relaxed">${it.desc}</p>
+          <p class="text-xs text-slate-200 mt-1 leading-relaxed">${formatMarkdown(it.desc)}</p>
         </div>
       `).join('');
 
@@ -899,7 +902,7 @@
               </button>
               <div class="practice-ans-box hidden p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-xs text-emerald-200 leading-relaxed">
                 <div class="font-bold text-emerald-300 mb-1">정답: ${pq.answer}번</div>
-                <div>${pq.explanation}</div>
+                <div>${formatMarkdown(pq.explanation)}</div>
               </div>
             </div>
           </div>
@@ -968,7 +971,8 @@
           e.stopPropagation();
           const ansBox = btn.nextElementSibling;
           if (ansBox) {
-            ansBox.classList.toggle('hidden');
+            const isHidden = ansBox.classList.toggle('hidden');
+            if (!isHidden) renderMath();
           }
         };
       });
@@ -1084,7 +1088,7 @@
         </div>
         <div class="hidden saved-answer-box bg-slate-900/80 p-3 rounded-xl border border-slate-700/50 text-xs text-slate-200 space-y-1">
           <div class="font-bold text-emerald-400">정답: ${q.correctAnswers[0]}번</div>
-          <div class="leading-relaxed text-slate-300">${q.explanation || '해설 없음'}</div>
+          <div class="leading-relaxed text-slate-300">${q.explanation ? formatMarkdown(q.explanation) : '해설 없음'}</div>
         </div>
       `;
 
@@ -1106,6 +1110,7 @@
       toggleBtn.onclick = () => {
         const isHidden = answerBox.classList.toggle('hidden');
         toggleBtn.querySelector('span').innerText = isHidden ? '정답 및 해설 보기' : '해설 닫기';
+        if (!isHidden) renderMath();
       };
 
       els.savedListContainer.appendChild(card);
@@ -1155,6 +1160,88 @@
       `;
       els.statSubjectBreakdown.appendChild(row);
     });
+  }
+
+  // ================= MARKDOWN & RICH TEXT FORMATTER =================
+  function formatMarkdown(rawText) {
+    if (!rawText) return '';
+    let text = String(rawText);
+
+    // 1. Protect Math Blocks ($$...$$ and $...$) so markdown regex won't mangle math formulas
+    const mathBlocks = [];
+    text = text.replace(/\$\$([\s\S]+?)\$\$/g, (match) => {
+      mathBlocks.push(match);
+      return `___MATH_BLOCK_${mathBlocks.length - 1}___`;
+    });
+    text = text.replace(/\$([^\$\n]+?)\$/g, (match) => {
+      mathBlocks.push(match);
+      return `___MATH_BLOCK_${mathBlocks.length - 1}___`;
+    });
+
+    // 2. Handle literal \n string if present outside math
+    text = text.replace(/\\n/g, '\n');
+
+    // 3. Section Headers **[...]** -> Beautiful badge headers
+    text = text.replace(/\*\*\[(.*?)\]\*\*/g, (match, title) => {
+      let icon = '📌';
+      let badgeClass = 'text-amber-300 bg-amber-500/15 border-amber-500/30';
+      if (title.includes('정답')) {
+        icon = '🎯';
+        badgeClass = 'text-emerald-300 bg-emerald-500/15 border-emerald-500/30';
+      } else if (title.includes('오답') || title.includes('선지')) {
+        icon = '🔍';
+        badgeClass = 'text-sky-300 bg-sky-500/15 border-sky-500/30';
+      } else if (title.includes('핵심') || title.includes('암기') || title.includes('공식') || title.includes('팁')) {
+        icon = '💡';
+        badgeClass = 'text-amber-300 bg-amber-500/15 border-amber-500/30';
+      }
+      return `\n<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg ${badgeClass} border text-xs font-bold mt-3.5 mb-2 w-fit shadow-sm"><span>${icon}</span><span>${title}</span></div>\n`;
+    });
+
+    // 4. Bold **...**
+    text = text.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-slate-100">$1</strong>');
+
+    // 5. Italic *...*
+    text = text.replace(/(?<!\*)\*([^\*\n]+?)\*(?!\*)/g, '<em class="italic text-slate-200">$1</em>');
+
+    // 6. Inline Code `...`
+    text = text.replace(/`([^`\n]+?)`/g, '<code class="px-1.5 py-0.5 rounded bg-slate-800 text-amber-300 font-mono text-[11px] border border-slate-700/60">$1</code>');
+
+    // 7. Line-by-line processing for lists (- item) and tags
+    const lines = text.split('\n');
+    const processedLines = [];
+    for (let line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed) {
+        processedLines.push('');
+        continue;
+      }
+      if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+        let content = trimmed.substring(2).trim();
+        content = content.replace(/\[정답\]/g, '<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mr-1">정답</span>');
+        content = content.replace(/\[오답\]/g, '<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30 mr-1">오답</span>');
+        processedLines.push(`<div class="flex items-start gap-2 my-1 pl-1 text-xs text-slate-200 leading-relaxed"><span class="text-emerald-400 font-bold shrink-0 mt-0.5">•</span><div class="flex-1">${content}</div></div>`);
+      } else if (trimmed.startsWith('<div class="flex items-center')) {
+        processedLines.push(trimmed);
+      } else {
+        processedLines.push(line);
+      }
+    }
+    text = processedLines.join('\n');
+
+    // 8. Restore Math Blocks
+    text = text.replace(/___MATH_BLOCK_(\d+)___/g, (match, idx) => {
+      return mathBlocks[parseInt(idx, 10)] || match;
+    });
+
+    // 9. Clean line breaks and paragraphs
+    text = text
+      .replace(/(<\/div>)\n+/g, '$1')
+      .replace(/\n+(<div)/g, '$1')
+      .replace(/\n{2,}/g, '<div class="my-2"></div>')
+      .replace(/\n/g, '<br>');
+
+    return text;
   }
 
   // ================= KATEX MATH RENDERER =================
