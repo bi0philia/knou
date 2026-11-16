@@ -135,6 +135,16 @@
     btnResetAllData: document.getElementById('btnResetAllData'),
 
     // Modals
+    modalRoadmap: document.getElementById('modalRoadmap'),
+    btnOpenRoadmap: document.getElementById('btnOpenRoadmap'),
+    bannerRoadmap: document.getElementById('bannerRoadmap'),
+    btnCloseRoadmap: document.getElementById('btnCloseRoadmap'),
+    rmTabSchedule: document.getElementById('rmTabSchedule'),
+    rmTabCheat: document.getElementById('rmTabCheat'),
+    rmTabGuide: document.getElementById('rmTabGuide'),
+    rmPanelSchedule: document.getElementById('rmPanelSchedule'),
+    rmPanelCheat: document.getElementById('rmPanelCheat'),
+    rmPanelGuide: document.getElementById('rmPanelGuide'),
     modalGridDrawer: document.getElementById('modalGridDrawer'),
     btnCloseGridDrawer: document.getElementById('btnCloseGridDrawer'),
     gridDrawerButtons: document.getElementById('gridDrawerButtons'),
@@ -1339,6 +1349,76 @@
     els.modalImageZoom.onclick = (e) => {
       if (e.target === els.modalImageZoom) els.modalImageZoom.classList.add('hidden');
     };
+
+    // Roadmap & Timetable Modal
+    function openRoadmapModal() {
+      if (els.modalRoadmap) {
+        els.modalRoadmap.classList.remove('hidden');
+        renderMath();
+        refreshIcons();
+      }
+    }
+
+    function closeRoadmapModal() {
+      if (els.modalRoadmap) {
+        els.modalRoadmap.classList.add('hidden');
+      }
+    }
+
+    if (els.btnOpenRoadmap) els.btnOpenRoadmap.onclick = openRoadmapModal;
+    if (els.bannerRoadmap) els.bannerRoadmap.onclick = openRoadmapModal;
+    if (els.btnCloseRoadmap) els.btnCloseRoadmap.onclick = closeRoadmapModal;
+    if (els.modalRoadmap) {
+      els.modalRoadmap.onclick = (e) => {
+        if (e.target === els.modalRoadmap) closeRoadmapModal();
+      };
+    }
+
+    // Roadmap Sub-Tab Switching
+    function switchRoadmapTab(tab) {
+      const activeClass = 'bg-emerald-600 text-white shadow-sm';
+      const inactiveClass = 'text-slate-300 hover:text-white hover:bg-slate-700/60';
+
+      [els.rmTabSchedule, els.rmTabCheat, els.rmTabGuide].forEach(btn => {
+        if (btn) btn.className = `flex-1 py-2 rounded-lg ${inactiveClass} flex items-center justify-center gap-1.5 transition`;
+      });
+      [els.rmPanelSchedule, els.rmPanelCheat, els.rmPanelGuide].forEach(panel => {
+        if (panel) panel.classList.add('hidden');
+      });
+
+      if (tab === 'schedule') {
+        if (els.rmTabSchedule) els.rmTabSchedule.className = `flex-1 py-2 rounded-lg ${activeClass} flex items-center justify-center gap-1.5 transition`;
+        if (els.rmPanelSchedule) els.rmPanelSchedule.classList.remove('hidden');
+      } else if (tab === 'cheat') {
+        if (els.rmTabCheat) els.rmTabCheat.className = `flex-1 py-2 rounded-lg ${activeClass} flex items-center justify-center gap-1.5 transition`;
+        if (els.rmPanelCheat) els.rmPanelCheat.classList.remove('hidden');
+        renderMath();
+      } else if (tab === 'guide') {
+        if (els.rmTabGuide) els.rmTabGuide.className = `flex-1 py-2 rounded-lg ${activeClass} flex items-center justify-center gap-1.5 transition`;
+        if (els.rmPanelGuide) els.rmPanelGuide.classList.remove('hidden');
+      }
+    }
+
+    if (els.rmTabSchedule) els.rmTabSchedule.onclick = () => switchRoadmapTab('schedule');
+    if (els.rmTabCheat) els.rmTabCheat.onclick = () => switchRoadmapTab('cheat');
+    if (els.rmTabGuide) els.rmTabGuide.onclick = () => switchRoadmapTab('guide');
+
+    // Jump to subject from cheat sheet
+    document.querySelectorAll('.btn-jump-subject').forEach(btn => {
+      btn.onclick = (e) => {
+        const subj = e.currentTarget.getAttribute('data-subj');
+        if (subj) {
+          closeRoadmapModal();
+          state.currentSubject = subj;
+          state.currentRange = '전체';
+          switchTab('quiz');
+          renderSubjectChips();
+          renderRangePills();
+          filterAndPrepareQuestions();
+          renderCurrentQuestion();
+        }
+      };
+    });
 
     // Concepts search
     els.conceptSearchInput.oninput = (e) => {

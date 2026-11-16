@@ -48,7 +48,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles.css?v=20261116_02">
+  <link rel="stylesheet" href="styles.css?v=20261116_03">
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen transition-colors duration-200 text-base">
 
@@ -93,6 +93,13 @@
 
       <!-- Quick Action Controls (Right) -->
       <div class="flex items-center space-x-2">
+        <!-- Roadmap & Timetable Button -->
+        <button id="btnOpenRoadmap" class="px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-500/20 to-teal-500/20 hover:from-emerald-500/30 hover:to-teal-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold transition flex items-center gap-1.5 shadow-sm" title="2026-2학기 시험 로드맵 & 듀얼트랙 시간표">
+          <span>🎯</span>
+          <span class="hidden sm:inline font-bold">시험 전략·시간표</span>
+          <span class="text-[10px] bg-emerald-500 text-slate-950 px-1.5 py-0.2 rounded font-black">D-27</span>
+        </button>
+
         <!-- Exam Timer Badge -->
         <div id="examTimerBadge" class="hidden items-center gap-1.5 bg-red-500/20 border border-red-500/40 text-red-400 text-xs sm:text-sm px-3 py-1.5 rounded-full font-mono font-bold animate-pulse">
           <i data-lucide="clock" class="w-4 h-4"></i>
@@ -121,6 +128,24 @@
     <!-- ----------------- VIEW 1: QUIZ VIEW ----------------- -->
     <section id="viewQuiz" class="space-y-4">
       
+      <!-- Interactive Roadmap Banner -->
+      <div id="bannerRoadmap" class="cursor-pointer bg-gradient-to-r from-slate-900 via-slate-800/90 to-slate-900 rounded-2xl border border-emerald-500/40 p-3 sm:p-4 flex items-center justify-between gap-3 shadow-md hover:border-emerald-400/70 transition group">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">📅</span>
+          <div>
+            <div class="font-bold text-slate-100 flex items-center gap-2 text-xs sm:text-sm">
+              <span>2026-2학기 시험 로드맵 & 듀얼트랙 시간표</span>
+              <span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">D-27</span>
+            </div>
+            <p class="text-slate-400 text-[11px] sm:text-xs mt-0.5">화학 중간(11/29, 30점) 40분 루틴 + 전과목 기말(12/13, 50점) 선행 분산 시간표 & 6개 과목별 빈출 족보 확인</p>
+          </div>
+        </div>
+        <button class="shrink-0 px-3 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition flex items-center gap-1">
+          <span>시간표 보기</span>
+          <span>→</span>
+        </button>
+      </div>
+
       <!-- Top Filters Bar: Subject Chips & Scope / Mode Settings -->
       <div class="bg-slate-850/80 rounded-2xl border border-slate-800 p-3 sm:p-4 space-y-3 shadow-md">
         
@@ -523,6 +548,306 @@
     </div>
   </nav>
 
+  <!-- ================= MODAL: EXAM STRATEGY ROADMAP & TIMETABLE ================= -->
+  <div id="modalRoadmap" class="hidden fixed inset-0 z-50 modal-backdrop bg-black/75 flex items-center justify-center p-3 sm:p-5 animate-fadeIn">
+    <div class="bg-slate-900 w-full max-w-3xl rounded-3xl border border-slate-700/80 p-4 sm:p-6 space-y-4 max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3 shrink-0">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-xl shrink-0">
+            🎯
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-100 flex items-center gap-2">
+              <span>2026-2학기 시험 전략 & 맞춤 시간표</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] bg-emerald-500 text-slate-950 font-black">D-27</span>
+            </h3>
+            <p class="text-xs text-slate-400">배점(중간 30점 + 기말 50점 + 출석 20점) 최적화 | 기말 선행 분산 듀얼트랙</p>
+          </div>
+        </div>
+        <button id="btnCloseRoadmap" class="p-1.5 rounded-xl text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Roadmap Nav Sub-Tabs -->
+      <div class="flex items-center gap-1.5 bg-slate-800/80 p-1 rounded-xl border border-slate-700/70 text-xs font-semibold shrink-0">
+        <button id="rmTabSchedule" class="flex-1 py-2 rounded-lg bg-emerald-600 text-white shadow-sm flex items-center justify-center gap-1.5 transition">
+          <span>📅</span>
+          <span>듀얼트랙 시간표 (D-27)</span>
+        </button>
+        <button id="rmTabCheat" class="flex-1 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/60 flex items-center justify-center gap-1.5 transition">
+          <span>📊</span>
+          <span>6개 과목별 100% 빈출 족보</span>
+        </button>
+        <button id="rmTabGuide" class="flex-1 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/60 flex items-center justify-center gap-1.5 transition">
+          <span>💡</span>
+          <span>공부 수위(레벨) 가이드</span>
+        </button>
+      </div>
+
+      <!-- Scrollable Tab Content Container -->
+      <div class="overflow-y-auto flex-1 pr-1 space-y-4 text-xs leading-relaxed">
+        
+        <!-- ================= SUB-PANEL 1: SCHEDULE ================= -->
+        <div id="rmPanelSchedule" class="space-y-4">
+          <!-- Summary Banner -->
+          <div class="bg-gradient-to-r from-emerald-950/40 to-slate-800/80 p-3.5 rounded-2xl border border-emerald-500/30 space-y-2">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="font-bold text-emerald-300 text-xs sm:text-sm flex items-center gap-1.5">
+                <span>⚡</span>
+                <span>왜 '듀얼 트랙(Dual-Track)'으로 기말을 지금 시작해야 하는가?</span>
+              </span>
+              <span class="text-[11px] text-amber-300 font-semibold bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-md">기말 비중 대폭 상향</span>
+            </div>
+            <p class="text-slate-300 text-[11px] sm:text-xs leading-relaxed">
+              기말시험(12/13, 50점)은 6개 과목 전범위로 분량이 매우 방대합니다. 11/29까지 화학 1과목에만 매달리면 기말에 벼락치기 부담이 폭발합니다. <br>
+              따라서 <b>화학 중간(1~6강, 30점)은 하루 30~40분 루틴</b>으로 가볍게 챙기고, <b>남은 일일 학습시간(1~1.5시간)은 지금(11/16)부터 기말 과목(통계·식물·농업)에 선제 투자</b>하여 11/29 시점에 이미 기말 3과목 1회독을 마치는 것이 가장 영리한 전략입니다.
+            </p>
+          </div>
+
+          <!-- Schedule Timeline Cards -->
+          <div class="space-y-2.5">
+            <!-- Phase 1 -->
+            <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700/70 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-emerald-400">11/16(월) ~ 11/20(금) [D-13]</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-700 text-slate-300 font-medium">통계 1회독 완성</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-300 pt-1">
+                <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-700/50">
+                  <span class="text-emerald-400 font-bold">[트랙 A / 30분] 화학 중간 (1~6강)</span><br>
+                  • SI단위, 원자구조, 주기율표 족 성질 (기초핵심 30제 중 하루 6문제씩)
+                </div>
+                <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-700/50">
+                  <span class="text-sky-400 font-bold">[트랙 B / 1시간] 생물통계학 기말 선행</span><br>
+                  • ANOVA 분산분석표 + 가설검정 70제 풀이 (하루 15문제씩)
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700/70 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-emerald-400">11/21(토) ~ 11/24(화) [D-9]</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-700 text-slate-300 font-medium">식물분류 1회독 완성</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-300 pt-1">
+                <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-700/50">
+                  <span class="text-emerald-400 font-bold">[트랙 A / 30분] 화학 중간 계산 공식</span><br>
+                  • 보일-샤를, 이상기체, 몰농도, 반응계수 공식 4종 완벽 마스터
+                </div>
+                <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-700/50">
+                  <span class="text-sky-400 font-bold">[트랙 B / 1시간] 식물분류학 기말 선행</span><br>
+                  • 학명 표기법 + 화서 + 주요 과 70제 집중 암기
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700/70 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-emerald-400">11/25(수) ~ 11/28(토) [D-1]</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-700 text-slate-300 font-medium">농업 1회독 + 화학 최종점검</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-300 pt-1">
+                <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-700/50">
+                  <span class="text-emerald-400 font-bold">[트랙 A / 40분] 화학 중간 실전 모의</span><br>
+                  • 16~28번 실전 15문항 타이머 모의평가 100점 달성 확인
+                </div>
+                <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-700/50">
+                  <span class="text-sky-400 font-bold">[트랙 B / 1시간] 환경친화형농업 기말 선행</span><br>
+                  • 양분 결핍증(노엽/신엽) + 탄질비 질소기아 70제 풀이
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 1 -->
+            <div class="p-3 bg-emerald-950/40 rounded-xl border border-emerald-500/50 flex items-center justify-between">
+              <div>
+                <span class="font-bold text-emerald-300">🎯 11/29(일) 환경화학 중간 출석대체시험 (30점 만점 획득!)</span>
+                <p class="text-[11px] text-slate-300 mt-0.5">※ 계산기 지참 필수! 이미 기말 3과목(통계·식물·농업) 1회독 완료 상태로 편안하게 시험 응시</p>
+              </div>
+              <span class="px-2.5 py-1 rounded-lg bg-emerald-500 text-slate-950 font-black text-xs">중간 D-Day</span>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700/70 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-teal-400">11/30(월) ~ 12/03(목) [D-13]</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-700 text-slate-300 font-medium">미생물 1회독 완성</span>
+              </div>
+              <p class="text-[11px] text-slate-300">
+                • <b>환경미생물학</b> 1~4장, 7~9장 기말 축소범위 70제 정복 (그람염색 + 미생물 증식곡선)<br>
+                • <b>생물통계학</b> 분산분석표 오답 집중 재점검
+              </p>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700/70 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-teal-400">12/04(금) ~ 12/07(월) [D-9]</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-700 text-slate-300 font-medium">생물과학 & 화학 기말 완성</span>
+              </div>
+              <p class="text-[11px] text-slate-300">
+                • <b>생물과학</b> 70제 (미토콘드리아/엽록체, 광합성 명반응/암반응, 감수분열)<br>
+                • <b>환경화학</b> 기말 7~15강 (엔탈피, 1차반응 반감기, 약산 pH 계산)
+              </p>
+            </div>
+
+            <!-- Phase 6 -->
+            <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700/70 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-amber-400">12/08(화) ~ 12/12(토) [D-1 파이널]</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 font-medium border border-amber-500/30">전과목 오답 올 클리어</span>
+              </div>
+              <p class="text-[11px] text-slate-300">
+                • <b>[오답노트 탭]</b>에 쌓인 6개 과목 틀린 문제만 모아 2회독 (틀린 문항 0개 만들기)<br>
+                • 과목별 빈출 족보 치트시트 눈스캔 (과목당 15~20분)
+              </p>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div class="p-3 bg-teal-950/40 rounded-xl border border-teal-500/50 flex items-center justify-between">
+              <div>
+                <span class="font-bold text-teal-300">🎯 12/13(일) 2026-2학기 전과목 기말고사 (50점 만점 도전!)</span>
+                <p class="text-[11px] text-slate-300 mt-0.5">전과목 A/A+ 달성 및 3학년 2학기 성공적 완결!</p>
+              </div>
+              <span class="px-2.5 py-1 rounded-lg bg-teal-500 text-slate-950 font-black text-xs">기말 D-Day</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= SUB-PANEL 2: CHEAT SHEET ================= -->
+        <div id="rmPanelCheat" class="hidden space-y-3">
+          <div class="text-[11px] text-slate-400 mb-2">
+            ※ 2018~2023년 역대 기출문제의 공식과 선지를 전수 분석하여 추출한 과목별 100% 빈출 족보입니다.
+          </div>
+
+          <!-- Subject 1: 환경화학 -->
+          <div class="p-3.5 bg-slate-800/90 rounded-2xl border border-slate-700/80 space-y-2">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="font-bold text-emerald-400 text-xs sm:text-sm">🧪 환경화학 (중간 1~6강 15문항 / 기말 7~15강 20문항)</span>
+              <button class="btn-jump-subject text-[11px] px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition" data-subj="환경화학">
+                문제 풀러가기 →
+              </button>
+            </div>
+            <div class="space-y-1 text-slate-300 text-[11px] leading-relaxed">
+              <div>• <b>중간 16~28번 고정 순서</b>: SI단위(질량은 kg) ➔ 전자질량($e^- \ll p \approx n$) ➔ 질량수(=양성자+중성자) ➔ 최외각전자(2족=2개) ➔ 반지름(좌하$\swarrow$증가), 이온화E(우상$\nearrow$증가) ➔ 포도당 분자식($C_6H_{12}O_6$) ➔ 보일-샤를($(PV)/T$) ➔ 물 상평형 곡선(융해곡선 **음의 기울기**) ➔ 노르말농도($N=M\times\text{가수}$).</div>
+              <div>• <b>기말 핵심</b>: 엔탈피($H=E+PV$), 1차 반응 반감기($t_{1/2}=\frac{\ln 2}{k}$), 약산 $[H^+]=\sqrt{C K_a}$, 베르-람베르트 법칙($A=\epsilon b c$).</div>
+            </div>
+          </div>
+
+          <!-- Subject 2: 생물통계학 -->
+          <div class="p-3.5 bg-slate-800/90 rounded-2xl border border-slate-700/80 space-y-2">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="font-bold text-emerald-400 text-xs sm:text-sm">📊 생물통계학 (ANOVA 분산분석표 + 가설검정 70제)</span>
+              <button class="btn-jump-subject text-[11px] px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition" data-subj="생물통계학">
+                문제 풀러가기 →
+              </button>
+            </div>
+            <div class="space-y-1 text-slate-300 text-[11px] leading-relaxed">
+              <div>• <b>ANOVA 표 계산 (매년 6문항!)</b>: 총자유도 = 처리자유도 + 오차자유도 ($df_T = df_t + df_e$), 분산 $MS = SS / df$, $F = MS_t / MS_e$.</div>
+              <div>• <b>가설검정 판정</b>: $p < 0.05$면 귀무가설 기각(유의차 있음, $*$), $p < 0.01$이면 고도로 유의($**$).</div>
+              <div>• <b>분포 선택</b>: 두 분산의 비 $\rightarrow$ $F$-분포, 모분산 모르는 소표본($n<30$) 평균 $\rightarrow$ $t$-분포.</div>
+            </div>
+          </div>
+
+          <!-- Subject 3: 식물분류학 -->
+          <div class="p-3.5 bg-slate-800/90 rounded-2xl border border-slate-700/80 space-y-2">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="font-bold text-emerald-400 text-xs sm:text-sm">🌿 식물분류학 (학명 표기법 + 화서 + 과별 특징)</span>
+              <button class="btn-jump-subject text-[11px] px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition" data-subj="식물분류학">
+                문제 풀러가기 →
+              </button>
+            </div>
+            <div class="space-y-1 text-slate-300 text-[11px] leading-relaxed">
+              <div>• <b>학명 표기</b>: *속명(대문자 이탤릭)* + *종소명(소문자 이탤릭)* + 명명자(정체 대문자). (명명자는 기울이지 않음!)</div>
+              <div>• <b>화서 구분</b>: 무한화서(총상, 수상, 두상 - 아래/밖에서 핌) vs 유한화서(취산 - 위/안에서 핌).</div>
+              <div>• <b>과별 암기</b>: 십자화과(꽃잎 4개, 사강웅예), 국화과(두상화서, 수과), 화본과(영과, 엽초/엽설).</div>
+            </div>
+          </div>
+
+          <!-- Subject 4: 환경친화형농업 -->
+          <div class="p-3.5 bg-slate-800/90 rounded-2xl border border-slate-700/80 space-y-2">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="font-bold text-emerald-400 text-xs sm:text-sm">🌾 환경친화형농업 (양분 결핍증 + 탄질비 질소기아)</span>
+              <button class="btn-jump-subject text-[11px] px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition" data-subj="환경친화형농업">
+                문제 풀러가기 →
+              </button>
+            </div>
+            <div class="space-y-1 text-slate-300 text-[11px] leading-relaxed">
+              <div>• <b>양분 결핍증 위치 (100% 출제!)</b>: 이동성 큰 원소(N, P, K, Mg) ➔ <b>노엽(하엽)에 결핍</b> / 이동성 작은 원소(Ca, Fe, B) ➔ <b>신엽(생장점)에 결핍</b>.</div>
+              <div>• <b>C/N율 질소 기아</b>: C/N비 30 이상인 유기물 투입 시 토양 미생물이 질소 독점 ➔ 작물 일시적 질소 기아.</div>
+              <div>• <b>녹비작물</b>: 콩과(자운영, 헤어리베치 - 질소고정) vs 화본과(호밀, 보리 - 유기물 공급).</div>
+            </div>
+          </div>
+
+          <!-- Subject 5: 환경미생물학 -->
+          <div class="p-3.5 bg-slate-800/90 rounded-2xl border border-slate-700/80 space-y-2">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="font-bold text-emerald-400 text-xs sm:text-sm">🧫 환경미생물학 (기말 범위 1~4장, 7~9장 축소 주의!)</span>
+              <button class="btn-jump-subject text-[11px] px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition" data-subj="환경미생물학">
+                문제 풀러가기 →
+              </button>
+            </div>
+            <div class="space-y-1 text-slate-300 text-[11px] leading-relaxed">
+              <div>• <b>파스퇴르 vs 코흐</b>: 파스퇴르(자연발생설 부정, 백신, 저온살균) vs 코흐(순수배양 4대 가설, 결핵균).</div>
+              <div>• <b>그람 염색</b>: 그람양성(두꺼운 펩티도글리칸 ➔ 보라색) vs 그람음성(외막 LPS ➔ 탈색 후 적색).</div>
+              <div>• <b>증식 곡선</b>: 유도기 ➔ 대수증식기(세대시간 측정) ➔ 정지기(항생물질 생산) ➔ 사멸기.</div>
+            </div>
+          </div>
+
+          <!-- Subject 6: 생물과학 -->
+          <div class="p-3.5 bg-slate-800/90 rounded-2xl border border-slate-700/80 space-y-2">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="font-bold text-emerald-400 text-xs sm:text-sm">🧬 생물과학 (세포 소기관 + 광합성 명반응/암반응)</span>
+              <button class="btn-jump-subject text-[11px] px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition" data-subj="생물과학">
+                문제 풀러가기 →
+              </button>
+            </div>
+            <div class="space-y-1 text-slate-300 text-[11px] leading-relaxed">
+              <div>• <b>세포 소기관</b>: 미토콘드리아(ATP 생성, 이중막, 자체 DNA), 엽록체(광합성), 리보솜(단백질 합성, 막 없음).</div>
+              <div>• <b>광합성</b>: 명반응(틸라코이드, 물 분해 $O_2$ 방출, ATP/NADPH 생성) vs 암반응(스트로마, 루비스코 효소, $CO_2$ 고정 ➔ 포도당).</div>
+              <div>• <b>세포분열</b>: 체세포분열($2n \rightarrow 2n$) vs 감수분열($2n \rightarrow n$, 2회 연속 분열, 제1전기 교차).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= SUB-PANEL 3: GUIDE ================= -->
+        <div id="rmPanelGuide" class="hidden space-y-3">
+          <div class="p-3.5 bg-slate-800/90 rounded-2xl border border-slate-700/80 space-y-2">
+            <h4 class="font-bold text-amber-300 text-xs sm:text-sm flex items-center gap-1.5">
+              <span>💡</span>
+              <span>어느 수준까지 공부해야 하나요? (합격 3대 전략)</span>
+            </h4>
+            <div class="space-y-2 text-slate-300 text-[11px] sm:text-xs leading-relaxed">
+              <div class="p-2.5 bg-slate-900/80 rounded-xl border border-slate-700/50">
+                <span class="font-bold text-emerald-400">1. 유도 과정은 버리고 '최종 대입 공식 1줄'만 취한다</span><br>
+                공식의 증명이나 복잡한 계산식은 시험에 안 나옵니다. $PV=nRT$, $df=n-1$, $t_{1/2}=\frac{0.693}{k}$, $[H^+]=\sqrt{CK_a}$ 처럼 문제에 주어진 숫자만 곱하고 나누는 형태만 익히면 충분합니다.
+              </div>
+              <div class="p-2.5 bg-slate-900/80 rounded-xl border border-slate-700/50">
+                <span class="font-bold text-emerald-400">2. 개념은 '양자택일 대립어' 위주로 외운다</span><br>
+                출제위원들은 항상 단어 1개를 반대로 바꾸어 오답을 만듭니다.<br>
+                • 노엽(이동성 큼) $\leftrightarrow$ 신엽(이동성 작음)<br>
+                • 음의 기울기(물) $\leftrightarrow$ 양의 기울기<br>
+                • 제1종 오류(참인데 기각) $\leftrightarrow$ 제2종 오류(거짓인데 채택)<br>
+                • 그람양성(보라색) $\leftrightarrow$ 그람음성(적색)
+              </div>
+              <div class="p-2.5 bg-slate-900/80 rounded-xl border border-slate-700/50">
+                <span class="font-bold text-emerald-400">3. 기본서 정독(X) ➔ 기출문제 풀이 & 해설 눈스캔(O)</span><br>
+                두꺼운 교재를 1강부터 읽으면 1주일도 못 버팁니다. 스터디랩 앱에서 기출문제 70개를 풀며 해설에 정리된 키워드만 빠르게 눈으로 확인하는 것이 10배 이상 빠르고 점수도 높게 나옵니다.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
   <!-- ================= MODAL: MOBILE QUESTION GRID SHEET ================= -->
   <div id="modalGridDrawer" class="hidden fixed inset-0 z-50 modal-backdrop bg-black/60 flex items-end sm:items-center justify-center p-0 sm:p-4 animate-fadeIn">
     <div class="bg-slate-900 w-full sm:max-w-md rounded-t-3xl sm:rounded-2xl border border-slate-800 p-5 space-y-4 max-h-[85vh] flex flex-col">
@@ -597,7 +922,7 @@
   </div>
 
   <!-- Data & Application Script -->
-  <script src="data/bundle.js?v=20261116_02"></script>
-  <script src="app.js?v=20261116_02"></script>
+  <script src="data/bundle.js?v=20261116_03"></script>
+  <script src="app.js?v=20261116_03"></script>
 </body>
 </html>
