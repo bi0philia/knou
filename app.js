@@ -331,8 +331,10 @@
       els.rangePills.appendChild(pill);
     });
 
-    // Update top header badge
-    els.topSubjectBadge.innerText = `${state.currentSubject} (${state.currentRange})`;
+    // Update top header badge if present
+    if (els.topSubjectBadge) {
+      els.topSubjectBadge.innerText = `${state.currentSubject} (${state.currentRange})`;
+    }
   }
 
   function filterAndPrepareQuestions(customList = null) {
