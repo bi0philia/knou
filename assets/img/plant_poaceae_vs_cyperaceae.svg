@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%" style="background:#0f172a; border-radius:12px; font-family:sans-serif;">
+  <text x="400" y="30" fill="#38bdf8" font-size="18" font-weight="bold" text-anchor="middle">🌾 단자엽식물 양대 산맥: 벼과(화본과) vs 사초과(방동사니과) 식별키</text>
+  
+  <!-- 벼과 (좌) -->
+  <g transform="translate(60, 50)">
+    <rect width="320" height="250" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="160" y="32" fill="#34d399" font-size="16" font-weight="bold" text-anchor="middle">벼과 (Poaceae / 화본과)</text>
+    
+    <!-- 줄기 단면 (원형 중공) -->
+    <g transform="translate(50, 60)">
+      <circle cx="45" cy="45" r="35" fill="#065f46" stroke="#10b981" stroke-width="4"/>
+      <circle cx="45" cy="45" r="20" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
+      <text x="45" y="105" fill="#a7f3d0" font-size="11" font-weight="bold" text-anchor="middle">줄기 단면 원형·속이 빔(中空)</text>
+    </g>
+
+    <!-- 엽초/엽설 구조 -->
+    <g transform="translate(180, 55)">
+      <!-- 개방 엽초 도식 -->
+      <path d="M40 10 C20 30 20 70 40 90" fill="none" stroke="#34d399" stroke-width="3"/>
+      <path d="M48 10 C68 30 68 70 48 90" fill="none" stroke="#34d399" stroke-width="3"/>
+      <line x1="44" y1="5" x2="44" y2="95" stroke="#64748b" stroke-width="3"/>
+      <rect x="36" y="20" width="16" height="6" fill="#facc15" rx="2"/>
+      <text x="44" y="110" fill="#fde047" font-size="10" font-weight="bold" text-anchor="middle">엽초 트임(개방) & 엽설 발달</text>
+    </g>
+
+    <!-- 요약 3대 포인트 -->
+    <g transform="translate(20, 180)">
+      <text x="0" y="0" fill="#f8fafc" font-size="11">• 잎의 배열: **2열 호생(1/2 엽서)**</text>
+      <text x="0" y="20" fill="#f8fafc" font-size="11">• 열매: **영과(Caryopsis)** - 과피와 종피 융합</text>
+      <text x="0" y="40" fill="#34d399" font-size="11" font-weight="bold">• 대표종: 벼, 보리, 밀, 옥수수, 강아지풀</text>
+    </g>
+  </g>
+
+  <!-- 사초과 (우) -->
+  <g transform="translate(420, 50)">
+    <rect width="320" height="250" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <text x="160" y="32" fill="#38bdf8" font-size="16" font-weight="bold" text-anchor="middle">사초과 (Cyperaceae / 방동사니과)</text>
+    
+    <!-- 줄기 단면 (삼각형 충실) -->
+    <g transform="translate(50, 60)">
+      <polygon points="45,15 15,75 75,75" fill="#0369a1" stroke="#38bdf8" stroke-width="4"/>
+      <polygon points="45,28 25,68 65,68" fill="#0284c7"/>
+      <text x="45" y="105" fill="#bae6fd" font-size="11" font-weight="bold" text-anchor="middle">줄기 단면 삼각형·속이 참(充實)</text>
+    </g>
+
+    <!-- 엽초 폐쇄 구조 -->
+    <g transform="translate(180, 55)">
+      <!-- 폐쇄 원통 엽초 -->
+      <rect x="25" y="15" width="40" height="75" rx="6" fill="#075985" stroke="#38bdf8" stroke-width="2"/>
+      <line x1="45" y1="5" x2="45" y2="95" stroke="#64748b" stroke-width="3"/>
+      <text x="45" y="110" fill="#7dd3fc" font-size="10" font-weight="bold" text-anchor="middle">엽초 완전히 둘러쌈(폐쇄)</text>
+    </g>
+
+    <!-- 요약 3대 포인트 -->
+    <g transform="translate(20, 180)">
+      <text x="0" y="0" fill="#f8fafc" font-size="11">• 잎의 배열: **3열 호생(1/3 엽서)**</text>
+      <text x="0" y="20" fill="#f8fafc" font-size="11">• 열매: **수과(Achene)** - 과피와 종피 분리</text>
+      <text x="0" y="40" fill="#38bdf8" font-size="11" font-weight="bold">• 대표종: 방동사니, 파피루스, 왕골, 황새풀</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%" style="background:#0f172a; border-radius:12px; font-family:sans-serif;">
+  <text x="400" y="30" fill="#38bdf8" font-size="18" font-weight="bold" text-anchor="middle">🌱 식물체 내 무기양분 체내 이동성과 결핍 부위 (100% 매년 1번 문제)</text>
+  
+  <rect x="50" y="50" width="700" height="250" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- 식물 모형 중심 -->
+  <g transform="translate(400, 240)">
+    <!-- 줄기 -->
+    <line x1="0" y1="0" x2="0" y2="-150" stroke="#15803d" stroke-width="7" stroke-linecap="round"/>
+    <!-- 뿌리 -->
+    <path d="M0 0 L-20 30 M0 0 L0 35 M0 0 L20 30" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
+    <!-- 하엽 (오래된 잎) -->
+    <path d="M0 -30 C-60 -30 -90 -20 -90 -10 C-60 -10 -30 -20 0 -25" fill="#ca8a04" stroke="#eab308" stroke-width="2"/>
+    <path d="M0 -30 C60 -30 90 -20 90 -10 C60 -10 30 -20 0 -25" fill="#ca8a04" stroke="#eab308" stroke-width="2"/>
+    <!-- 중간잎 -->
+    <path d="M0 -75 C-50 -75 -75 -70 -75 -60 C-50 -60 -25 -65 0 -70" fill="#16a34a" stroke="#22c55e" stroke-width="2"/>
+    <path d="M0 -75 C50 -75 75 -70 75 -60 C50 -60 25 -65 0 -70" fill="#16a34a" stroke="#22c55e" stroke-width="2"/>
+    <!-- 신엽 (어린잎/생장점) -->
+    <path d="M0 -120 C-40 -120 -60 -120 -60 -110 C-40 -110 -20 -115 0 -118" fill="#f43f5e" stroke="#fb7185" stroke-width="2"/>
+    <path d="M0 -120 C40 -120 60 -120 60 -110 C40 -110 20 -115 0 -118" fill="#f43f5e" stroke="#fb7185" stroke-width="2"/>
+    <circle cx="0" cy="-150" r="8" fill="#f43f5e"/>
+  </g>
+
+  <!-- 좌측 카드: 이동성 큰 원소 -->
+  <g transform="translate(80, 75)">
+    <rect width="210" height="195" rx="10" fill="#0f172a" stroke="#eab308" stroke-width="2"/>
+    <text x="105" y="28" fill="#facc15" font-size="14" font-weight="bold" text-anchor="middle">이동성 큰 원소 (N, P, K, Mg)</text>
+    <rect x="25" y="40" width="160" height="24" rx="6" fill="#713f12"/>
+    <text x="105" y="56" fill="#fef08a" font-size="12" font-weight="bold" text-anchor="middle">★ 노엽(하엽)에서 결핍!</text>
+    <text x="20" y="88" fill="#f8fafc" font-size="11">• 체내에서 어린 조직으로 재이동</text>
+    <text x="20" y="108" fill="#f8fafc" font-size="11">• 오래된 잎의 양분을 먼저 소모</text>
+    <text x="20" y="128" fill="#94a3b8" font-size="11">• N: 하엽 전체 황화</text>
+    <text x="20" y="148" fill="#94a3b8" font-size="11">• P: 하엽 자홍색(안토시아닌)</text>
+    <text x="20" y="168" fill="#94a3b8" font-size="11">• K: 잎 가장자리 갈변 괴사</text>
+    <text x="20" y="186" fill="#94a3b8" font-size="11">• Mg: 엽맥 사이 황화</text>
+  </g>
+
+  <!-- 우측 카드: 이동성 작은 원소 -->
+  <g transform="translate(510, 75)">
+    <rect width="210" height="195" rx="10" fill="#0f172a" stroke="#f43f5e" stroke-width="2"/>
+    <text x="105" y="28" fill="#fb7185" font-size="14" font-weight="bold" text-anchor="middle">이동성 작은 원소 (Ca, Fe, B)</text>
+    <rect x="25" y="40" width="160" height="24" rx="6" fill="#881337"/>
+    <text x="105" y="56" fill="#ffe4e6" font-size="12" font-weight="bold" text-anchor="middle">★ 신엽·생장점에서 결핍!</text>
+    <text x="20" y="88" fill="#f8fafc" font-size="11">• 체내에서 재이동 불가(고정)</text>
+    <text x="20" y="108" fill="#f8fafc" font-size="11">• 어린잎/생장점이 즉시 굶음</text>
+    <text x="20" y="128" fill="#94a3b8" font-size="11">• Ca: 어린잎 끝마름(Tip-burn)</text>
+    <text x="20" y="148" fill="#94a3b8" font-size="11">• Ca: 토마토 배꼽썩음병</text>
+    <text x="20" y="168" fill="#94a3b8" font-size="11">• Fe: 신엽의 엽맥 사이 백화</text>
+    <text x="20" y="186" fill="#94a3b8" font-size="11">• B: 생장점 고사, 화분관 발아 불량</text>
+  </g>
+</svg>

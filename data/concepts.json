@@ -61,7 +61,11 @@
         "label": "용액 농도 (몰농도 vs 노르말농도)",
         "desc": "• **몰농도($M$)**: 용액 $1\\text{ L}$ 당 용질의 몰수 ($\\text{mol}/\\text{L}$).<br>• **노르말농도($N$)**: 용액 $1\\text{ L}$ 당 용질의 g당량수 ($\\text{eq}/\\text{L}$). 관계식: $$N = M \\times \\text{가수}(n)$$ 예: $1\\text{ M } H_2SO_4$ (2가 산) = $2\\text{ N } H_2SO_4$."
       }
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/envchem_water_phase.svg",
+      "caption": "물(H₂O)의 상평형도: 융해곡선 음(-)의 기울기 특이성 및 삼중점(0.01°C, 0.006 atm)"
+    }
   },
   {
     "id": "envchem_c3",
@@ -255,7 +259,11 @@
         "label": "편모(Flagella)와 선모(Pili / Fimbriae)",
         "desc": "• 편모: 단백질 플라젤린(Flagellin)으로 구성, 회전 운동을 통해 화학주성(Chemotaxis) 발휘.<br>• 선모(Fimbriae): 세포 표면 부착 관여.<br>• 성선모(Sex pili): 세균 접합(Conjugation) 시 플라스미드 유전물질 수평 전달 통로."
       }
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/microbio_gram_stain.svg",
+      "caption": "그람염색법 세포벽 구조: 그람양성(보라색, 두꺼운 펩티도글리칸 90%) vs 그람음성(적색, 외막 LPS 지질 10%)"
+    }
   },
   {
     "id": "microbio_c3",
@@ -295,7 +303,11 @@
         "label": "환경 인자: 온도와 pH의 영향",
         "desc": "• 저온균($<15^\\circ\\text{C}$), 중온균($20\\sim45^\\circ\\text{C}$, 하수처리 활성슬러지 주력), 고온균($>50^\\circ\\text{C}$, 퇴비화 및 고온 혐기소화).<br>• 세균은 중성(pH 6.5~7.5), 곰팡이/진균은 약산성(pH 5~6)에서 최적 증식."
       }
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/microbio_growth_curve.svg",
+      "caption": "회분배양 미생물 4단계 증식곡선: 유도기 → 대수증식기(μ_max, 세대시간) → 정지기(항생물질) → 사멸기"
+    }
   },
   {
     "id": "microbio_c5",
@@ -449,7 +461,11 @@
         "label": "제1종 오류 vs 제2종 오류 (빈출 대립어)",
         "desc": "• **제1종 오류($\\alpha$)**: 귀무가설이 **실제 참인데도 잘못 기각**하는 오류 (위양성, False positive). 유의수준 $\\alpha$.<br>• **제2종 오류($\\beta$)**: 귀무가설이 **실제 거짓인데도 기각하지 못하는** 오류 (위음성, False negative).<br>• **검정력($1 - \\beta$)**: 대립가설이 참일 때 이를 올바르게 채택(귀무가설 기각)할 확률. 표본 크기($n$)가 커질수록 검정력 증가."
       }
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/biostat_normal_curve.svg",
+      "caption": "표준정규분포(Z)와 가설검정 양측 기각역 (유의수준 α = 0.05, Z = ±1.96)"
+    }
   },
   {
     "id": "biostat_c4",
@@ -551,7 +567,11 @@
         "label": "기준표본(Type)의 종류",
         "desc": "• **정기준표본(Holotype)**: 저자가 원기재 시 단일 표본으로 지정한 기준.<br>• **동의기준표본(Isotype)**: 정기준표본과 동일한 수집품에서 채취된 복제 표본.<br>• **후임기준표본(Lectotype)**: 원기재자가 정기준표본을 지정하지 않았거나 분실 시 원자료 중에서 후대 연구자가 선정한 표본."
       }
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/plant_flower_structure.svg",
+      "caption": "완전화(Complete Flower)의 4대 기본 구조: 꽃받침(Calyx), 꽃잎(Corolla), 수술(Stamen), 암술(Pistil)"
+    }
   },
   {
     "id": "plants_c2",
@@ -573,7 +593,11 @@
         "label": "엽맥(Venation, 잎맥)과 식물군",
         "desc": "• **망상맥(그물맥)**: 쌍자엽식물(쌍떡잎식물)의 기본 특징. 우상맥, 장상맥.<br>• **평행맥(나란히맥)**: 단자엽식물(외떡잎식물)의 기본 특징 (벼, 옥수수, 백합)."
       }
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/plant_phyllotaxy.svg",
+      "caption": "식물 잎의 배열 — 엽서(Phyllotaxy) 4대 유형: 호생(어긋나기), 대생(마주나기), 윤생(돌려나기), 근생(로제트)"
+    }
   },
   {
     "id": "plants_c3",
@@ -595,7 +619,11 @@
         "label": "자방(씨방)의 위치",
         "desc": "• **자방상위**: 꽃받침, 꽃잎, 수술보다 자방이 위에 위치 (십자화과, 콩과).<br>• **자방하위**: 꽃받침통과 화탁이 자방을 둘러싸고 그 위에 꽃잎이 달림 (국화과, 사과나무, 오이)."
       }
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/plant_inflorescences.svg",
+      "caption": "주요 화서(꽃차례) 8종 비교: 총상, 수상, 산방, 산형, 두상, 원추, 육수, 취산화서"
+    }
   },
   {
     "id": "plants_c4",
@@ -665,7 +693,11 @@
         "label": "난초과 (Orchidaceae)",
         "desc": "• 꽃은 좌우상칭, 꽃잎 중 1장이 크게 변형된 **순판(Lip/Labellum)**.<br>• 수술과 암술이 융합된 **예주(Column/Gynostemium)** 형성.<br>• 화분이 덩어리진 화분괴(Pollinia), 미세 종자."
       }
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/plant_poaceae_vs_cyperaceae.svg",
+      "caption": "단자엽식물 양대 산맥 식별키: 벼과(원형 중공 줄기·개방 엽초·영과) vs 사초과(삼각형 충실 줄기·폐쇄 엽초·수과)"
+    }
   },
   {
     "id": "plants_c7",
@@ -723,7 +755,11 @@
         "label": "토양 pH와 양분 유효도",
         "desc": "대부분의 작물 양분은 **약산성~중성(pH 6.0~7.0)**에서 흡수 유효도가 가장 높음. 강산성(pH < 5.0)에서는 인산($P$)이 알루미늄($Al$), 철($Fe$)과 불용성 결합하여 결핍, $Al$ 독성 발생. 강알칼리성(pH > 8.0)에서는 인산이 칼슘($Ca$)과 불용화되고 미량원소($Fe, Mn, Zn$) 흡수 저해."
       }
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/ecoagri_nutrient_mobility.svg",
+      "caption": "식물체 내 무기양분 이동성: 이동성 큰 원소(N, P, K, Mg → 노엽 결핍) vs 이동성 작은 원소(Ca, Fe, B → 신엽·생장점 결핍)"
+    }
   },
   {
     "id": "ecoagri_c3",
@@ -839,7 +875,11 @@
         "label": "기타 핵심 세포 소기관",
         "desc": "• **리보솜**: 단백질 합성 기구, 막이 없음.<br>• **조면소포체**: 리보솜 부착, 분비 단백질 합성 및 가공.<br>• **활면소포체**: 지질 합성, 해독 작용, 칼슘 저장.<br>• **골지체**: 단백질 농축, 변형, 분비 소포 포장.<br>• **리소좀**: 가수분해효소 함유, 세포내 소화."
       }
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/biosci_chloroplast_mito.svg",
+      "caption": "세포내 공생 2대 에너지 소기관: 엽록체(명반응/암반응) vs 미토콘드리아(TCA회로/전자전달계)"
+    }
   },
   {
     "id": "biosci_c2",

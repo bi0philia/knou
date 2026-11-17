@@ -37,7 +37,7 @@
     fontSizes: ['text-sm', 'text-base', 'text-lg'],
     isShuffled: false,
     conceptSearchQuery: '',
-    conceptSubjectFilter: '전체'
+    conceptSubjectFilter: '환경화학'
   };
 
   // ================= DOM ELEMENTS =================
@@ -855,10 +855,8 @@
     renderConceptSubjectFilter();
     const query = state.conceptSearchQuery.toLowerCase().trim();
 
-    let filtered = state.concepts;
-    if (state.conceptSubjectFilter !== '전체') {
-      filtered = filtered.filter(c => c.subject === state.conceptSubjectFilter);
-    }
+    // Filter by selected subject (No '전체' view)
+    let filtered = state.concepts.filter(c => c.subject === state.conceptSubjectFilter);
 
     if (query) {
       filtered = filtered.filter(c => {
@@ -942,6 +940,16 @@
         `;
       }
 
+      let figureHtml = '';
+      if (card.figure) {
+        figureHtml = `
+          <div class="my-4 p-3 bg-slate-900/90 rounded-xl border border-slate-700/80 text-center shadow-inner">
+            <img src="${card.figure.url}" alt="${card.figure.caption || card.title}" class="mx-auto max-h-80 w-full object-contain rounded-lg border border-slate-700/50 bg-slate-950/60 p-1" loading="lazy">
+            ${card.figure.caption ? `<p class="text-xs text-emerald-400 mt-2 font-medium flex items-center justify-center gap-1.5"><i data-lucide="image" class="w-3.5 h-3.5"></i><span>${card.figure.caption}</span></p>` : ''}
+          </div>
+        `;
+      }
+
       cardEl.innerHTML = `
         <div class="p-4 cursor-pointer flex items-center justify-between gap-3 concept-header">
           <div class="space-y-1">
@@ -950,12 +958,13 @@
               <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">${card.category}</span>
               <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-teal-500/20 text-teal-300">${card.badge}</span>
             </div>
-            <h3 class="text-sm font-bold text-slate-100">${card.title}</h3>
+            <h3 class="text-sm sm:text-base font-bold text-slate-100">${card.title}</h3>
             <p class="text-xs text-slate-400">${card.summary}</p>
           </div>
           <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform chevron-icon"></i>
         </div>
         <div class="px-4 pb-4 pt-1 border-t border-slate-700/60 concept-body">
+          ${figureHtml}
           ${itemsHtml}
           ${practiceHtml}
           ${relatedBtnHtml}
@@ -1026,12 +1035,19 @@
 
   function renderConceptSubjectFilter() {
     els.conceptSubjectFilter.innerHTML = '';
-    const allSubjects = ['전체', ...state.subjects.map(s => s.id)];
+    const allSubjects = state.subjects.map(s => s.id);
+    
+    // Default to currentSubject or first subject, never '전체'
+    if (!state.conceptSubjectFilter || state.conceptSubjectFilter === '전체' || !allSubjects.includes(state.conceptSubjectFilter)) {
+      state.conceptSubjectFilter = (state.currentSubject && allSubjects.includes(state.currentSubject))
+        ? state.currentSubject
+        : (allSubjects[0] || '환경화학');
+    }
 
     allSubjects.forEach(s => {
       const isSelected = s === state.conceptSubjectFilter;
       const btn = document.createElement('button');
-      btn.className = `px-3 py-1 rounded-xl text-xs font-semibold whitespace-nowrap transition touch-card ${
+      btn.className = `px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition touch-card ${
         isSelected
           ? 'bg-emerald-500 text-slate-950 font-bold shadow-sm'
           : 'bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700/60'
@@ -1218,6 +1234,9 @@
 
     // 6. Inline Code `...`
     text = text.replace(/`([^`\n]+?)`/g, '<code class="px-1.5 py-0.5 rounded bg-slate-800 text-amber-300 font-mono text-[11px] border border-slate-700/60">$1</code>');
+
+    // 6.5 Markdown Images ![alt](url)
+    text = text.replace(/!\[(.*?)\]\((.*?)\)/g, '<div class="my-3 text-center"><img src="$2" alt="$1" class="mx-auto rounded-xl border border-slate-700 max-h-72 w-auto object-contain bg-slate-900/60 p-2 shadow-sm" loading="lazy"><p class="text-[11px] text-slate-400 mt-1.5 font-medium">$1</p></div>');
 
     // 7. Line-by-line processing for lists (- item) and tags
     const lines = text.split('\n');

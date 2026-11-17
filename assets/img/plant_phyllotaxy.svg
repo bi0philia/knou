@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="100%" height="100%" style="background:#0f172a; border-radius:12px; font-family:sans-serif;">
+  <text x="400" y="32" fill="#38bdf8" font-size="18" font-weight="bold" text-anchor="middle">🌿 식물 잎의 배열 — 엽서(葉序, Phyllotaxy) 4대 유형</text>
+  
+  <!-- 1. 호생 (어긋나기) -->
+  <g transform="translate(40, 60)">
+    <rect width="160" height="260" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="80" y="30" fill="#34d399" font-size="15" font-weight="bold" text-anchor="middle">호생 (어긋나기)</text>
+    <text x="80" y="48" fill="#94a3b8" font-size="11" text-anchor="middle">한 마디에 잎 1장 교대</text>
+    <!-- 줄기 -->
+    <line x1="80" y1="65" x2="80" y2="230" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+    <!-- 잎들 -->
+    <path d="M80 190 C40 180 30 160 30 150 C50 150 70 170 80 185" fill="#10b981" stroke="#059669" stroke-width="1.5"/>
+    <path d="M80 150 C120 140 130 120 130 110 C110 110 90 130 80 145" fill="#10b981" stroke="#059669" stroke-width="1.5"/>
+    <path d="M80 110 C40 100 30 80 30 70 C50 70 70 90 80 105" fill="#10b981" stroke="#059669" stroke-width="1.5"/>
+    <text x="80" y="250" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">벼과, 참나무과, 장미과</text>
+  </g>
+
+  <!-- 2. 대생 (마주나기) -->
+  <g transform="translate(225, 60)">
+    <rect width="160" height="260" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="80" y="30" fill="#38bdf8" font-size="15" font-weight="bold" text-anchor="middle">대생 (마주나기)</text>
+    <text x="80" y="48" fill="#94a3b8" font-size="11" text-anchor="middle">한 마디에 잎 2장 마주봄</text>
+    <!-- 줄기 -->
+    <line x1="80" y1="65" x2="80" y2="230" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+    <!-- 1층 -->
+    <path d="M80 180 C40 170 30 150 30 140 C50 140 70 160 80 175" fill="#0ea5e9" stroke="#0284c7" stroke-width="1.5"/>
+    <path d="M80 180 C120 170 130 150 130 140 C110 140 90 160 80 175" fill="#0ea5e9" stroke="#0284c7" stroke-width="1.5"/>
+    <!-- 2층 -->
+    <path d="M80 120 C40 110 30 90 30 80 C50 80 70 100 80 115" fill="#0ea5e9" stroke="#0284c7" stroke-width="1.5"/>
+    <path d="M80 120 C120 110 130 90 130 80 C110 80 90 100 80 115" fill="#0ea5e9" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="80" y="250" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">꿀풀과, 석죽과, 단풍나무</text>
+  </g>
+
+  <!-- 3. 윤생 (돌려나기) -->
+  <g transform="translate(410, 60)">
+    <rect width="160" height="260" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="80" y="30" fill="#fbbf24" font-size="15" font-weight="bold" text-anchor="middle">윤생 (돌려나기)</text>
+    <text x="80" y="48" fill="#94a3b8" font-size="11" text-anchor="middle">한 마디에 잎 3장 이상</text>
+    <!-- 줄기 -->
+    <line x1="80" y1="65" x2="80" y2="230" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+    <!-- 윤생 1 -->
+    <path d="M80 160 C35 155 25 140 25 130 C45 130 65 145 80 155" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M80 160 C125 155 135 140 135 130 C115 130 95 145 80 155" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+    <ellipse cx="80" cy="175" rx="15" ry="30" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" opacity="0.8"/>
+    <!-- 윤생 2 -->
+    <path d="M80 100 C35 95 25 80 25 70 C45 70 65 85 80 95" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M80 100 C125 95 135 80 135 70 C115 70 95 85 80 95" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+    <ellipse cx="80" cy="115" rx="15" ry="30" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" opacity="0.8"/>
+    <text x="80" y="250" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">갈퀴덩굴, 옥매, 검정말</text>
+  </g>
+
+  <!-- 4. 근생 (뿌리잎/로제트) -->
+  <g transform="translate(595, 60)">
+    <rect width="160" height="260" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="80" y="30" fill="#f43f5e" font-size="15" font-weight="bold" text-anchor="middle">근생 (뿌리잎/로제트)</text>
+    <text x="80" y="48" fill="#94a3b8" font-size="11" text-anchor="middle">줄기 극단축, 방석상 퍼짐</text>
+    <!-- 지표면 -->
+    <line x1="20" y1="200" x2="140" y2="200" stroke="#64748b" stroke-width="2" stroke-dasharray="4"/>
+    <!-- 뿌리 -->
+    <line x1="80" y1="200" x2="80" y2="230" stroke="#78350f" stroke-width="4"/>
+    <!-- 방사상 잎 -->
+    <path d="M80 200 C30 200 20 180 20 170 C45 170 65 190 80 198" fill="#f43f5e" stroke="#e11d48" stroke-width="1.5"/>
+    <path d="M80 200 C130 200 140 180 140 170 C115 170 95 190 80 198" fill="#f43f5e" stroke="#e11d48" stroke-width="1.5"/>
+    <path d="M80 200 C50 160 45 130 50 120 C65 135 75 170 80 198" fill="#fb7185" stroke="#e11d48" stroke-width="1.5"/>
+    <path d="M80 200 C110 160 115 130 110 120 C95 135 85 170 80 198" fill="#fb7185" stroke="#e11d48" stroke-width="1.5"/>
+    <text x="80" y="250" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">민들레, 냉이, 질경이</text>
+  </g>
+</svg>
