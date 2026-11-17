@@ -1048,6 +1048,13 @@
           renderSubjects();
           renderRangePills();
           filterAndPrepareQuestions();
+          if (card.relatedQuestionIds && card.relatedQuestionIds.length > 0) {
+            const firstId = card.relatedQuestionIds[0];
+            const targetIdx = state.filteredQuestions.findIndex(q => q.id === firstId);
+            if (targetIdx !== -1) {
+              state.currentIndex = targetIdx;
+            }
+          }
           renderCurrentQuestion();
         };
       }
