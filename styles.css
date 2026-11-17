@@ -103,3 +103,45 @@ body {
 .safe-pb {
   padding-bottom: calc(0.5rem + var(--safe-area-bottom));
 }
+
+/* ================= FONT SIZE SCALING SYSTEM (극적인 가독성 향상) ================= */
+html.font-scale-base {
+  font-size: 16px;
+}
+
+html.font-scale-lg {
+  font-size: 20px; /* +25% 시원하게 커진 글씨 */
+}
+
+html.font-scale-xl {
+  font-size: 24.5px; /* +53% 확연하게 큰 대형 글씨 */
+}
+
+/* Ensure line-height scales comfortably */
+html.font-scale-lg body {
+  line-height: 1.65;
+}
+html.font-scale-xl body {
+  line-height: 1.75;
+}
+
+/* Dynamically scale fixed-pixel utilities in high-scale modes */
+html.font-scale-lg [class*="text-[10px]"],
+html.font-scale-lg [class*="text-[11px]"] {
+  font-size: 0.82rem !important;
+  line-height: 1.25rem !important;
+}
+
+html.font-scale-xl [class*="text-[10px]"],
+html.font-scale-xl [class*="text-[11px]"] {
+  font-size: 0.95rem !important;
+  line-height: 1.4rem !important;
+}
+
+/* KaTeX equations scaling */
+html.font-scale-lg .katex {
+  font-size: 1.18em !important;
+}
+html.font-scale-xl .katex {
+  font-size: 1.35em !important;
+}

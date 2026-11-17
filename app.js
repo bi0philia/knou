@@ -33,8 +33,12 @@
     currentTab: 'quiz', // 'quiz' | 'concepts' | 'saved' | 'stats'
     savedSubTab: 'bookmarks', // 'bookmarks' | 'mistakes'
     theme: localStorage.getItem('knou_theme') || 'dark',
-    fontSizeIndex: parseInt(localStorage.getItem('knou_font_size_idx') || '1'), // 0: sm, 1: base, 2: lg
-    fontSizes: ['text-sm', 'text-base', 'text-lg'],
+    fontSizeIndex: parseInt(localStorage.getItem('knou_font_size_idx') || '0'), // 0: base (100%), 1: lg (125%), 2: xl (153%)
+    fontScaleConfig: [
+      { id: 'font-scale-base', label: '보통', badgeClass: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30', pct: '100%' },
+      { id: 'font-scale-lg', label: '크게', badgeClass: 'bg-amber-500/20 text-amber-300 border-amber-500/30', pct: '125%' },
+      { id: 'font-scale-xl', label: '아주 크게', badgeClass: 'bg-rose-500/20 text-rose-300 border-rose-500/30', pct: '153%' }
+    ],
     isShuffled: false,
     conceptSearchQuery: '',
     conceptSubjectFilter: '환경화학'
@@ -215,18 +219,53 @@
   }
 
   function initFontSize() {
-    applyFontSize();
+    applyFontSize(false);
   }
 
   function cycleFontSize() {
-    state.fontSizeIndex = (state.fontSizeIndex + 1) % state.fontSizes.length;
+    state.fontSizeIndex = (state.fontSizeIndex + 1) % state.fontScaleConfig.length;
     localStorage.setItem('knou_font_size_idx', state.fontSizeIndex);
-    applyFontSize();
+    applyFontSize(true);
   }
 
-  function applyFontSize() {
-    state.fontSizes.forEach(cls => document.body.classList.remove(cls));
-    document.body.classList.add(state.fontSizes[state.fontSizeIndex]);
+  function applyFontSize(showNotification = false) {
+    const html = document.documentElement;
+    state.fontScaleConfig.forEach(cfg => html.classList.remove(cfg.id));
+    
+    if (state.fontSizeIndex < 0 || state.fontSizeIndex >= state.fontScaleConfig.length) {
+      state.fontSizeIndex = 0;
+    }
+    const current = state.fontScaleConfig[state.fontSizeIndex];
+    html.classList.add(current.id);
+
+    // Update UI badge
+    const badge = document.getElementById('fontSizeBadge');
+    if (badge) {
+      badge.innerText = current.label;
+      badge.className = `px-1.5 py-0.5 rounded text-[10px] font-bold border transition ${current.badgeClass}`;
+    }
+
+    if (showNotification) {
+      showToast(`글자 크기: ${current.label} (${current.pct})`);
+    }
+  }
+
+  function showToast(msg) {
+    let toast = document.getElementById('knouGlobalToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'knouGlobalToast';
+      toast.className = 'fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-xl bg-slate-900/95 text-emerald-300 border border-emerald-500/40 shadow-2xl text-xs font-bold transition-all duration-300 pointer-events-none opacity-0';
+      document.body.appendChild(toast);
+    }
+    toast.innerText = msg;
+    toast.style.opacity = '1';
+    toast.style.transform = 'translate(-50%, -6px)';
+    clearTimeout(window._toastTimeout);
+    window._toastTimeout = setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translate(-50%, 0px)';
+    }, 1800);
   }
 
   // ================= NAVIGATION =================

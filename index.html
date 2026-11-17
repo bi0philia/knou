@@ -105,10 +105,11 @@
           <span id="timerText">25:00</span>
         </div>
 
-        <!-- Font Size Button -->
-        <button id="btnFontSize" class="p-2 sm:px-2.5 sm:py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700/60 transition flex items-center gap-1 text-xs" title="글자 크기 변경">
-          <i data-lucide="type" class="w-4 h-4"></i>
-          <span class="hidden sm:inline font-medium">크기</span>
+        <!-- Font Size Button with Visual Badge -->
+        <button id="btnFontSize" class="px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 border border-slate-700/60 transition flex items-center gap-1.5 text-xs font-semibold" title="글자 크기 변경 (기본 / 크게 / 아주 크게)">
+          <i data-lucide="type" class="w-4 h-4 text-emerald-400"></i>
+          <span class="hidden sm:inline text-slate-300">글자</span>
+          <span id="fontSizeBadge" class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">보통</span>
         </button>
 
         <!-- Dark/Light Theme Toggle -->
