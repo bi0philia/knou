@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="100%" style="background:#0f172a; border-radius:12px; font-family:sans-serif;">
+  <text x="400" y="28" fill="#38bdf8" font-size="18" font-weight="bold" text-anchor="middle">🧬 분자생물학의 중심원리(Central Dogma): DNA → RNA → 단백질</text>
+  
+  <rect x="50" y="45" width="700" height="235" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- 1. DNA -->
+  <g transform="translate(80, 85)">
+    <rect width="160" height="150" rx="10" fill="#0369a1" stroke="#38bdf8" stroke-width="2"/>
+    <text x="80" y="32" fill="#e0f2fe" font-size="18" font-weight="bold" text-anchor="middle">DNA</text>
+    <rect x="15" y="50" width="130" height="85" rx="6" fill="#0f172a"/>
+    <text x="80" y="75" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">복제 (Replication)</text>
+    <text x="80" y="95" fill="#f8fafc" font-size="10" text-anchor="middle">• 반보존적 복제</text>
+    <text x="80" y="112" fill="#f8fafc" font-size="10" text-anchor="middle">• 5' → 3' 합성 방향</text>
+    <text x="80" y="128" fill="#94a3b8" font-size="10" text-anchor="middle">오카자키 절편</text>
+  </g>
+
+  <!-- 전사 화살표 (DNA -> RNA) -->
+  <g transform="translate(250, 135)">
+    <line x1="0" y1="20" x2="80" y2="20" stroke="#f59e0b" stroke-width="4"/>
+    <polygon points="85,20 75,14 75,26" fill="#f59e0b"/>
+    <text x="42" y="8" fill="#fbbf24" font-size="12" font-weight="bold" text-anchor="middle">전사 (Transcription)</text>
+    <text x="42" y="38" fill="#94a3b8" font-size="9" text-anchor="middle">RNA 중합효소</text>
+  </g>
+
+  <!-- 2. RNA -->
+  <g transform="translate(345, 85)">
+    <rect width="160" height="150" rx="10" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+    <text x="80" y="32" fill="#ecfdf5" font-size="18" font-weight="bold" text-anchor="middle">mRNA</text>
+    <rect x="15" y="50" width="130" height="85" rx="6" fill="#0f172a"/>
+    <text x="80" y="75" fill="#34d399" font-size="11" font-weight="bold" text-anchor="middle">유전 암호 (Codon)</text>
+    <text x="80" y="95" fill="#f8fafc" font-size="10" text-anchor="middle">• 3개 염기 = 1코돈</text>
+    <text x="80" y="112" fill="#f8fafc" font-size="10" text-anchor="middle">• 개시: AUG(Met)</text>
+    <text x="80" y="128" fill="#fca5a5" font-size="10" text-anchor="middle">• 종결: UAA,UAG,UGA</text>
+  </g>
+
+  <!-- 번역 화살표 (RNA -> 단백질) -->
+  <g transform="translate(515, 135)">
+    <line x1="0" y1="20" x2="80" y2="20" stroke="#f43f5e" stroke-width="4"/>
+    <polygon points="85,20 75,14 75,26" fill="#f43f5e"/>
+    <text x="42" y="8" fill="#fb7185" font-size="12" font-weight="bold" text-anchor="middle">번역 (Translation)</text>
+    <text x="42" y="38" fill="#94a3b8" font-size="9" text-anchor="middle">리보솜 + tRNA</text>
+  </g>
+
+  <!-- 3. 단백질 -->
+  <g transform="translate(605, 85)">
+    <rect width="125" height="150" rx="10" fill="#581c87" stroke="#a855f7" stroke-width="2"/>
+    <text x="62" y="32" fill="#f3e8ff" font-size="17" font-weight="bold" text-anchor="middle">단백질</text>
+    <rect x="10" y="50" width="105" height="85" rx="6" fill="#0f172a"/>
+    <text x="52" y="75" fill="#c084fc" font-size="11" font-weight="bold" text-anchor="middle">형질 발현</text>
+    <text x="52" y="95" fill="#f8fafc" font-size="10" text-anchor="middle">아미노산 사슬</text>
+    <text x="52" y="112" fill="#f8fafc" font-size="10" text-anchor="middle">펩타이드 결합</text>
+    <text x="52" y="128" fill="#94a3b8" font-size="9" text-anchor="middle">생체 기능 수행</text>
+  </g>
+</svg>

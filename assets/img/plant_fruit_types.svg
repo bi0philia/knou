@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" width="100%" height="100%" style="background:#0f172a; border-radius:12px; font-family:sans-serif;">
+  <text x="400" y="30" fill="#38bdf8" font-size="18" font-weight="bold" text-anchor="middle">🍎 과실(Fruit, 열매)의 분류 체계: 진과 vs 위과 &amp; 건과 vs 육질과</text>
+  
+  <!-- 상단 대분류: 진과 vs 위과 -->
+  <g transform="translate(60, 50)">
+    <!-- 진과 (True Fruit) -->
+    <rect width="320" height="120" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="160" y="28" fill="#34d399" font-size="15" font-weight="bold" text-anchor="middle">진과 (眞果, True Fruit)</text>
+    <rect x="25" y="38" width="270" height="24" rx="4" fill="#064e3b"/>
+    <text x="160" y="54" fill="#a7f3d0" font-size="12" font-weight="bold" text-anchor="middle">순수하게 자방(씨방)벽만 발달하여 과육 형성</text>
+    <text x="25" y="82" fill="#f8fafc" font-size="11">• 내과피/중과피/외과피가 자방에서 유래</text>
+    <text x="25" y="102" fill="#34d399" font-size="11" font-weight="bold">• 대표: 복숭아, 자두, 감, 포도, 토마토</text>
+  </g>
+
+  <g transform="translate(420, 50)">
+    <!-- 위과 (False / Accessory Fruit) -->
+    <rect width="320" height="120" rx="10" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+    <text x="160" y="28" fill="#fb7185" font-size="15" font-weight="bold" text-anchor="middle">위과 (僞果, False / Accessory Fruit)</text>
+    <rect x="25" y="38" width="270" height="24" rx="4" fill="#881337"/>
+    <text x="160" y="54" fill="#fecdd3" font-size="12" font-weight="bold" text-anchor="middle">자방 외 꽃받침통·화탁(꽃턱)이 발달하여 과육 형성</text>
+    <text x="25" y="82" fill="#f8fafc" font-size="11">• 사과/배: 화탁이 과육 형성 (이과 Pome)</text>
+    <text x="25" y="102" fill="#fb7185" font-size="11" font-weight="bold">• 대표: 사과, 배, 딸기(화탁 표면에 수과 부착)</text>
+  </g>
+
+  <!-- 하단 3개 카드: 건개과 vs 건폐과 vs 육질과 -->
+  <g transform="translate(40, 190)">
+    <!-- 건개과 -->
+    <rect width="225" height="130" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="112" y="26" fill="#fbbf24" font-size="13" font-weight="bold" text-anchor="middle">건개과 (Dehiscent Dry)</text>
+    <text x="112" y="44" fill="#94a3b8" font-size="10" text-anchor="middle">성숙 시 과피가 벌어져 종자 방출</text>
+    <text x="15" y="70" fill="#f8fafc" font-size="11">• **협과(꼬투리)**: 2개 봉선 (콩과)</text>
+    <text x="15" y="90" fill="#f8fafc" font-size="11">• **삭과**: 다수 봉선/구멍 (양귀비, 붓꽃)</text>
+    <text x="15" y="110" fill="#f8fafc" font-size="11">• **골돌과**: 1개 봉선 (목련, 작약)</text>
+  </g>
+
+  <g transform="translate(285, 190)">
+    <!-- 건폐과 -->
+    <rect width="230" height="130" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="115" y="26" fill="#38bdf8" font-size="13" font-weight="bold" text-anchor="middle">건폐과 (Indehiscent Dry)</text>
+    <text x="115" y="44" fill="#94a3b8" font-size="10" text-anchor="middle">성숙해도 과피가 벌어지지 않음</text>
+    <text x="15" y="70" fill="#f8fafc" font-size="11">• **영과**: 과피-종피 융합 (벼, 옥수수)</text>
+    <text x="15" y="90" fill="#f8fafc" font-size="11">• **수과**: 종피-과피 분리 (국화과, 민들레)</text>
+    <text x="15" y="110" fill="#f8fafc" font-size="11">• **시과**: 날개 발달 (단풍나무)</text>
+  </g>
+
+  <g transform="translate(535, 190)">
+    <!-- 육질과 -->
+    <rect width="225" height="130" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+    <text x="112" y="26" fill="#c084fc" font-size="13" font-weight="bold" text-anchor="middle">육질과 (Fleshy Fruit)</text>
+    <text x="112" y="44" fill="#94a3b8" font-size="10" text-anchor="middle">과피 전체 또는 일부가 즙액 풍부</text>
+    <text x="15" y="70" fill="#f8fafc" font-size="11">• **핵과**: 내과피가 단단한 핵 (복숭아)</text>
+    <text x="15" y="90" fill="#f8fafc" font-size="11">• **장과**: 중·내과피 다육 (포도, 토마토)</text>
+    <text x="15" y="110" fill="#f8fafc" font-size="11">• **박과(호과)**: 외과피 가죽질 (수박, 오이)</text>
+  </g>
+</svg>

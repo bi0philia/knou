@@ -54,7 +54,11 @@
       "환경화학_2019_41",
       "환경화학_2019_42",
       "환경화학_2019_43"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/envchem_bohr_orbitals.svg",
+      "caption": "보어 원자모형 전자껍질(K, L, M, N) 2n² 수용 한계 및 주기율표 경향성"
+    }
   },
   {
     "id": "envchem_c2",
@@ -87,7 +91,7 @@
     ],
     "figure": {
       "url": "assets/img/envchem_water_phase.svg",
-      "caption": "물(H₂O)의 상평형도: 융해곡선 음(-)의 기울기 특이성 및 삼중점(0.01°C, 0.006 atm)"
+      "caption": "물의 온도-압력 3중점 상평형도(Phase Diagram) 및 임계점"
     },
     "practiceQuestions": [
       {
@@ -323,7 +327,11 @@
       "환경화학_2019_41",
       "환경화학_2019_42",
       "환경화학_2019_43"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/envchem_beer_lambert.svg",
+      "caption": "분광광도법 베르-람베르트(Beer-Lambert) 흡광 법칙 A = εbc 원리"
+    }
   },
   {
     "id": "envchem_c7",
@@ -463,7 +471,7 @@
     ],
     "figure": {
       "url": "assets/img/microbio_gram_stain.svg",
-      "caption": "그람염색법 세포벽 구조: 그람양성(보라색, 두꺼운 펩티도글리칸 90%) vs 그람음성(적색, 외막 LPS 지질 10%)"
+      "caption": "그람 양성균 vs 음성균 세포벽 구조와 그람 염색 4단계 탈색 메커니즘"
     },
     "practiceQuestions": [
       {
@@ -553,7 +561,7 @@
     ],
     "figure": {
       "url": "assets/img/microbio_growth_curve.svg",
-      "caption": "회분배양 미생물 4단계 증식곡선: 유도기 → 대수증식기(μ_max, 세대시간) → 정지기(항생물질) → 사멸기"
+      "caption": "미생물 회분 배양 4단계 생장곡선 및 모노드(Monod) 비증식속도론"
     },
     "practiceQuestions": [
       {
@@ -635,7 +643,11 @@
       "환경미생물학_2019_6",
       "환경미생물학_2019_7",
       "환경미생물학_2019_8"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/microbio_oxidation_pond.svg",
+      "caption": "산화지(Oxidation Pond) 내 조류(광합성/산소)와 호기성 세균(유기물 분해/CO2) 상호 공생"
+    }
   },
   {
     "id": "microbio_c6",
@@ -681,7 +693,11 @@
       "환경미생물학_2019_6",
       "환경미생물학_2019_7",
       "환경미생물학_2019_8"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/microbio_bnr_ebpr.svg",
+      "caption": "생물학적 영양소 제거(A2O BNR 질소탈질) 및 인 과잉흡수(EBPR) 공정 메커니즘"
+    }
   },
   {
     "id": "microbio_c7",
@@ -727,7 +743,11 @@
       "환경미생물학_2019_6",
       "환경미생물학_2019_7",
       "환경미생물학_2019_8"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/microbio_anaerobic_digestion.svg",
+      "caption": "혐기성 소화(Anaerobic Digestion) 4단계 반응 경로 및 최종 바이오가스 생성"
+    }
   },
   {
     "id": "microbio_c8",
@@ -888,7 +908,11 @@
       "생물통계학_2019_6",
       "생물통계학_2019_7",
       "생물통계학_2019_8"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/biostat_normal_curve.svg",
+      "caption": "표준정규분포 Z 곡선과 경험적 규칙(68-95-99.7%) 확률 구간"
+    }
   },
   {
     "id": "biostat_c3",
@@ -984,7 +1008,11 @@
       "생물통계학_2019_6",
       "생물통계학_2019_7",
       "생물통계학_2019_8"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/biostat_anova_tree.svg",
+      "caption": "일원배치 분산분석(ANOVA) 총제곱합 분해 및 집단간/집단내 F-검정 구조"
+    }
   },
   {
     "id": "biostat_c5",
@@ -1188,7 +1216,7 @@
     ],
     "figure": {
       "url": "assets/img/plant_phyllotaxy.svg",
-      "caption": "식물 잎의 배열 — 엽서(Phyllotaxy) 4대 유형: 호생(어긋나기), 대생(마주나기), 윤생(돌려나기), 근생(로제트)"
+      "caption": "식물 엽서(잎차례) 4대 기본 유형: 호생·대생·윤생·근생"
     },
     "practiceQuestions": [
       {
@@ -1236,8 +1264,8 @@
       }
     ],
     "figure": {
-      "url": "assets/img/plant_inflorescences.svg",
-      "caption": "주요 화서(꽃차례) 8종 비교: 총상, 수상, 산방, 산형, 두상, 원추, 육수, 취산화서"
+      "url": "assets/img/plant_flower_structure.svg",
+      "caption": "완전화의 4대 기본 요소(꽃받침·꽃잎·수술·암술) 및 자예/웅예 미세구조"
     },
     "practiceQuestions": [
       {
@@ -1319,7 +1347,11 @@
       "식물분류학_2019_6",
       "식물분류학_2019_7",
       "식물분류학_2019_8"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/plant_fruit_types.svg",
+      "caption": "과실(Fruit)의 체계적 분류: 진과 vs 위과 및 건개과·건폐과·육질과"
+    }
   },
   {
     "id": "plants_c5",
@@ -1406,7 +1438,7 @@
     ],
     "figure": {
       "url": "assets/img/plant_poaceae_vs_cyperaceae.svg",
-      "caption": "단자엽식물 양대 산맥 식별키: 벼과(원형 중공 줄기·개방 엽초·영과) vs 사초과(삼각형 충실 줄기·폐쇄 엽초·수과)"
+      "caption": "벼과(Poaceae) vs 사초과(Cyperaceae) 6대 핵심 식별 형질 비교"
     },
     "practiceQuestions": [
       {
@@ -1472,7 +1504,11 @@
       "식물분류학_2019_6",
       "식물분류학_2019_7",
       "식물분류학_2019_8"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/plant_stamen_types.svg",
+      "caption": "수술(웅예) 5대 특수 유형: 사강웅예·이강웅예·양체웅예·단체웅예·집약웅예"
+    }
   },
   {
     "id": "ecoagri_c1",
@@ -1538,7 +1574,7 @@
     ],
     "figure": {
       "url": "assets/img/ecoagri_nutrient_mobility.svg",
-      "caption": "식물체 내 무기양분 이동성: 이동성 큰 원소(N, P, K, Mg → 노엽 결핍) vs 이동성 작은 원소(Ca, Fe, B → 신엽·생장점 결핍)"
+      "caption": "식물 무기양분 체내 이동성 분류(이동성 우수 vs 불량) 및 결핍 증상 발생 위치"
     },
     "practiceQuestions": [
       {
@@ -1604,7 +1640,11 @@
       "환경친화형농업_2019_6",
       "환경친화형농업_2019_7",
       "환경친화형농업_2019_8"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/ecoagri_cn_ratio_starvation.svg",
+      "caption": "토양 유기물 탄질비(C/N비)와 미생물 질소 기아(Nitrogen Starvation) 발생 임계선"
+    }
   },
   {
     "id": "ecoagri_c4",
@@ -1700,7 +1740,11 @@
       "환경친화형농업_2019_6",
       "환경친화형농업_2019_7",
       "환경친화형농업_2019_8"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/ecoagri_ipm_thresholds.svg",
+      "caption": "종합적 병해충 관리(IPM) 경제적 피해수준(EIL) vs 요방제수준(ET) 의사결정 모델"
+    }
   },
   {
     "id": "ecoagri_c6",
@@ -1812,7 +1856,7 @@
     ],
     "figure": {
       "url": "assets/img/biosci_chloroplast_mito.svg",
-      "caption": "세포내 공생 2대 에너지 소기관: 엽록체(명반응/암반응) vs 미토콘드리아(TCA회로/전자전달계)"
+      "caption": "세포내 공생설(Endosymbiosis) 증거: 엽록체 vs 미토콘드리아 이중막 구조"
     },
     "practiceQuestions": [],
     "relatedQuestionIds": [
@@ -1970,7 +2014,11 @@
       "생물과학_2019_41",
       "생물과학_2019_42",
       "생물과학_2019_43"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/biosci_respiration_pathways.svg",
+      "caption": "세포호흡 3단계(해당과정-TCA회로-산화적인산화) 반응 경로 및 ATP 총수지"
+    }
   },
   {
     "id": "biosci_c5",
@@ -2057,7 +2105,11 @@
       "생물과학_2019_41",
       "생물과학_2019_42",
       "생물과학_2019_43"
-    ]
+    ],
+    "figure": {
+      "url": "assets/img/biosci_central_dogma.svg",
+      "caption": "분자생물학 중심원리(Central Dogma): DNA 복제 → 전사(mRNA) → 번역(단백질)"
+    }
   },
   {
     "id": "biosci_c7",

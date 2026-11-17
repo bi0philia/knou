@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%" style="background:#0f172a; border-radius:12px; font-family:sans-serif;">
+  <text x="400" y="30" fill="#38bdf8" font-size="18" font-weight="bold" text-anchor="middle">☀️ 산화지(Oxidation Pond) 내 조류-호기성 세균 상호 공생 메커니즘</text>
+  
+  <rect x="50" y="50" width="700" height="250" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- 태양광 -->
+  <g transform="translate(100, 75)">
+    <circle cx="25" cy="25" r="16" fill="#f59e0b"/>
+    <path d="M25 0 L25 -6 M25 50 L25 56 M0 25 L-6 25 M50 25 L56 25" stroke="#f59e0b" stroke-width="2.5"/>
+    <text x="25" y="60" fill="#fbbf24" font-size="11" font-weight="bold" text-anchor="middle">태양광 (Solar)</text>
+  </g>
+
+  <!-- 미세조류 박스 (좌상단) -->
+  <g transform="translate(200, 75)">
+    <rect width="220" height="95" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+    <text x="110" y="28" fill="#34d399" font-size="14" font-weight="bold" text-anchor="middle">🌿 미세조류 (Algae)</text>
+    <text x="110" y="46" fill="#a7f3d0" font-size="11" text-anchor="middle">Chlorella, Scenedesmus</text>
+    <rect x="15" y="58" width="190" height="24" rx="4" fill="#047857"/>
+    <text x="110" y="74" fill="#ecfdf5" font-size="11" font-weight="bold" text-anchor="middle">광합성 수행: CO₂ + H₂O → O₂ 방출</text>
+  </g>
+
+  <!-- 호기성 세균 박스 (우하단) -->
+  <g transform="translate(480, 145)">
+    <rect width="230" height="95" rx="10" fill="#1e3a8a" stroke="#38bdf8" stroke-width="2"/>
+    <text x="115" y="28" fill="#38bdf8" font-size="14" font-weight="bold" text-anchor="middle">🦠 호기성 종속세균 (Bacteria)</text>
+    <text x="115" y="46" fill="#bae6fd" font-size="11" text-anchor="middle">Pseudomonas, Flavobacterium</text>
+    <rect x="15" y="58" width="200" height="24" rx="4" fill="#0369a1"/>
+    <text x="115" y="74" fill="#f0f9ff" font-size="11" font-weight="bold" text-anchor="middle">유기물 산화분해: BOD + O₂ → CO₂</text>
+  </g>
+
+  <!-- O2 공급 화살표 (조류 → 세균) -->
+  <g transform="translate(370, 95)">
+    <path d="M50 0 C120 0 140 30 140 45" fill="none" stroke="#34d399" stroke-width="4" stroke-dasharray="5"/>
+    <polygon points="140,50 135,40 145,40" fill="#34d399"/>
+    <rect x="75" y="5" width="95" height="22" rx="4" fill="#0f172a" stroke="#10b981"/>
+    <text x="122" y="20" fill="#34d399" font-size="11" font-weight="bold" text-anchor="middle">산소(O₂) 공급</text>
+  </g>
+
+  <!-- CO2 및 영양염 공급 화살표 (세균 → 조류) -->
+  <g transform="translate(270, 180)">
+    <path d="M210 20 C100 20 60 -10 60 -25" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="5"/>
+    <polygon points="60,-30 55,-20 65,-20" fill="#38bdf8"/>
+    <rect x="80" y="8" width="140" height="22" rx="4" fill="#0f172a" stroke="#38bdf8"/>
+    <text x="150" y="23" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">CO₂ + NH₄⁺, PO₄³⁻ 공급</text>
+  </g>
+
+  <!-- 하부 혐기성 층 -->
+  <g transform="translate(80, 255)">
+    <rect width="640" height="35" rx="6" fill="#451a03" stroke="#78350f" stroke-width="1.5"/>
+    <text x="320" y="22" fill="#fed7aa" font-size="11" font-weight="bold" text-anchor="middle">하부 침전 슬러지층: 혐기성 세균에 의한 혐기 소화 (CH₄, H₂S 발생 및 침전 슬러지 감량)</text>
+  </g>
+</svg>

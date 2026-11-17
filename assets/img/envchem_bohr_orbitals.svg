@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%" style="background:#0f172a; border-radius:12px; font-family:sans-serif;">
+  <text x="400" y="28" fill="#38bdf8" font-size="18" font-weight="bold" text-anchor="middle">⚛️ 전자껍질 수용수(2n² 법칙)와 주기율표 주기적 성질 경향</text>
+  
+  <rect x="40" y="45" width="720" height="255" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- 좌측: 보어 전자껍질 2n^2 동심원 모형 -->
+  <g transform="translate(190, 175)">
+    <circle cx="0" cy="0" r="18" fill="#f43f5e" stroke="#fb7185" stroke-width="2"/>
+    <text x="0" y="5" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">원자핵</text>
+
+    <!-- K 껍질 n=1 -->
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3"/>
+    <circle cx="0" cy="-40" r="3.5" fill="#38bdf8"/><circle cx="0" cy="40" r="3.5" fill="#38bdf8"/>
+    <text x="43" y="-5" fill="#38bdf8" font-size="10" font-weight="bold">K (n=1): 2개</text>
+
+    <!-- L 껍질 n=2 -->
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#34d399" stroke-width="1.5" stroke-dasharray="3"/>
+    <text x="73" y="-5" fill="#34d399" font-size="10" font-weight="bold">L (n=2): 8개</text>
+
+    <!-- M 껍질 n=3 -->
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3"/>
+    <text x="103" y="-5" fill="#fbbf24" font-size="10" font-weight="bold">M (n=3): 18개 (2×3²)</text>
+  </g>
+
+  <!-- 우측: 주기율표 주기성 경향성 요약 매트릭스 -->
+  <g transform="translate(420, 70)">
+    <rect width="320" height="205" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+    <text x="160" y="24" fill="#38bdf8" font-size="13" font-weight="bold" text-anchor="middle">주기율표의 주기성 경향 (빈출 대립어)</text>
+
+    <!-- 1. 원자 반지름 (좌하향 증가) -->
+    <g transform="translate(20, 40)">
+      <rect width="280" height="42" rx="6" fill="#1e293b" stroke="#10b981"/>
+      <text x="15" y="18" fill="#34d399" font-size="11" font-weight="bold">↙ 원자 반지름: 좌측 하단으로 갈수록 증가</text>
+      <text x="15" y="32" fill="#94a3b8" font-size="10">전자껍질 수 증가, 유효핵전하 감소</text>
+    </g>
+
+    <!-- 2. 이온화에너지/전기음성도 (우상향 증가) -->
+    <g transform="translate(20, 92)">
+      <rect width="280" height="52" rx="6" fill="#1e293b" stroke="#f43f5e"/>
+      <text x="15" y="18" fill="#fb7185" font-size="11" font-weight="bold">↗ 이온화에너지·전자친화도·전기음성도</text>
+      <text x="15" y="32" fill="#f8fafc" font-size="10">우측 상단으로 갈수록 증가 (비활성기체 제외)</text>
+      <text x="15" y="46" fill="#fca5a5" font-size="9">전기음성도 최대 원소: 플루오린(F, 4.0)</text>
+    </g>
+
+    <!-- 3. 주요 족 요약 -->
+    <g transform="translate(20, 154)">
+      <text x="0" y="14" fill="#facc15" font-size="10" font-weight="bold">• 1족 알칼리금속(+1가, 수소발생, 염기성)</text>
+      <text x="0" y="30" fill="#facc15" font-size="10" font-weight="bold">• 17족 할로젠(-1가, 최외각 7개, F2 > Cl2 > Br2 > I2)</text>
+      <text x="0" y="44" fill="#facc15" font-size="10" font-weight="bold">• 18족 비활성기체(최외각 8개 옥텟 완성, 안정)</text>
+    </g>
+  </g>
+</svg>

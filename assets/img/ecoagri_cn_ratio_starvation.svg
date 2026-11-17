@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%" style="background:#0f172a; border-radius:12px; font-family:sans-serif;">
+  <text x="400" y="28" fill="#38bdf8" font-size="18" font-weight="bold" text-anchor="middle">🌾 유기물 탄질비(C/N율)와 질소 기아(Nitrogen Starvation) 메커니즘</text>
+  
+  <rect x="50" y="45" width="700" height="255" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- 좌측: C/N > 30 (질소 기아 발생) -->
+  <g transform="translate(80, 65)">
+    <rect width="300" height="215" rx="10" fill="#451a03" stroke="#f43f5e" stroke-width="2"/>
+    <text x="150" y="28" fill="#fb7185" font-size="15" font-weight="bold" text-anchor="middle">C/N비 &gt; 30 (볏짚, 톱밥, 왕겨)</text>
+    <rect x="25" y="40" width="250" height="26" rx="4" fill="#881337"/>
+    <text x="150" y="58" fill="#ffe4e6" font-size="12" font-weight="bold" text-anchor="middle">★ '질소 기아' 발생 (작물 생육 마비)</text>
+    <g transform="translate(20, 85)">
+      <text x="0" y="14" fill="#f8fafc" font-size="11">1) 탄소원이 과다하여 미생물이 폭발적 증식</text>
+      <text x="0" y="36" fill="#f8fafc" font-size="11">2) 미생물이 단백질 합성을 위해 토양 속의</text>
+      <text x="0" y="54" fill="#fca5a5" font-size="11" font-weight="bold">   가용성 질소(NH₄⁺, NO₃⁻)를 모조리 독점 소비!</text>
+      <text x="0" y="78" fill="#f8fafc" font-size="11">3) 작물이 흡수할 질소가 고갈되어</text>
+      <text x="0" y="96" fill="#fb7185" font-size="11" font-weight="bold">   작물이 굶어 죽는 '질소 기아' 초래</text>
+    </g>
+  </g>
+
+  <!-- 우측: C/N < 20 (질소 무기화) -->
+  <g transform="translate(420, 65)">
+    <rect width="300" height="215" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+    <text x="150" y="28" fill="#34d399" font-size="15" font-weight="bold" text-anchor="middle">C/N비 &lt; 20 (유박, 두과 녹비, 완숙퇴비)</text>
+    <rect x="25" y="40" width="250" height="26" rx="4" fill="#047857"/>
+    <text x="150" y="58" fill="#ecfdf5" font-size="12" font-weight="bold" text-anchor="middle">★ '질소 무기화' 진행 (작물에 양분 공급)</text>
+    <g transform="translate(20, 85)">
+      <text x="0" y="14" fill="#f8fafc" font-size="11">1) 질소 함량이 충분하여 미생물 수요 충족</text>
+      <text x="0" y="36" fill="#f8fafc" font-size="11">2) 미생물이 유기물을 분해하고 남은 잉여 질소를</text>
+      <text x="0" y="54" fill="#6ee7b7" font-size="11" font-weight="bold">   무기태 질소(NH₄⁺) 형태로 토양에 방출!</text>
+      <text x="0" y="78" fill="#f8fafc" font-size="11">3) 작물이 뿌리로 질소를 흡수하여</text>
+      <text x="0" y="96" fill="#34d399" font-size="11" font-weight="bold">   천연 비료 공급 효과 극대화</text>
+    </g>
+  </g>
+</svg>
