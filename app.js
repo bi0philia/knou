@@ -1284,6 +1284,32 @@
     // 6.5 Markdown Images ![alt](url)
     text = text.replace(/!\[(.*?)\]\((.*?)\)/g, '<div class="my-3 text-center"><img src="$2" alt="$1" class="mx-auto rounded-xl border border-slate-700 max-h-72 w-auto object-contain bg-slate-900/60 p-2 shadow-sm" loading="lazy"><p class="text-[11px] text-slate-400 mt-1.5 font-medium">$1</p></div>');
 
+    // 6.8 Markdown Tables
+    text = text.replace(/\|\s*<br\s*\/?>\s*\|/gi, '|\n|');
+    text = text.replace(/(?:^|\n)(\|[^\n]+\|\r?\n\|[-:\s|]+\|\r?\n(?:\|[^\n]+\|\r?\n?)+)/g, (match, tableText) => {
+      const rows = tableText.trim().split('\n').map(r => r.trim()).filter(Boolean);
+      if (rows.length < 2) return match;
+      const headerCells = rows[0].split('|').slice(1, -1).map(c => c.trim());
+      const bodyRows = rows.slice(2);
+      
+      let html = '<div class="overflow-x-auto my-3 rounded-xl border border-slate-700/80 shadow-sm"><table class="w-full text-left text-xs border-collapse">';
+      html += '<thead class="bg-slate-900/90 text-emerald-400 font-bold border-b border-slate-700"><tr>';
+      headerCells.forEach(cell => {
+        html += `<th class="py-2.5 px-3 border-r border-slate-700/60 last:border-0 whitespace-nowrap">${cell}</th>`;
+      });
+      html += '</tr></thead><tbody class="divide-y divide-slate-700/50 bg-slate-800/60">';
+      bodyRows.forEach(row => {
+        const cells = row.split('|').slice(1, -1).map(c => c.trim());
+        html += '<tr class="hover:bg-slate-700/30 transition">';
+        cells.forEach(cell => {
+          html += `<td class="py-2 px-3 text-slate-200 border-r border-slate-700/40 last:border-0">${cell}</td>`;
+        });
+        html += '</tr>';
+      });
+      html += '</tbody></table></div>';
+      return '\n' + html + '\n';
+    });
+
     // 7. Line-by-line processing for lists (- item) and tags
     const lines = text.split('\n');
     const processedLines = [];
@@ -1313,6 +1339,7 @@
 
     // 9. Clean line breaks and paragraphs
     text = text
+      .replace(/(<\/?(table|thead|tbody|tr|th|td)[^>]*>)\s*\n+/gi, '$1')
       .replace(/(<\/div>)\n+/g, '$1')
       .replace(/\n+(<div)/g, '$1')
       .replace(/\n{2,}/g, '<div class="my-2"></div>')
