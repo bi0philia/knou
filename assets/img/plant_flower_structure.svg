@@ -40,7 +40,7 @@
     <ellipse cx="0" cy="-160" rx="14" ry="7" fill="#059669" stroke="#34d399" stroke-width="2"/>
   </g>
 
-  <!-- 좌측 설명 박스: 암술 & 꽃잎 -->
+  <!-- 좌측 설명 박스: 암술 &amp; 꽃잎 -->
   <g transform="translate(80, 85)">
     <!-- 암술 주석 -->
     <rect width="180" height="75" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
@@ -56,7 +56,7 @@
     <line x1="180" y1="130" x2="300" y2="150" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="3"/>
   </g>
 
-  <!-- 우측 설명 박스: 수술 & 꽃받침 -->
+  <!-- 우측 설명 박스: 수술 &amp; 꽃받침 -->
   <g transform="translate(540, 85)">
     <!-- 수술 주석 -->
     <rect width="180" height="75" rx="8" fill="#0f172a" stroke="#eab308" stroke-width="1.5"/>

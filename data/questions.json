@@ -44,8 +44,8 @@
     ],
     "lecture": 15,
     "lectureTitle": "15강: 생태계의 구성과 물질 순환 (먹이사슬, 에너지 피라미드, 탄소/질소 순환)",
-    "conceptId": "biosci_c3",
-    "conceptTitle": "동물 생리 통합·항상성 및 생태계 물질 순환"
+    "conceptId": "biosci_c7",
+    "conceptTitle": "식물 호르몬 5종의 기능과 굴성·휴면 조절"
   },
   {
     "id": "생물과학_2019_37",
@@ -92,8 +92,8 @@
     ],
     "lecture": 15,
     "lectureTitle": "15강: 생태계의 구성과 물질 순환 (먹이사슬, 에너지 피라미드, 탄소/질소 순환)",
-    "conceptId": "biosci_c3",
-    "conceptTitle": "동물 생리 통합·항상성 및 생태계 물질 순환"
+    "conceptId": "biosci_c7",
+    "conceptTitle": "식물 호르몬 5종의 기능과 굴성·휴면 조절"
   },
   {
     "id": "생물과학_2019_38",
@@ -135,8 +135,8 @@
     "conceptTags": [],
     "lecture": 15,
     "lectureTitle": "15강: 생태계의 구성과 물질 순환 (먹이사슬, 에너지 피라미드, 탄소/질소 순환)",
-    "conceptId": "biosci_c3",
-    "conceptTitle": "동물 생리 통합·항상성 및 생태계 물질 순환"
+    "conceptId": "biosci_c7",
+    "conceptTitle": "식물 호르몬 5종의 기능과 굴성·휴면 조절"
   },
   {
     "id": "생물과학_2019_39",
@@ -182,8 +182,8 @@
     ],
     "lecture": 15,
     "lectureTitle": "15강: 생태계의 구성과 물질 순환 (먹이사슬, 에너지 피라미드, 탄소/질소 순환)",
-    "conceptId": "biosci_c3",
-    "conceptTitle": "동물 생리 통합·항상성 및 생태계 물질 순환"
+    "conceptId": "biosci_c7",
+    "conceptTitle": "식물 호르몬 5종의 기능과 굴성·휴면 조절"
   },
   {
     "id": "생물과학_2019_40",
@@ -229,8 +229,8 @@
     ],
     "lecture": 15,
     "lectureTitle": "15강: 생태계의 구성과 물질 순환 (먹이사슬, 에너지 피라미드, 탄소/질소 순환)",
-    "conceptId": "biosci_c3",
-    "conceptTitle": "동물 생리 통합·항상성 및 생태계 물질 순환"
+    "conceptId": "biosci_c7",
+    "conceptTitle": "식물 호르몬 5종의 기능과 굴성·휴면 조절"
   },
   {
     "id": "생물과학_2019_41",
@@ -276,8 +276,8 @@
     ],
     "lecture": 15,
     "lectureTitle": "15강: 생태계의 구성과 물질 순환 (먹이사슬, 에너지 피라미드, 탄소/질소 순환)",
-    "conceptId": "biosci_c3",
-    "conceptTitle": "동물 생리 통합·항상성 및 생태계 물질 순환"
+    "conceptId": "biosci_c7",
+    "conceptTitle": "식물 호르몬 5종의 기능과 굴성·휴면 조절"
   },
   {
     "id": "생물과학_2019_42",
@@ -323,8 +323,8 @@
     ],
     "lecture": 15,
     "lectureTitle": "15강: 생태계의 구성과 물질 순환 (먹이사슬, 에너지 피라미드, 탄소/질소 순환)",
-    "conceptId": "biosci_c3",
-    "conceptTitle": "동물 생리 통합·항상성 및 생태계 물질 순환"
+    "conceptId": "biosci_c7",
+    "conceptTitle": "식물 호르몬 5종의 기능과 굴성·휴면 조절"
   },
   {
     "id": "생물과학_2019_43",
@@ -370,8 +370,8 @@
     ],
     "lecture": 15,
     "lectureTitle": "15강: 생태계의 구성과 물질 순환 (먹이사슬, 에너지 피라미드, 탄소/질소 순환)",
-    "conceptId": "biosci_c3",
-    "conceptTitle": "동물 생리 통합·항상성 및 생태계 물질 순환"
+    "conceptId": "biosci_c7",
+    "conceptTitle": "식물 호르몬 5종의 기능과 굴성·휴면 조절"
   },
   {
     "id": "생물과학_2019_44",
@@ -1686,8 +1686,8 @@
     "conceptTags": [],
     "lecture": 1,
     "lectureTitle": "01강: 생물통계학의 기본 개념과 척도 (명목·서열·구간·비율)",
-    "conceptId": "biostat_c1",
-    "conceptTitle": "측정 척도·도수분포표·대푯값 및 산포도"
+    "conceptId": "biostat_c7",
+    "conceptTitle": "시험 직전 5분 마스터 계산 공식 모음"
   },
   {
     "id": "생물통계학_2019_2",
@@ -1725,8 +1725,8 @@
     "conceptTags": [],
     "lecture": 1,
     "lectureTitle": "01강: 생물통계학의 기본 개념과 척도 (명목·서열·구간·비율)",
-    "conceptId": "biostat_c1",
-    "conceptTitle": "측정 척도·도수분포표·대푯값 및 산포도"
+    "conceptId": "biostat_c7",
+    "conceptTitle": "시험 직전 5분 마스터 계산 공식 모음"
   },
   {
     "id": "생물통계학_2019_3",
@@ -1768,8 +1768,8 @@
     "conceptTags": [],
     "lecture": 2,
     "lectureTitle": "02강: 자료의 정리와 도수분포 (히스토그램, 도수다각형)",
-    "conceptId": "biostat_c1",
-    "conceptTitle": "측정 척도·도수분포표·대푯값 및 산포도"
+    "conceptId": "biostat_c7",
+    "conceptTitle": "시험 직전 5분 마스터 계산 공식 모음"
   },
   {
     "id": "생물통계학_2019_4",
@@ -1807,8 +1807,8 @@
     "conceptTags": [],
     "lecture": 2,
     "lectureTitle": "02강: 자료의 정리와 도수분포 (히스토그램, 도수다각형)",
-    "conceptId": "biostat_c1",
-    "conceptTitle": "측정 척도·도수분포표·대푯값 및 산포도",
+    "conceptId": "biostat_c7",
+    "conceptTitle": "시험 직전 5분 마스터 계산 공식 모음",
     "svg": "<svg viewBox=\"0 0 380 200\" class=\"w-full max-w-md mx-auto bg-slate-950/80 rounded-xl p-3 border border-slate-700/80\">\n  <!-- Baseline -->\n  <line x1=\"30\" y1=\"160\" x2=\"350\" y2=\"160\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n  <!-- Bell Curve -->\n  <path d=\"M 40 160 Q 120 160 160 90 Q 190 35 220 90 Q 260 160 340 160\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n  <!-- Center Mean line -->\n  <line x1=\"190\" y1=\"35\" x2=\"190\" y2=\"160\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"4\"/>\n  <text x=\"190\" y=\"178\" fill=\"#e2e8f0\" font-size=\"11\" text-anchor=\"middle\">μ₀ (귀무가설 평균)</text>\n  <!-- Left rejection area -->\n  <path d=\"M 40 160 Q 90 160 105 140 L 105 160 Z\" fill=\"#ef4444\" opacity=\"0.7\"/>\n  <text x=\"75\" y=\"150\" fill=\"#fca5a5\" font-size=\"10\" font-weight=\"bold\">α/2</text>\n  <!-- Right rejection area -->\n  <path d=\"M 275 140 Q 290 160 340 160 L 275 160 Z\" fill=\"#ef4444\" opacity=\"0.7\"/>\n  <text x=\"305\" y=\"150\" fill=\"#fca5a5\" font-size=\"10\" font-weight=\"bold\">α/2</text>\n  <!-- Center acceptance area -->\n  <text x=\"190\" y=\"110\" fill=\"#34d399\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\">귀무가설 채택역 (1 - α)</text>\n  <text x=\"190\" y=\"25\" fill=\"#f87171\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">p-값 &lt; α 이면 귀무가설(H₀) 기각!</text>\n</svg>"
   },
   {
@@ -1851,8 +1851,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 집중경향치와 대푯값 (평균, 중앙값, 최빈값, 절단평균)",
-    "conceptId": "biostat_c1",
-    "conceptTitle": "측정 척도·도수분포표·대푯값 및 산포도"
+    "conceptId": "biostat_c7",
+    "conceptTitle": "시험 직전 5분 마스터 계산 공식 모음"
   },
   {
     "id": "생물통계학_2019_6",
@@ -1894,8 +1894,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 집중경향치와 대푯값 (평균, 중앙값, 최빈값, 절단평균)",
-    "conceptId": "biostat_c1",
-    "conceptTitle": "측정 척도·도수분포표·대푯값 및 산포도"
+    "conceptId": "biostat_c7",
+    "conceptTitle": "시험 직전 5분 마스터 계산 공식 모음"
   },
   {
     "id": "생물통계학_2019_7",
@@ -1937,8 +1937,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 집중경향치와 대푯값 (평균, 중앙값, 최빈값, 절단평균)",
-    "conceptId": "biostat_c1",
-    "conceptTitle": "측정 척도·도수분포표·대푯값 및 산포도"
+    "conceptId": "biostat_c7",
+    "conceptTitle": "시험 직전 5분 마스터 계산 공식 모음"
   },
   {
     "id": "생물통계학_2019_8",
@@ -1980,8 +1980,8 @@
     "conceptTags": [],
     "lecture": 4,
     "lectureTitle": "04강: 산포도와 분포의 형태 (분산, 표준편차, 변이계수 CV, 왜도·첨도)",
-    "conceptId": "biostat_c1",
-    "conceptTitle": "측정 척도·도수분포표·대푯값 및 산포도"
+    "conceptId": "biostat_c7",
+    "conceptTitle": "시험 직전 5분 마스터 계산 공식 모음"
   },
   {
     "id": "생물통계학_2019_9",
@@ -3178,7 +3178,7 @@
     "lecture": 1,
     "lectureTitle": "01강: 식물분류학 개요와 명명규약 (국제식물명명규약, 기준표본)",
     "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2019_2",
@@ -3221,7 +3221,7 @@
     "lecture": 1,
     "lectureTitle": "01강: 식물분류학 개요와 명명규약 (국제식물명명규약, 기준표본)",
     "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2019_3",
@@ -3264,7 +3264,7 @@
     "lecture": 2,
     "lectureTitle": "02강: 식물분류학의 발달사 (인위분류, 자연분류, 계통분류체계)",
     "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2019_4",
@@ -3306,8 +3306,8 @@
     "conceptTags": [],
     "lecture": 2,
     "lectureTitle": "02강: 식물분류학의 발달사 (인위분류, 자연분류, 계통분류체계)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c6",
+    "conceptTitle": "원시 피자식물(목련아강)·미나리아재비과·현호색과"
   },
   {
     "id": "식물분류학_2019_5",
@@ -3349,8 +3349,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 영양분류형질 (뿌리·줄기 변형, 잎의 형태, 단엽·복엽, 엽서)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c4",
+    "conceptTitle": "화서(꽃차례 8대 유형) & 과실의 체계적 분류"
   },
   {
     "id": "식물분류학_2019_6",
@@ -3392,8 +3392,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 영양분류형질 (뿌리·줄기 변형, 잎의 형태, 단엽·복엽, 엽서)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c5",
+    "conceptTitle": "세포·화학 형질(2차대사산물) 및 분자계통학"
   },
   {
     "id": "식물분류학_2019_7",
@@ -3435,8 +3435,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 영양분류형질 (뿌리·줄기 변형, 잎의 형태, 단엽·복엽, 엽서)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c6",
+    "conceptTitle": "원시 피자식물(목련아강)·미나리아재비과·현호색과"
   },
   {
     "id": "식물분류학_2019_8",
@@ -3478,8 +3478,8 @@
     "conceptTags": [],
     "lecture": 4,
     "lectureTitle": "04강: 생식분류형질 (꽃의 구조, 화서, 화식, 열매와 종자 유형)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c6",
+    "conceptTitle": "원시 피자식물(목련아강)·미나리아재비과·현호색과"
   },
   {
     "id": "식물분류학_2019_9",
@@ -3521,8 +3521,8 @@
     "conceptTags": [],
     "lecture": 4,
     "lectureTitle": "04강: 생식분류형질 (꽃의 구조, 화서, 화식, 열매와 종자 유형)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c6",
+    "conceptTitle": "원시 피자식물(목련아강)·미나리아재비과·현호색과"
   },
   {
     "id": "식물분류학_2019_10",
@@ -3564,8 +3564,8 @@
     "conceptTags": [],
     "lecture": 5,
     "lectureTitle": "05강: 관속식물의 다양성과 분류 증거 (해부학·화분학·세포학적 증거)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c7",
+    "conceptTitle": "석죽과·마디풀과 및 느릅나무과(비대칭 왜저) 식별"
   },
   {
     "id": "식물분류학_2019_11",
@@ -3607,8 +3607,8 @@
     "conceptTags": [],
     "lecture": 5,
     "lectureTitle": "05강: 관속식물의 다양성과 분류 증거 (해부학·화분학·세포학적 증거)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c7",
+    "conceptTitle": "석죽과·마디풀과 및 느릅나무과(비대칭 왜저) 식별"
   },
   {
     "id": "식물분류학_2019_12",
@@ -3650,8 +3650,8 @@
     "conceptTags": [],
     "lecture": 6,
     "lectureTitle": "06강: 목련아강의 분류 (목련과, 수련과, 미나리아재비과, 현호색과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c7",
+    "conceptTitle": "석죽과·마디풀과 및 느릅나무과(비대칭 왜저) 식별"
   },
   {
     "id": "식물분류학_2019_13",
@@ -3693,8 +3693,8 @@
     "conceptTags": [],
     "lecture": 6,
     "lectureTitle": "06강: 목련아강의 분류 (목련과, 수련과, 미나리아재비과, 현호색과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c8",
+    "conceptTitle": "참나무과(Quercus) 6대 수종 도토리 깍지 비교 및 자작나무과"
   },
   {
     "id": "식물분류학_2019_14",
@@ -3736,8 +3736,8 @@
     "conceptTags": [],
     "lecture": 6,
     "lectureTitle": "06강: 목련아강의 분류 (목련과, 수련과, 미나리아재비과, 현호색과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c9",
+    "conceptTitle": "제비꽃과(유경·무경)·진달래과(철쭉·산철쭉) 식별"
   },
   {
     "id": "식물분류학_2019_15",
@@ -3779,8 +3779,8 @@
     "conceptTags": [],
     "lecture": 7,
     "lectureTitle": "07강: 석죽아강의 분류 (석죽과, 비름과, 명아주과, 마디풀과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c9",
+    "conceptTitle": "제비꽃과(유경·무경)·진달래과(철쭉·산철쭉) 식별"
   },
   {
     "id": "식물분류학_2019_16",
@@ -3822,8 +3822,8 @@
     "conceptTags": [],
     "lecture": 7,
     "lectureTitle": "07강: 석죽아강의 분류 (석죽과, 비름과, 명아주과, 마디풀과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c9",
+    "conceptTitle": "제비꽃과(유경·무경)·진달래과(철쭉·산철쭉) 식별"
   },
   {
     "id": "식물분류학_2019_17",
@@ -3865,8 +3865,8 @@
     "conceptTags": [],
     "lecture": 8,
     "lectureTitle": "08강: 조록나무아강의 분류 (참나무과, 자작나무과, 느릅나무과, 뽕나무과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c10",
+    "conceptTitle": "콩과(접형화관·양체웅예)·장미과·산형과(복산형)·노박덩굴과"
   },
   {
     "id": "식물분류학_2019_18",
@@ -3908,8 +3908,8 @@
     "conceptTags": [],
     "lecture": 8,
     "lectureTitle": "08강: 조록나무아강의 분류 (참나무과, 자작나무과, 느릅나무과, 뽕나무과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c10",
+    "conceptTitle": "콩과(접형화관·양체웅예)·장미과·산형과(복산형)·노박덩굴과"
   },
   {
     "id": "식물분류학_2019_19",
@@ -3951,8 +3951,8 @@
     "conceptTags": [],
     "lecture": 8,
     "lectureTitle": "08강: 조록나무아강의 분류 (참나무과, 자작나무과, 느릅나무과, 뽕나무과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c10",
+    "conceptTitle": "콩과(접형화관·양체웅예)·장미과·산형과(복산형)·노박덩굴과"
   },
   {
     "id": "식물분류학_2019_20",
@@ -3994,8 +3994,8 @@
     "conceptTags": [],
     "lecture": 9,
     "lectureTitle": "09강: 오아과아강의 분류 (모란과, 차나무과, 아욱과, 십자화과, 진달래과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c10",
+    "conceptTitle": "콩과(접형화관·양체웅예)·장미과·산형과(복산형)·노박덩굴과"
   },
   {
     "id": "식물분류학_2019_21",
@@ -4037,8 +4037,8 @@
     "conceptTags": [],
     "lecture": 9,
     "lectureTitle": "09강: 오아과아강의 분류 (모란과, 차나무과, 아욱과, 십자화과, 진달래과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c11",
+    "conceptTitle": "국화과(서양민들레 반곡)·꿀풀과(이강웅예)·물푸레나무과(미선나무)·꼭두서니과"
   },
   {
     "id": "식물분류학_2019_22",
@@ -4080,8 +4080,8 @@
     "conceptTags": [],
     "lecture": 10,
     "lectureTitle": "10강: 장미아강 I의 분류 (장미과 4대 아과, 돌나물과, 범의귀과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c11",
+    "conceptTitle": "국화과(서양민들레 반곡)·꿀풀과(이강웅예)·물푸레나무과(미선나무)·꼭두서니과"
   },
   {
     "id": "식물분류학_2019_23",
@@ -4123,8 +4123,8 @@
     "conceptTags": [],
     "lecture": 10,
     "lectureTitle": "10강: 장미아강 I의 분류 (장미과 4대 아과, 돌나물과, 범의귀과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c3",
+    "conceptTitle": "꽃의 구조·화피·수술 5대 특수 유형 & 암술·거(距)"
   },
   {
     "id": "식물분류학_2019_24",
@@ -4166,8 +4166,8 @@
     "conceptTags": [],
     "lecture": 10,
     "lectureTitle": "10강: 장미아강 I의 분류 (장미과 4대 아과, 돌나물과, 범의귀과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c11",
+    "conceptTitle": "국화과(서양민들레 반곡)·꿀풀과(이강웅예)·물푸레나무과(미선나무)·꼭두서니과"
   },
   {
     "id": "식물분류학_2019_25",
@@ -4209,8 +4209,8 @@
     "conceptTags": [],
     "lecture": 11,
     "lectureTitle": "11강: 장미아강 II의 분류 (콩과, 운향과, 미나리과, 두릅나무과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c11",
+    "conceptTitle": "국화과(서양민들레 반곡)·꿀풀과(이강웅예)·물푸레나무과(미선나무)·꼭두서니과"
   },
   {
     "id": "식물분류학_2019_26",
@@ -4252,8 +4252,8 @@
     "conceptTags": [],
     "lecture": 11,
     "lectureTitle": "11강: 장미아강 II의 분류 (콩과, 운향과, 미나리과, 두릅나무과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c1",
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2019_27",
@@ -4295,8 +4295,8 @@
     "conceptTags": [],
     "lecture": 12,
     "lectureTitle": "12강: 국화아강 I의 분류 (가지과, 꿀풀과, 현삼과, 초롱꽃과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c12",
+    "conceptTitle": "단자엽식물(벼과 vs 사초과)·백합과·붓꽃과·난초과 식별"
   },
   {
     "id": "식물분류학_2019_28",
@@ -4338,8 +4338,8 @@
     "conceptTags": [],
     "lecture": 12,
     "lectureTitle": "12강: 국화아강 I의 분류 (가지과, 꿀풀과, 현삼과, 초롱꽃과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c12",
+    "conceptTitle": "단자엽식물(벼과 vs 사초과)·백합과·붓꽃과·난초과 식별"
   },
   {
     "id": "식물분류학_2019_29",
@@ -4381,8 +4381,8 @@
     "conceptTags": [],
     "lecture": 13,
     "lectureTitle": "13강: 국화아강 II의 분류 (국화과 - 두상화서, 통상화·설상화, 수과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c1",
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2019_30",
@@ -4424,8 +4424,8 @@
     "conceptTags": [],
     "lecture": 13,
     "lectureTitle": "13강: 국화아강 II의 분류 (국화과 - 두상화서, 통상화·설상화, 수과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c12",
+    "conceptTitle": "단자엽식물(벼과 vs 사초과)·백합과·붓꽃과·난초과 식별"
   },
   {
     "id": "식물분류학_2019_31",
@@ -4467,8 +4467,8 @@
     "conceptTags": [],
     "lecture": 13,
     "lectureTitle": "13강: 국화아강 II의 분류 (국화과 - 두상화서, 통상화·설상화, 수과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c12",
+    "conceptTitle": "단자엽식물(벼과 vs 사초과)·백합과·붓꽃과·난초과 식별"
   },
   {
     "id": "식물분류학_2019_32",
@@ -4510,8 +4510,8 @@
     "conceptTags": [],
     "lecture": 14,
     "lectureTitle": "14강: 단자엽식물 I의 분류 (택사아강, 종려아강, 닭의장풀아강, 벼과·사초과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c2",
+    "conceptTitle": "잎의 형태·엽서 및 영양기관 분류형질(부정근·지하경)"
   },
   {
     "id": "식물분류학_2019_33",
@@ -4553,8 +4553,8 @@
     "conceptTags": [],
     "lecture": 14,
     "lectureTitle": "14강: 단자엽식물 I의 분류 (택사아강, 종려아강, 닭의장풀아강, 벼과·사초과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c12",
+    "conceptTitle": "단자엽식물(벼과 vs 사초과)·백합과·붓꽃과·난초과 식별"
   },
   {
     "id": "식물분류학_2019_34",
@@ -4596,8 +4596,8 @@
     "conceptTags": [],
     "lecture": 15,
     "lectureTitle": "15강: 단자엽식물 II의 분류 (백합과, 수선화과, 붓꽃과, 난초과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c12",
+    "conceptTitle": "단자엽식물(벼과 vs 사초과)·백합과·붓꽃과·난초과 식별"
   },
   {
     "id": "식물분류학_2019_35",
@@ -4639,8 +4639,8 @@
     "conceptTags": [],
     "lecture": 15,
     "lectureTitle": "15강: 단자엽식물 II의 분류 (백합과, 수선화과, 붓꽃과, 난초과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c12",
+    "conceptTitle": "단자엽식물(벼과 vs 사초과)·백합과·붓꽃과·난초과 식별"
   },
   {
     "id": "환경미생물학_2019_1",
@@ -4682,8 +4682,8 @@
     "conceptTags": [],
     "lecture": 1,
     "lectureTitle": "01강: 환경미생물의 정의와 분류 (크기 기준, 세균·고균·진균·원생동물)",
-    "conceptId": "microbio_c1",
-    "conceptTitle": "환경미생물 기초·세포 구조와 성장동역학"
+    "conceptId": "microbio_c8",
+    "conceptTitle": "생물학적 수소 생산 양론비 & 미생물연료전지(MFC)"
   },
   {
     "id": "환경미생물학_2019_2",
@@ -4725,8 +4725,8 @@
     "conceptTags": [],
     "lecture": 1,
     "lectureTitle": "01강: 환경미생물의 정의와 분류 (크기 기준, 세균·고균·진균·원생동물)",
-    "conceptId": "microbio_c1",
-    "conceptTitle": "환경미생물 기초·세포 구조와 성장동역학"
+    "conceptId": "microbio_c8",
+    "conceptTitle": "생물학적 수소 생산 양론비 & 미생물연료전지(MFC)"
   },
   {
     "id": "환경미생물학_2019_3",
@@ -4768,8 +4768,8 @@
     "conceptTags": [],
     "lecture": 2,
     "lectureTitle": "02강: 미생물 세포 구조와 물질대사 (세포벽 펩티도글리칸, 그람염색)",
-    "conceptId": "microbio_c1",
-    "conceptTitle": "환경미생물 기초·세포 구조와 성장동역학"
+    "conceptId": "microbio_c8",
+    "conceptTitle": "생물학적 수소 생산 양론비 & 미생물연료전지(MFC)"
   },
   {
     "id": "환경미생물학_2019_4",
@@ -4811,8 +4811,8 @@
     "conceptTags": [],
     "lecture": 2,
     "lectureTitle": "02강: 미생물 세포 구조와 물질대사 (세포벽 펩티도글리칸, 그람염색)",
-    "conceptId": "microbio_c1",
-    "conceptTitle": "환경미생물 기초·세포 구조와 성장동역학",
+    "conceptId": "microbio_c8",
+    "conceptTitle": "생물학적 수소 생산 양론비 & 미생물연료전지(MFC)",
     "svg": "<svg viewBox=\"0 0 380 200\" class=\"w-full max-w-md mx-auto bg-slate-950/80 rounded-xl p-3 border border-slate-700/80\">\n  <defs><marker id=\"arr3\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#94a3b8\"/></marker></defs>\n  <line x1=\"45\" y1=\"165\" x2=\"355\" y2=\"165\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arr3)\"/>\n  <line x1=\"45\" y1=\"165\" x2=\"45\" y2=\"20\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arr3)\"/>\n  <text x=\"355\" y=\"180\" fill=\"#94a3b8\" font-size=\"11\" text-anchor=\"end\">배양 시간 (Time)</text>\n  <text x=\"20\" y=\"20\" fill=\"#94a3b8\" font-size=\"11\" transform=\"rotate(-90 20,20)\" text-anchor=\"end\">생균수 log N</text>\n  <!-- 4 Phases Curve -->\n  <path d=\"M 45 145 L 100 145 Q 120 145 160 80 L 220 50 Q 240 50 280 50 Q 300 50 340 140\" fill=\"none\" stroke=\"#a855f7\" stroke-width=\"3\"/>\n  <!-- Phase division dashed lines -->\n  <line x1=\"100\" y1=\"25\" x2=\"100\" y2=\"165\" stroke=\"#475569\" stroke-dasharray=\"3\"/>\n  <line x1=\"220\" y1=\"25\" x2=\"220\" y2=\"165\" stroke=\"#475569\" stroke-dasharray=\"3\"/>\n  <line x1=\"280\" y1=\"25\" x2=\"280\" y2=\"165\" stroke=\"#475569\" stroke-dasharray=\"3\"/>\n  <!-- Labels -->\n  <text x=\"72\" y=\"130\" fill=\"#c084fc\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">1. 유도기</text>\n  <text x=\"72\" y=\"142\" fill=\"#94a3b8\" font-size=\"9\" text-anchor=\"middle\">(Lag)</text>\n  <text x=\"160\" y=\"45\" fill=\"#38bdf8\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">2. 대수증식기</text>\n  <text x=\"160\" y=\"58\" fill=\"#94a3b8\" font-size=\"9\" text-anchor=\"middle\">(Exponential)</text>\n  <text x=\"250\" y=\"40\" fill=\"#fbbf24\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">3. 정체기</text>\n  <text x=\"250\" y=\"52\" fill=\"#94a3b8\" font-size=\"9\" text-anchor=\"middle\">(Stationary)</text>\n  <text x=\"310\" y=\"85\" fill=\"#f87171\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">4. 사멸기</text>\n  <text x=\"310\" y=\"97\" fill=\"#94a3b8\" font-size=\"9\" text-anchor=\"middle\">(Death)</text>\n</svg>"
   },
   {
@@ -4855,8 +4855,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 지구생태계와 미생물 (탄소·질소·황 순환 미생물, 극한미생물)",
-    "conceptId": "microbio_c1",
-    "conceptTitle": "환경미생물 기초·세포 구조와 성장동역학"
+    "conceptId": "microbio_c8",
+    "conceptTitle": "생물학적 수소 생산 양론비 & 미생물연료전지(MFC)"
   },
   {
     "id": "환경미생물학_2019_6",
@@ -4898,8 +4898,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 지구생태계와 미생물 (탄소·질소·황 순환 미생물, 극한미생물)",
-    "conceptId": "microbio_c1",
-    "conceptTitle": "환경미생물 기초·세포 구조와 성장동역학"
+    "conceptId": "microbio_c8",
+    "conceptTitle": "생물학적 수소 생산 양론비 & 미생물연료전지(MFC)"
   },
   {
     "id": "환경미생물학_2019_7",
@@ -4941,8 +4941,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 지구생태계와 미생물 (탄소·질소·황 순환 미생물, 극한미생물)",
-    "conceptId": "microbio_c1",
-    "conceptTitle": "환경미생물 기초·세포 구조와 성장동역학"
+    "conceptId": "microbio_c8",
+    "conceptTitle": "생물학적 수소 생산 양론비 & 미생물연료전지(MFC)"
   },
   {
     "id": "환경미생물학_2019_8",
@@ -4984,8 +4984,8 @@
     "conceptTags": [],
     "lecture": 4,
     "lectureTitle": "04강: 미생물 성장곡선과 반응동역학 (유도기·대수기·정체기·사멸기, 모노드 식)",
-    "conceptId": "microbio_c1",
-    "conceptTitle": "환경미생물 기초·세포 구조와 성장동역학"
+    "conceptId": "microbio_c8",
+    "conceptTitle": "생물학적 수소 생산 양론비 & 미생물연료전지(MFC)"
   },
   {
     "id": "환경미생물학_2019_9",
@@ -6188,8 +6188,8 @@
     "conceptTags": [],
     "lecture": 1,
     "lectureTitle": "01강: 친환경농업의 개념과 필요성 (환경보전, 농업생태계 균형)",
-    "conceptId": "ecoagri_c1",
-    "conceptTitle": "농업생태계·토양관리·작물양분관리(INM) 및 병해충관리(IPM)"
+    "conceptId": "ecoagri_c7",
+    "conceptTitle": "친환경농어업법 인증 기준 및 유기축산 원칙"
   },
   {
     "id": "환경친화형농업_2019_2",
@@ -6231,8 +6231,8 @@
     "conceptTags": [],
     "lecture": 1,
     "lectureTitle": "01강: 친환경농업의 개념과 필요성 (환경보전, 농업생태계 균형)",
-    "conceptId": "ecoagri_c1",
-    "conceptTitle": "농업생태계·토양관리·작물양분관리(INM) 및 병해충관리(IPM)"
+    "conceptId": "ecoagri_c7",
+    "conceptTitle": "친환경농어업법 인증 기준 및 유기축산 원칙"
   },
   {
     "id": "환경친화형농업_2019_3",
@@ -6274,8 +6274,8 @@
     "conceptTags": [],
     "lecture": 2,
     "lectureTitle": "02강: 토양의 구성과 건전성 (토양 삼상, 유기물 시용, 떼알구조)",
-    "conceptId": "ecoagri_c1",
-    "conceptTitle": "농업생태계·토양관리·작물양분관리(INM) 및 병해충관리(IPM)"
+    "conceptId": "ecoagri_c7",
+    "conceptTitle": "친환경농어업법 인증 기준 및 유기축산 원칙"
   },
   {
     "id": "환경친화형농업_2019_4",
@@ -6317,8 +6317,8 @@
     "conceptTags": [],
     "lecture": 2,
     "lectureTitle": "02강: 토양의 구성과 건전성 (토양 삼상, 유기물 시용, 떼알구조)",
-    "conceptId": "ecoagri_c1",
-    "conceptTitle": "농업생태계·토양관리·작물양분관리(INM) 및 병해충관리(IPM)"
+    "conceptId": "ecoagri_c7",
+    "conceptTitle": "친환경농어업법 인증 기준 및 유기축산 원칙"
   },
   {
     "id": "환경친화형농업_2019_5",
@@ -6360,8 +6360,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 시설원예 및 과수원 토양 관리 (염류집적 방지, 담수 제염, 녹비)",
-    "conceptId": "ecoagri_c1",
-    "conceptTitle": "농업생태계·토양관리·작물양분관리(INM) 및 병해충관리(IPM)",
+    "conceptId": "ecoagri_c7",
+    "conceptTitle": "친환경농어업법 인증 기준 및 유기축산 원칙",
     "svg": "<svg viewBox=\"0 0 380 200\" class=\"w-full max-w-md mx-auto bg-slate-950/80 rounded-xl p-3 border border-slate-700/80\">\n  <defs><marker id=\"arr4\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#94a3b8\"/></marker></defs>\n  <line x1=\"45\" y1=\"165\" x2=\"355\" y2=\"165\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arr4)\"/>\n  <line x1=\"45\" y1=\"165\" x2=\"45\" y2=\"20\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arr4)\"/>\n  <text x=\"355\" y=\"180\" fill=\"#94a3b8\" font-size=\"11\" text-anchor=\"end\">시간 (Time)</text>\n  <text x=\"20\" y=\"20\" fill=\"#94a3b8\" font-size=\"11\" transform=\"rotate(-90 20,20)\" text-anchor=\"end\">해충 밀도</text>\n  <!-- EIL Line -->\n  <line x1=\"45\" y1=\"65\" x2=\"340\" y2=\"65\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-dasharray=\"5\"/>\n  <text x=\"345\" y=\"68\" fill=\"#f87171\" font-size=\"11\" font-weight=\"bold\">EIL (경제적 피해허용수준)</text>\n  <!-- ET Line -->\n  <line x1=\"45\" y1=\"105\" x2=\"340\" y2=\"105\" stroke=\"#fbbf24\" stroke-width=\"2\" stroke-dasharray=\"5\"/>\n  <text x=\"345\" y=\"108\" fill=\"#fde047\" font-size=\"11\" font-weight=\"bold\">ET (경제적 피해수준 = 방제개시점)</text>\n  <!-- Pest Population Wave -->\n  <path d=\"M 45 145 Q 85 125 120 145 Q 160 160 195 108 Q 215 80 230 112 Q 260 155 300 135\" fill=\"none\" stroke=\"#22c55e\" stroke-width=\"2.5\"/>\n  <!-- Action Point at ET -->\n  <circle cx=\"195\" cy=\"108\" r=\"5\" fill=\"#f59e0b\" stroke=\"#ffffff\" stroke-width=\"1.5\"/>\n  <text x=\"180\" y=\"95\" fill=\"#fbbf24\" font-size=\"11\" font-weight=\"bold\">방제 조치 실시 (ET 도달 시점)</text>\n  <!-- Rule -->\n  <text x=\"190\" y=\"35\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">항상 경제적 피해수준(ET) &lt; 경제적 피해허용수준(EIL)</text>\n</svg>"
   },
   {
@@ -6404,8 +6404,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 시설원예 및 과수원 토양 관리 (염류집적 방지, 담수 제염, 녹비)",
-    "conceptId": "ecoagri_c1",
-    "conceptTitle": "농업생태계·토양관리·작물양분관리(INM) 및 병해충관리(IPM)"
+    "conceptId": "ecoagri_c7",
+    "conceptTitle": "친환경농어업법 인증 기준 및 유기축산 원칙"
   },
   {
     "id": "환경친화형농업_2019_7",
@@ -6447,8 +6447,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 시설원예 및 과수원 토양 관리 (염류집적 방지, 담수 제염, 녹비)",
-    "conceptId": "ecoagri_c1",
-    "conceptTitle": "농업생태계·토양관리·작물양분관리(INM) 및 병해충관리(IPM)"
+    "conceptId": "ecoagri_c7",
+    "conceptTitle": "친환경농어업법 인증 기준 및 유기축산 원칙"
   },
   {
     "id": "환경친화형농업_2019_8",
@@ -6490,8 +6490,8 @@
     "conceptTags": [],
     "lecture": 4,
     "lectureTitle": "04강: 작물양분종합관리(INM) (토양검정, 유기질비료, 결핍 증상 진단)",
-    "conceptId": "ecoagri_c1",
-    "conceptTitle": "농업생태계·토양관리·작물양분관리(INM) 및 병해충관리(IPM)"
+    "conceptId": "ecoagri_c7",
+    "conceptTitle": "친환경농어업법 인증 기준 및 유기축산 원칙"
   },
   {
     "id": "환경친화형농업_2019_9",
@@ -7700,8 +7700,8 @@
     "svg": "<svg viewBox=\"0 0 380 220\" class=\"w-full max-w-md mx-auto bg-slate-950/80 rounded-xl p-3 border border-slate-700/80\">\n  <defs>\n    <marker id=\"arr\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#94a3b8\"/></marker>\n    <marker id=\"arr-red\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#ef4444\"/></marker>\n    <marker id=\"arr-teal\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#10b981\"/></marker>\n  </defs>\n  <!-- Axes -->\n  <line x1=\"45\" y1=\"185\" x2=\"350\" y2=\"185\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n  <line x1=\"45\" y1=\"185\" x2=\"45\" y2=\"25\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n  <text x=\"350\" y=\"200\" fill=\"#94a3b8\" font-size=\"11\" text-anchor=\"end\">반응의 진행 (Reaction Coordinate)</text>\n  <text x=\"20\" y=\"25\" fill=\"#94a3b8\" font-size=\"11\" transform=\"rotate(-90 20,25)\" text-anchor=\"end\">에너지 (E)</text>\n  <!-- Energy Curve -->\n  <path d=\"M 50 110 L 100 110 Q 155 15 210 110 Q 230 150 260 150 L 330 150\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n  <!-- Reactants Level -->\n  <line x1=\"50\" y1=\"110\" x2=\"140\" y2=\"110\" stroke=\"#fbbf24\" stroke-width=\"1.5\" stroke-dasharray=\"3\"/>\n  <text x=\"75\" y=\"102\" fill=\"#fbbf24\" font-size=\"12\" font-weight=\"bold\">반응물 (R)</text>\n  <!-- Products Level -->\n  <line x1=\"240\" y1=\"150\" x2=\"330\" y2=\"150\" stroke=\"#34d399\" stroke-width=\"1.5\" stroke-dasharray=\"3\"/>\n  <text x=\"270\" y=\"142\" fill=\"#34d399\" font-size=\"12\" font-weight=\"bold\">생성물 (P)</text>\n  <!-- Transition State -->\n  <circle cx=\"182\" cy=\"48\" r=\"4\" fill=\"#ef4444\"/>\n  <text x=\"182\" y=\"38\" fill=\"#f87171\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">전이상태 (TS*)</text>\n  <!-- Activation Energy Ea -->\n  <line x1=\"105\" y1=\"110\" x2=\"105\" y2=\"48\" stroke=\"#ef4444\" stroke-width=\"1.5\" marker-end=\"url(#arr-red)\"/>\n  <text x=\"115\" y=\"80\" fill=\"#ef4444\" font-size=\"11\" font-weight=\"bold\">Ea (활성화에너지)</text>\n  <!-- Enthalpy Change Delta H -->\n  <line x1=\"290\" y1=\"110\" x2=\"290\" y2=\"150\" stroke=\"#10b981\" stroke-width=\"2\" marker-end=\"url(#arr-teal)\"/>\n  <line x1=\"140\" y1=\"110\" x2=\"310\" y2=\"110\" stroke=\"#64748b\" stroke-width=\"1\" stroke-dasharray=\"3\"/>\n  <text x=\"300\" y=\"132\" fill=\"#10b981\" font-size=\"12\" font-weight=\"bold\">ΔH &lt; 0 (발열)</text>\n</svg>",
     "lecture": 7,
     "lectureTitle": "07강: 화학 반응과 열에너지 (발열·흡열 반응, 엔탈피 ΔH)",
-    "conceptId": "envchem_c2",
-    "conceptTitle": "용액 평형·열화학·반응속도론 및 산-염기 평형"
+    "conceptId": "envchem_c7",
+    "conceptTitle": "대기·수질 환경화학 및 유기작용기"
   },
   {
     "id": "환경화학_2019_37",
@@ -7743,8 +7743,8 @@
     "conceptTags": [],
     "lecture": 7,
     "lectureTitle": "07강: 화학 반응과 열에너지 (발열·흡열 반응, 엔탈피 ΔH)",
-    "conceptId": "envchem_c2",
-    "conceptTitle": "용액 평형·열화학·반응속도론 및 산-염기 평형"
+    "conceptId": "envchem_c7",
+    "conceptTitle": "대기·수질 환경화학 및 유기작용기"
   },
   {
     "id": "환경화학_2019_38",
@@ -7786,8 +7786,8 @@
     "conceptTags": [],
     "lecture": 7,
     "lectureTitle": "07강: 화학 반응과 열에너지 (발열·흡열 반응, 엔탈피 ΔH)",
-    "conceptId": "envchem_c2",
-    "conceptTitle": "용액 평형·열화학·반응속도론 및 산-염기 평형"
+    "conceptId": "envchem_c7",
+    "conceptTitle": "대기·수질 환경화학 및 유기작용기"
   },
   {
     "id": "환경화학_2019_39",
@@ -7825,8 +7825,8 @@
     "conceptTags": [],
     "lecture": 8,
     "lectureTitle": "08강: 화학 평형과 르 샤틀리에 원리 (평형 상수 K, 평형 이동)",
-    "conceptId": "envchem_c2",
-    "conceptTitle": "용액 평형·열화학·반응속도론 및 산-염기 평형",
+    "conceptId": "envchem_c7",
+    "conceptTitle": "대기·수질 환경화학 및 유기작용기",
     "svg": "<svg viewBox=\"0 0 380 180\" class=\"w-full max-w-md mx-auto bg-slate-950/80 rounded-xl p-3 border border-slate-700/80\">\n  <!-- Title Box -->\n  <rect x=\"20\" y=\"15\" width=\"340\" height=\"36\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\" rx=\"8\"/>\n  <text x=\"190\" y=\"38\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\">가역 반응의 화학 평형과 평형상수 (K)</text>\n  <!-- Reaction Equation -->\n  <text x=\"190\" y=\"85\" fill=\"#f1f5f9\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">a A + b B  ⇄  c C + d D</text>\n  <!-- Equilibrium Expression -->\n  <rect x=\"70\" y=\"105\" width=\"240\" height=\"60\" fill=\"#0f172a\" stroke=\"#10b981\" stroke-width=\"2\" rx=\"8\"/>\n  <text x=\"100\" y=\"142\" fill=\"#fbbf24\" font-size=\"16\" font-weight=\"bold\">K  = </text>\n  <text x=\"210\" y=\"128\" fill=\"#34d399\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">[C]ᶜ [D]ᵈ</text>\n  <line x1=\"145\" y1=\"135\" x2=\"275\" y2=\"135\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n  <text x=\"210\" y=\"155\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">[A]ᵃ [B]ᵇ</text>\n</svg>"
   },
   {
@@ -7869,8 +7869,8 @@
     "conceptTags": [],
     "lecture": 8,
     "lectureTitle": "08강: 화학 평형과 르 샤틀리에 원리 (평형 상수 K, 평형 이동)",
-    "conceptId": "envchem_c2",
-    "conceptTitle": "용액 평형·열화학·반응속도론 및 산-염기 평형"
+    "conceptId": "envchem_c7",
+    "conceptTitle": "대기·수질 환경화학 및 유기작용기"
   },
   {
     "id": "환경화학_2019_41",
@@ -7912,8 +7912,8 @@
     "conceptTags": [],
     "lecture": 8,
     "lectureTitle": "08강: 화학 평형과 르 샤틀리에 원리 (평형 상수 K, 평형 이동)",
-    "conceptId": "envchem_c2",
-    "conceptTitle": "용액 평형·열화학·반응속도론 및 산-염기 평형"
+    "conceptId": "envchem_c7",
+    "conceptTitle": "대기·수질 환경화학 및 유기작용기"
   },
   {
     "id": "환경화학_2019_42",
@@ -7955,8 +7955,8 @@
     "conceptTags": [],
     "lecture": 9,
     "lectureTitle": "09강: 화학 반응 속도와 촉매 (반응 차수, 반감기, 아레니우스 식)",
-    "conceptId": "envchem_c2",
-    "conceptTitle": "용액 평형·열화학·반응속도론 및 산-염기 평형"
+    "conceptId": "envchem_c7",
+    "conceptTitle": "대기·수질 환경화학 및 유기작용기"
   },
   {
     "id": "환경화학_2019_43",
@@ -7998,8 +7998,8 @@
     "conceptTags": [],
     "lecture": 9,
     "lectureTitle": "09강: 화학 반응 속도와 촉매 (반응 차수, 반감기, 아레니우스 식)",
-    "conceptId": "envchem_c2",
-    "conceptTitle": "용액 평형·열화학·반응속도론 및 산-염기 평형"
+    "conceptId": "envchem_c7",
+    "conceptTitle": "대기·수질 환경화학 및 유기작용기"
   },
   {
     "id": "환경화학_2019_44",
@@ -11766,7 +11766,7 @@
     "lecture": 1,
     "lectureTitle": "01강: 식물분류학 개요와 명명규약 (국제식물명명규약, 기준표본)",
     "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2018_2",
@@ -11809,7 +11809,7 @@
     "lecture": 1,
     "lectureTitle": "01강: 식물분류학 개요와 명명규약 (국제식물명명규약, 기준표본)",
     "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2018_3",
@@ -11852,7 +11852,7 @@
     "lecture": 2,
     "lectureTitle": "02강: 식물분류학의 발달사 (인위분류, 자연분류, 계통분류체계)",
     "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2018_4",
@@ -11894,8 +11894,8 @@
     "conceptTags": [],
     "lecture": 2,
     "lectureTitle": "02강: 식물분류학의 발달사 (인위분류, 자연분류, 계통분류체계)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c6",
+    "conceptTitle": "원시 피자식물(목련아강)·미나리아재비과·현호색과"
   },
   {
     "id": "식물분류학_2018_5",
@@ -11937,8 +11937,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 영양분류형질 (뿌리·줄기 변형, 잎의 형태, 단엽·복엽, 엽서)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c4",
+    "conceptTitle": "화서(꽃차례 8대 유형) & 과실의 체계적 분류"
   },
   {
     "id": "식물분류학_2018_6",
@@ -11980,8 +11980,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 영양분류형질 (뿌리·줄기 변형, 잎의 형태, 단엽·복엽, 엽서)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c5",
+    "conceptTitle": "세포·화학 형질(2차대사산물) 및 분자계통학"
   },
   {
     "id": "식물분류학_2018_7",
@@ -12023,8 +12023,8 @@
     "conceptTags": [],
     "lecture": 3,
     "lectureTitle": "03강: 영양분류형질 (뿌리·줄기 변형, 잎의 형태, 단엽·복엽, 엽서)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c6",
+    "conceptTitle": "원시 피자식물(목련아강)·미나리아재비과·현호색과"
   },
   {
     "id": "식물분류학_2018_8",
@@ -12066,8 +12066,8 @@
     "conceptTags": [],
     "lecture": 4,
     "lectureTitle": "04강: 생식분류형질 (꽃의 구조, 화서, 화식, 열매와 종자 유형)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c6",
+    "conceptTitle": "원시 피자식물(목련아강)·미나리아재비과·현호색과"
   },
   {
     "id": "식물분류학_2018_9",
@@ -12109,8 +12109,8 @@
     "conceptTags": [],
     "lecture": 4,
     "lectureTitle": "04강: 생식분류형질 (꽃의 구조, 화서, 화식, 열매와 종자 유형)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c6",
+    "conceptTitle": "원시 피자식물(목련아강)·미나리아재비과·현호색과"
   },
   {
     "id": "식물분류학_2018_10",
@@ -12152,8 +12152,8 @@
     "conceptTags": [],
     "lecture": 5,
     "lectureTitle": "05강: 관속식물의 다양성과 분류 증거 (해부학·화분학·세포학적 증거)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c7",
+    "conceptTitle": "석죽과·마디풀과 및 느릅나무과(비대칭 왜저) 식별"
   },
   {
     "id": "식물분류학_2018_11",
@@ -12195,8 +12195,8 @@
     "conceptTags": [],
     "lecture": 5,
     "lectureTitle": "05강: 관속식물의 다양성과 분류 증거 (해부학·화분학·세포학적 증거)",
-    "conceptId": "plants_c1",
-    "conceptTitle": "식물분류학 원리와 영양·생식분류형질"
+    "conceptId": "plants_c7",
+    "conceptTitle": "석죽과·마디풀과 및 느릅나무과(비대칭 왜저) 식별"
   },
   {
     "id": "식물분류학_2018_12",
@@ -12238,8 +12238,8 @@
     "conceptTags": [],
     "lecture": 6,
     "lectureTitle": "06강: 목련아강의 분류 (목련과, 수련과, 미나리아재비과, 현호색과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c7",
+    "conceptTitle": "석죽과·마디풀과 및 느릅나무과(비대칭 왜저) 식별"
   },
   {
     "id": "식물분류학_2018_13",
@@ -12281,8 +12281,8 @@
     "conceptTags": [],
     "lecture": 6,
     "lectureTitle": "06강: 목련아강의 분류 (목련과, 수련과, 미나리아재비과, 현호색과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c8",
+    "conceptTitle": "참나무과(Quercus) 6대 수종 도토리 깍지 비교 및 자작나무과"
   },
   {
     "id": "식물분류학_2018_14",
@@ -12324,8 +12324,8 @@
     "conceptTags": [],
     "lecture": 6,
     "lectureTitle": "06강: 목련아강의 분류 (목련과, 수련과, 미나리아재비과, 현호색과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c9",
+    "conceptTitle": "제비꽃과(유경·무경)·진달래과(철쭉·산철쭉) 식별"
   },
   {
     "id": "식물분류학_2018_15",
@@ -12367,8 +12367,8 @@
     "conceptTags": [],
     "lecture": 7,
     "lectureTitle": "07강: 석죽아강의 분류 (석죽과, 비름과, 명아주과, 마디풀과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c9",
+    "conceptTitle": "제비꽃과(유경·무경)·진달래과(철쭉·산철쭉) 식별"
   },
   {
     "id": "식물분류학_2018_16",
@@ -12410,8 +12410,8 @@
     "conceptTags": [],
     "lecture": 7,
     "lectureTitle": "07강: 석죽아강의 분류 (석죽과, 비름과, 명아주과, 마디풀과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c10",
+    "conceptTitle": "콩과(접형화관·양체웅예)·장미과·산형과(복산형)·노박덩굴과"
   },
   {
     "id": "식물분류학_2018_17",
@@ -12453,8 +12453,8 @@
     "conceptTags": [],
     "lecture": 8,
     "lectureTitle": "08강: 조록나무아강의 분류 (참나무과, 자작나무과, 느릅나무과, 뽕나무과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c10",
+    "conceptTitle": "콩과(접형화관·양체웅예)·장미과·산형과(복산형)·노박덩굴과"
   },
   {
     "id": "식물분류학_2018_18",
@@ -12496,8 +12496,8 @@
     "conceptTags": [],
     "lecture": 8,
     "lectureTitle": "08강: 조록나무아강의 분류 (참나무과, 자작나무과, 느릅나무과, 뽕나무과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c10",
+    "conceptTitle": "콩과(접형화관·양체웅예)·장미과·산형과(복산형)·노박덩굴과"
   },
   {
     "id": "식물분류학_2018_19",
@@ -12539,8 +12539,8 @@
     "conceptTags": [],
     "lecture": 8,
     "lectureTitle": "08강: 조록나무아강의 분류 (참나무과, 자작나무과, 느릅나무과, 뽕나무과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c5",
+    "conceptTitle": "세포·화학 형질(2차대사산물) 및 분자계통학"
   },
   {
     "id": "식물분류학_2018_20",
@@ -12582,8 +12582,8 @@
     "conceptTags": [],
     "lecture": 9,
     "lectureTitle": "09강: 오아과아강의 분류 (모란과, 차나무과, 아욱과, 십자화과, 진달래과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c5",
+    "conceptTitle": "세포·화학 형질(2차대사산물) 및 분자계통학"
   },
   {
     "id": "식물분류학_2018_21",
@@ -12625,8 +12625,8 @@
     "conceptTags": [],
     "lecture": 9,
     "lectureTitle": "09강: 오아과아강의 분류 (모란과, 차나무과, 아욱과, 십자화과, 진달래과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c6",
+    "conceptTitle": "원시 피자식물(목련아강)·미나리아재비과·현호색과"
   },
   {
     "id": "식물분류학_2018_22",
@@ -12668,8 +12668,8 @@
     "conceptTags": [],
     "lecture": 10,
     "lectureTitle": "10강: 장미아강 I의 분류 (장미과 4대 아과, 돌나물과, 범의귀과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c3",
+    "conceptTitle": "꽃의 구조·화피·수술 5대 특수 유형 & 암술·거(距)"
   },
   {
     "id": "식물분류학_2018_23",
@@ -12711,8 +12711,8 @@
     "conceptTags": [],
     "lecture": 10,
     "lectureTitle": "10강: 장미아강 I의 분류 (장미과 4대 아과, 돌나물과, 범의귀과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c3",
+    "conceptTitle": "꽃의 구조·화피·수술 5대 특수 유형 & 암술·거(距)"
   },
   {
     "id": "식물분류학_2018_24",
@@ -12754,8 +12754,8 @@
     "conceptTags": [],
     "lecture": 10,
     "lectureTitle": "10강: 장미아강 I의 분류 (장미과 4대 아과, 돌나물과, 범의귀과)",
-    "conceptId": "plants_c2",
-    "conceptTitle": "목련아강·석죽아강·오아과아강 및 장미아강 분류"
+    "conceptId": "plants_c3",
+    "conceptTitle": "꽃의 구조·화피·수술 5대 특수 유형 & 암술·거(距)"
   },
   {
     "id": "식물분류학_2018_25",
@@ -12797,8 +12797,8 @@
     "conceptTags": [],
     "lecture": 11,
     "lectureTitle": "11강: 장미아강 II의 분류 (콩과, 운향과, 미나리과, 두릅나무과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c4",
+    "conceptTitle": "화서(꽃차례 8대 유형) & 과실의 체계적 분류"
   },
   {
     "id": "식물분류학_2018_26",
@@ -12840,8 +12840,8 @@
     "conceptTags": [],
     "lecture": 11,
     "lectureTitle": "11강: 장미아강 II의 분류 (콩과, 운향과, 미나리과, 두릅나무과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c1",
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2018_27",
@@ -12883,8 +12883,8 @@
     "conceptTags": [],
     "lecture": 12,
     "lectureTitle": "12강: 국화아강 I의 분류 (가지과, 꿀풀과, 현삼과, 초롱꽃과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c1",
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2018_28",
@@ -12926,8 +12926,8 @@
     "conceptTags": [],
     "lecture": 12,
     "lectureTitle": "12강: 국화아강 I의 분류 (가지과, 꿀풀과, 현삼과, 초롱꽃과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c12",
+    "conceptTitle": "단자엽식물(벼과 vs 사초과)·백합과·붓꽃과·난초과 식별"
   },
   {
     "id": "식물분류학_2018_29",
@@ -12969,8 +12969,8 @@
     "conceptTags": [],
     "lecture": 13,
     "lectureTitle": "13강: 국화아강 II의 분류 (국화과 - 두상화서, 통상화·설상화, 수과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c1",
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2018_30",
@@ -13012,8 +13012,8 @@
     "conceptTags": [],
     "lecture": 13,
     "lectureTitle": "13강: 국화아강 II의 분류 (국화과 - 두상화서, 통상화·설상화, 수과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c1",
+    "conceptTitle": "생물다양성협약·식물명명규약(ICN)·기준표본 및 식물학사"
   },
   {
     "id": "식물분류학_2018_31",
@@ -13055,8 +13055,8 @@
     "conceptTags": [],
     "lecture": 13,
     "lectureTitle": "13강: 국화아강 II의 분류 (국화과 - 두상화서, 통상화·설상화, 수과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c2",
+    "conceptTitle": "잎의 형태·엽서 및 영양기관 분류형질(부정근·지하경)"
   },
   {
     "id": "식물분류학_2018_32",
@@ -13098,8 +13098,8 @@
     "conceptTags": [],
     "lecture": 14,
     "lectureTitle": "14강: 단자엽식물 I의 분류 (택사아강, 종려아강, 닭의장풀아강, 벼과·사초과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c2",
+    "conceptTitle": "잎의 형태·엽서 및 영양기관 분류형질(부정근·지하경)"
   },
   {
     "id": "식물분류학_2018_33",
@@ -13141,8 +13141,8 @@
     "conceptTags": [],
     "lecture": 14,
     "lectureTitle": "14강: 단자엽식물 I의 분류 (택사아강, 종려아강, 닭의장풀아강, 벼과·사초과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c2",
+    "conceptTitle": "잎의 형태·엽서 및 영양기관 분류형질(부정근·지하경)"
   },
   {
     "id": "식물분류학_2018_34",
@@ -13185,8 +13185,8 @@
     "conceptTags": [],
     "lecture": 15,
     "lectureTitle": "15강: 단자엽식물 II의 분류 (백합과, 수선화과, 붓꽃과, 난초과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c2",
+    "conceptTitle": "잎의 형태·엽서 및 영양기관 분류형질(부정근·지하경)"
   },
   {
     "id": "식물분류학_2018_35",
@@ -13229,8 +13229,8 @@
     "svg": "<svg viewBox=\"0 0 400 200\" class=\"w-full max-w-md mx-auto bg-slate-950/80 rounded-xl p-3 border border-slate-700/80\">\n  <!-- 1. Simple Leaf (단엽) -->\n  <g transform=\"translate(10,15)\">\n    <path d=\"M 60 160 Q 60 90 60 30 Q 30 70 30 110 Q 30 150 60 160 Z\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"2\"/>\n    <path d=\"M 60 160 Q 60 90 60 30 Q 90 70 90 110 Q 90 150 60 160 Z\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"2\"/>\n    <line x1=\"60\" y1=\"175\" x2=\"60\" y2=\"30\" stroke=\"#047857\" stroke-width=\"2.5\"/>\n    <text x=\"60\" y=\"190\" fill=\"#34d399\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">단엽 (Simple)</text>\n  </g>\n  <!-- 2. Palmate Compound Leaf (장상복엽) -->\n  <g transform=\"translate(140,15)\">\n    <line x1=\"60\" y1=\"175\" x2=\"60\" y2=\"105\" stroke=\"#047857\" stroke-width=\"2.5\"/>\n    <!-- 5 leaflets radiating from one point -->\n    <ellipse cx=\"60\" cy=\"55\" rx=\"10\" ry=\"32\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"38\" cy=\"70\" rx=\"9\" ry=\"26\" transform=\"rotate(-35 38 70)\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"82\" cy=\"70\" rx=\"9\" ry=\"26\" transform=\"rotate(35 82 70)\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"25\" cy=\"95\" rx=\"8\" ry=\"20\" transform=\"rotate(-65 25 95)\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"95\" cy=\"95\" rx=\"8\" ry=\"20\" transform=\"rotate(65 95 95)\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <circle cx=\"60\" cy=\"105\" r=\"3.5\" fill=\"#fbbf24\"/>\n    <text x=\"60\" y=\"190\" fill=\"#fbbf24\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">장상복엽 (Palmate)</text>\n  </g>\n  <!-- 3. Pinnate Compound Leaf (우상복엽) -->\n  <g transform=\"translate(270,15)\">\n    <line x1=\"60\" y1=\"175\" x2=\"60\" y2=\"30\" stroke=\"#047857\" stroke-width=\"2.5\"/>\n    <ellipse cx=\"60\" cy=\"30\" rx=\"7\" ry=\"14\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"44\" cy=\"60\" rx=\"6\" ry=\"13\" transform=\"rotate(-40 44 60)\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"76\" cy=\"60\" rx=\"6\" ry=\"13\" transform=\"rotate(40 76 60)\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"44\" cy=\"95\" rx=\"6\" ry=\"13\" transform=\"rotate(-40 44 95)\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"76\" cy=\"95\" rx=\"6\" ry=\"13\" transform=\"rotate(40 76 95)\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"44\" cy=\"130\" rx=\"6\" ry=\"13\" transform=\"rotate(-40 44 130)\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"76\" cy=\"130\" rx=\"6\" ry=\"13\" transform=\"rotate(40 76 130)\" fill=\"#10b981\" opacity=\"0.7\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n    <text x=\"60\" y=\"190\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">우상복엽 (Pinnate)</text>\n  </g>\n</svg>",
     "lecture": 15,
     "lectureTitle": "15강: 단자엽식물 II의 분류 (백합과, 수선화과, 붓꽃과, 난초과)",
-    "conceptId": "plants_c3",
-    "conceptTitle": "국화아강과 단자엽식물(백합·벼·난초과) 분류"
+    "conceptId": "plants_c2",
+    "conceptTitle": "잎의 형태·엽서 및 영양기관 분류형질(부정근·지하경)"
   },
   {
     "id": "환경미생물학_2018_1",

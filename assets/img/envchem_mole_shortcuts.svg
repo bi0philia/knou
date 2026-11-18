@@ -91,7 +91,7 @@
     <text x="15" y="112" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="12">• H₂O = 18 / O₂ = 32 / N₂ = 28</text>
   </g>
 
-  <!-- Box C: Water & Air Unit Conversions -->
+  <!-- Box C: Water &amp; Air Unit Conversions -->
   <g transform="translate(550, 275)">
     <rect width="230" height="120" rx="10" fill="#131d31" stroke="#334155" stroke-width="1.2"/>
     <rect x="0" y="0" width="230" height="28" rx="8" fill="#1e293b"/>
