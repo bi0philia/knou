@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="dicotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="monocotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <marker id="arr-green" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#10b981"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="720" rx="16" fill="url(#bgGrad)" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Main Header Banner -->
+  <rect x="240" y="14" width="600" height="38" rx="8" fill="#1e293b" stroke="#059669" stroke-width="1.2"/>
+  <text x="540" y="39" fill="#34d399" font-family="'Pretendard', sans-serif" font-size="16" font-weight="900" text-anchor="middle">🌿 크론퀴스트(Cronquist) 계통분류체계: 목련강 6아강 &amp; 백합강 5아강 총람</text>
+
+  <!-- ROOT: 피자식물문 -->
+  <rect x="440" y="66" width="200" height="34" rx="8" fill="#334155" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="540" y="88" fill="#f8fafc" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" text-anchor="middle">피자식물문 (속씨식물군)</text>
+
+  <!-- Split Lines to Dicot & Monocot -->
+  <path d="M480 100 L280 120" stroke="#10b981" stroke-width="2.5" fill="none" marker-end="url(#arr-green)"/>
+  <path d="M600 100 L800 120" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arr-blue)"/>
+
+  <!-- ==================== LEFT BRANCH: 목련강 (쌍자엽식물, 6아강) ==================== -->
+  <rect x="150" y="125" width="260" height="32" rx="8" fill="url(#dicotGrad)" filter="drop-shadow(0 2px 8px rgba(16,185,129,0.3))"/>
+  <text x="280" y="146" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="14" font-weight="bold" text-anchor="middle">쌍자엽식물강 (목련강, 6대 아강)</text>
+
+  <!-- 1. 목련아강 -->
+  <g transform="translate(30, 175)">
+    <rect width="470" height="76" rx="8" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="0" y="0" width="120" height="76" rx="8" fill="#064e3b"/>
+    <text x="60" y="33" fill="#6ee7b7" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">1. 목련아강</text>
+    <text x="60" y="52" fill="#a7f3d0" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(가장 원시적)</text>
+    <text x="135" y="24" fill="#fbbf24" font-family="'Pretendard', sans-serif" font-size="11" font-weight="bold">• 핵심형질: <tspan fill="#f8fafc">이생심피(갈래심피), 다수 수술, 꽃부위 나선상 배열, 정유세포</tspan></text>
+    <text x="135" y="46" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 목련과: <tspan fill="#34d399">함박꽃나무(자생)</tspan>, 환상 탁엽흔, 골돌과</text>
+    <text x="135" y="64" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 미나리아재비과: <tspan fill="#34d399">할미꽃속(우상 암술대), 바람꽃속(꿩의바람꽃)</tspan> / 현호색과(괴경, 거)</text>
+  </g>
+
+  <!-- 2. 조록나무아강 -->
+  <g transform="translate(30, 260)">
+    <rect width="470" height="76" rx="8" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="0" y="0" width="120" height="76" rx="8" fill="#064e3b"/>
+    <text x="60" y="33" fill="#6ee7b7" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">2. 조록나무아강</text>
+    <text x="60" y="52" fill="#a7f3d0" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(풍매화 퇴화)</text>
+    <text x="135" y="24" fill="#fbbf24" font-family="'Pretendard', sans-serif" font-size="11">• 핵심형질: <tspan fill="#f8fafc">목본성, 미상화서(꼬리꽃차례), 단성화, 꽃잎 퇴화, 견과/시과</tspan></text>
+    <text x="135" y="46" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 참나무과: <tspan fill="#34d399">신갈나무(고산지/능선)</tspan>, 떡갈·상수리·굴참·갈참·졸참 각두 6형제</text>
+    <text x="135" y="64" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 느릅나무과: <tspan fill="#34d399">비대칭 왜저(歪底), 난티나무(거북꼬리 결각상 잎끝)</tspan></text>
+  </g>
+
+  <!-- 3. 석죽아강 -->
+  <g transform="translate(30, 345)">
+    <rect width="470" height="76" rx="8" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="0" y="0" width="120" height="76" rx="8" fill="#064e3b"/>
+    <text x="60" y="33" fill="#6ee7b7" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">3. 석죽아강</text>
+    <text x="60" y="52" fill="#a7f3d0" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(베탈린 색소)</text>
+    <text x="135" y="24" fill="#fbbf24" font-family="'Pretendard', sans-serif" font-size="11">• 핵심형질: <tspan fill="#f8fafc">베탈린(Betalain) 함유(석죽과 제외), 외유 발달, 3핵성 화분</tspan></text>
+    <text x="135" y="46" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 석죽과: 대생, 마디 굵음, <tspan fill="#34d399">동자꽃속(꽃잎 2열편, 수술 10, 암술대 5)</tspan></text>
+    <text x="135" y="64" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 마디풀과: 초상탁엽(통잎집), <tspan fill="#34d399">이삭여뀌(적색꽃, 암술대 2갈고리 털부착)</tspan></text>
+  </g>
+
+  <!-- 4. 오아과아강 -->
+  <g transform="translate(30, 430)">
+    <rect width="470" height="76" rx="8" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="0" y="0" width="120" height="76" rx="8" fill="#064e3b"/>
+    <text x="60" y="33" fill="#6ee7b7" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">4. 오아과아강</text>
+    <text x="60" y="52" fill="#a7f3d0" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(이판화·원심수술)</text>
+    <text x="135" y="24" fill="#fbbf24" font-family="'Pretendard', sans-serif" font-size="11">• 핵심형질: <tspan fill="#f8fafc">이판화, 합심피, 수술 다수 시 원심적 발달, 측막태좌</tspan></text>
+    <text x="135" y="46" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 십자화과: <tspan fill="#34d399">사강웅예(4길고 2짧음), 십자화관, 각과</tspan> / 제비꽃과: <tspan fill="#34d399">금강제비꽃(폐쇄화)</tspan></text>
+    <text x="135" y="64" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 진달래과: 철쭉(원두) vs <tspan fill="#34d399">산철쭉(예두, 갈색 털 &amp; 점성 끈적임)</tspan></text>
+  </g>
+
+  <!-- 5. 장미아강 -->
+  <g transform="translate(30, 515)">
+    <rect width="470" height="76" rx="8" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="0" y="0" width="120" height="76" rx="8" fill="#064e3b"/>
+    <text x="60" y="33" fill="#6ee7b7" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">5. 장미아강</text>
+    <text x="60" y="52" fill="#a7f3d0" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(이판화 최다번성)</text>
+    <text x="135" y="24" fill="#fbbf24" font-family="'Pretendard', sans-serif" font-size="11">• 핵심형질: <tspan fill="#f8fafc">화탁통(Hypanthium) 발달, 구심적 수술, 질소고정 공생</tspan></text>
+    <text x="135" y="46" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 콩과: <tspan fill="#34d399">접형화관(기1+익2+용2), 양체웅예(9+1), 협과(2봉선)</tspan></text>
+    <text x="135" y="64" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 장미과: 산딸기(취과), 조팝나무(골돌) / 산형과: <tspan fill="#34d399">복산형화서, 2분과, 중공줄기</tspan></text>
+  </g>
+
+  <!-- 6. 국화아강 -->
+  <g transform="translate(30, 600)">
+    <rect width="470" height="88" rx="8" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="0" y="0" width="120" height="88" rx="8" fill="#064e3b"/>
+    <text x="60" y="38" fill="#6ee7b7" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">6. 국화아강</text>
+    <text x="60" y="58" fill="#a7f3d0" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(합판화 최고진화)</text>
+    <text x="135" y="24" fill="#fbbf24" font-family="'Pretendard', sans-serif" font-size="11">• 핵심형질: <tspan fill="#f8fafc">합판화관, 5수성, 화관통 수술 부착, 두상화서/순형화관</tspan></text>
+    <text x="135" y="45" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 국화과: <tspan fill="#34d399">두상화서, 집약웅예, 서양민들레(총포 외편 반곡)</tspan></text>
+    <text x="135" y="63" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 꿀풀과: <tspan fill="#34d399">4각 줄기, 대생, 순형화관, 이강웅예, 4분과</tspan></text>
+    <text x="135" y="80" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 물푸레나무과: <tspan fill="#34d399">미선나무(한국특산 1속1종, 부채형 시과)</tspan> / 꼭두서니과(4윤생 갈고리)</text>
+  </g>
+
+
+  <!-- ==================== RIGHT BRANCH: 백합강 (단자엽식물, 5아강) ==================== -->
+  <rect x="680" y="125" width="260" height="32" rx="8" fill="url(#monocotGrad)" filter="drop-shadow(0 2px 8px rgba(56,189,248,0.3))"/>
+  <text x="810" y="146" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="14" font-weight="bold" text-anchor="middle">단자엽식물강 (백합강, 5대 아강)</text>
+
+  <!-- 1. 택사아강 -->
+  <g transform="translate(560, 175)">
+    <rect width="490" height="66" rx="8" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="0" y="0" width="120" height="66" rx="8" fill="#075985"/>
+    <text x="60" y="30" fill="#7dd3fc" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">1. 택사아강</text>
+    <text x="60" y="48" fill="#bae6fd" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(가장 원시적)</text>
+    <text x="135" y="24" fill="#38bdf8" font-family="'Pretendard', sans-serif" font-size="11" font-weight="bold">• 특징: <tspan fill="#f8fafc">원시 형질 간직, 대부분 수생식물, 이생심피</tspan></text>
+    <text x="135" y="48" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 대표과: 택사과(물옥잠, 택사), 자라풀과, 개구리밥과</text>
+  </g>
+
+  <!-- 2. 종려아강 -->
+  <g transform="translate(560, 250)">
+    <rect width="490" height="66" rx="8" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="0" y="0" width="120" height="66" rx="8" fill="#075985"/>
+    <text x="60" y="30" fill="#7dd3fc" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">2. 종려아강</text>
+    <text x="60" y="48" fill="#bae6fd" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(육수화서·불염포)</text>
+    <text x="135" y="24" fill="#38bdf8" font-family="'Pretendard', sans-serif" font-size="11">• 특징: <tspan fill="#f8fafc">교목성(부피생장X), 육수화서에 작은 꽃 밀생, 대형 불염포</tspan></text>
+    <text x="135" y="48" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 대표과: 야자과(종려나무), 천남성과(앉은부채, 천남성)</text>
+  </g>
+
+  <!-- 3. 닭의장풀아강 (초빈출) -->
+  <g transform="translate(560, 325)">
+    <rect width="490" height="135" rx="8" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.8"/>
+    <rect x="0" y="0" width="120" height="135" rx="8" fill="#0369a1"/>
+    <text x="60" y="55" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">3. 닭의장풀아강</text>
+    <text x="60" y="75" fill="#fde047" font-family="'Pretendard', sans-serif" font-size="11" font-weight="bold" text-anchor="middle">★ 100% 출제 ★</text>
+    <text x="60" y="93" fill="#bae6fd" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(벼목·풍매화)</text>
+    <text x="135" y="24" fill="#fbbf24" font-family="'Pretendard', sans-serif" font-size="11" font-weight="bold">• 핵심형질: <tspan fill="#f8fafc">화피 퇴화 축소, 바람 수분(풍매화), 경제작물 집중</tspan></text>
+    <text x="135" y="46" fill="#38bdf8" font-family="'Pretendard', sans-serif" font-size="11" font-weight="bold">• 벼과 (화본과):</text>
+    <text x="145" y="64" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">  줄기 <tspan fill="#34d399">원형·중공(속빔)</tspan>, <tspan fill="#34d399">2열 호생</tspan>, <tspan fill="#34d399">개방 엽초, 엽설 있음</tspan>, 영과(과피-종피 융합)</text>
+    <text x="135" y="86" fill="#38bdf8" font-family="'Pretendard', sans-serif" font-size="11" font-weight="bold">• 사초과 (방동사니과):</text>
+    <text x="145" y="104" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">  줄기 <tspan fill="#f87171">삼각형·중실(속참)</tspan>, <tspan fill="#f87171">3열 호생</tspan>, <tspan fill="#f87171">폐쇄 엽초, 엽설 없음</tspan>, 수과(과피-종피 분리)</text>
+    <text x="135" y="124" fill="#94a3b8" font-family="'Pretendard', sans-serif" font-size="10">  * 대표: 벼, 보리, 옥수수(벼과) vs 방동사니, 파피루스, 왕골(사초과)</text>
+  </g>
+
+  <!-- 4. 생강아강 -->
+  <g transform="translate(560, 470)">
+    <rect width="490" height="66" rx="8" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="0" y="0" width="120" height="66" rx="8" fill="#075985"/>
+    <text x="60" y="30" fill="#7dd3fc" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">4. 생강아강</text>
+    <text x="60" y="48" fill="#bae6fd" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(도관 뿌리 한정)</text>
+    <text x="135" y="24" fill="#38bdf8" font-family="'Pretendard', sans-serif" font-size="11">• 특징: <tspan fill="#f8fafc">도관이 뿌리에만 존재, 엽병과 엽신 뚜렷, 꽃잎 합생</tspan></text>
+    <text x="135" y="48" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">• 대표과: 생강과(생강, 양하), 파초과(바나나), 칸나과</text>
+  </g>
+
+  <!-- 5. 백합아강 (초빈출) -->
+  <g transform="translate(560, 545)">
+    <rect width="490" height="143" rx="8" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.8"/>
+    <rect x="0" y="0" width="120" height="143" rx="8" fill="#0369a1"/>
+    <text x="60" y="55" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="13" font-weight="900" text-anchor="middle">5. 백합아강</text>
+    <text x="60" y="75" fill="#fde047" font-family="'Pretendard', sans-serif" font-size="11" font-weight="bold" text-anchor="middle">★ 시험 단골 ★</text>
+    <text x="60" y="93" fill="#bae6fd" font-family="'Pretendard', sans-serif" font-size="10" text-anchor="middle">(화피 3+3 배열)</text>
+    <text x="135" y="24" fill="#fbbf24" font-family="'Pretendard', sans-serif" font-size="11">• 핵심형질: <tspan fill="#f8fafc">화피 2열(3+3) 배열, 꽃받침이 꽃잎화, 충매화, 균류 공생</tspan></text>
+    <text x="135" y="46" fill="#38bdf8" font-family="'Pretendard', sans-serif" font-size="11">• 백합과: <tspan fill="#e2e8f0">화피 6, 수술 6 / </tspan><tspan fill="#34d399">참나리(엽액에 흑자색 주아/살눈)</tspan></text>
+    <text x="135" y="66" fill="#e2e8f0" font-family="'Pretendard', sans-serif" font-size="11">  둥굴레(줄기 세로 모서리 각, 포 없음, 종모양 꽃)</text>
+    <text x="135" y="86" fill="#38bdf8" font-family="'Pretendard', sans-serif" font-size="11">• 붓꽃과: <tspan fill="#34d399">노랑붓꽃(한국 남부 고유 특산종, 멸종위기 2급)</tspan></text>
+    <text x="135" y="106" fill="#38bdf8" font-family="'Pretendard', sans-serif" font-size="11">• 청미래덩굴과: <tspan fill="#e2e8f0">엽병에 1쌍의 덩굴손(권수) 발달, 암수딴그루</tspan></text>
+    <text x="135" y="126" fill="#38bdf8" font-family="'Pretendard', sans-serif" font-size="11">• 난초과: <tspan fill="#34d399">순판(Lip), 예주(암수술 합착 기둥), 화분괴(덩어리 꽃가루)</tspan></text>
+  </g>
+</svg>
