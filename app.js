@@ -918,15 +918,15 @@
       cardEl.className = 'bg-slate-800/90 rounded-2xl border border-slate-700/80 overflow-hidden shadow-md transition';
       cardEl.setAttribute('data-concept-id', card.id);
 
-      const itemsHtml = card.items.map(it => `
+      const itemsHtml = card.items.map((it, itemIdx) => `
         <div class="py-2.5 border-b border-slate-700/40 last:border-0">
           <div class="flex items-center justify-between gap-2">
             <span class="text-xs font-bold text-emerald-400">${it.label}</span>
-            <button class="btn-copy-formula text-[10px] text-slate-400 hover:text-slate-200 bg-slate-700/60 px-1.5 py-0.5 rounded transition" data-text="${it.label}: ${it.desc}">
+            <button class="btn-copy-formula text-[10px] text-slate-400 hover:text-slate-200 bg-slate-700/60 px-1.5 py-0.5 rounded transition" data-concept-id="${card.id}" data-item-idx="${itemIdx}">
               복사
             </button>
           </div>
-          <p class="text-xs text-slate-200 mt-1 leading-relaxed">${formatMarkdown(it.desc)}</p>
+          <div class="text-xs text-slate-200 mt-1 leading-relaxed">${formatMarkdown(it.desc)}</div>
         </div>
       `).join('');
 
@@ -1066,8 +1066,22 @@
     document.querySelectorAll('.btn-copy-formula').forEach(btn => {
       btn.onclick = (e) => {
         e.stopPropagation();
-        const text = btn.getAttribute('data-text');
-        navigator.clipboard.writeText(text).then(() => {
+        const cId = btn.getAttribute('data-concept-id');
+        const idxStr = btn.getAttribute('data-item-idx');
+        let textToCopy = '';
+        if (cId && idxStr !== null) {
+          const idx = parseInt(idxStr, 10);
+          const concept = state.concepts.find(c => c.id === cId);
+          if (concept && concept.items && concept.items[idx]) {
+            const item = concept.items[idx];
+            const cleanDesc = item.desc.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+            textToCopy = `${item.label}: ${cleanDesc}`;
+          }
+        }
+        if (!textToCopy) {
+          textToCopy = btn.getAttribute('data-text') || '';
+        }
+        navigator.clipboard.writeText(textToCopy).then(() => {
           const original = btn.innerText;
           btn.innerText = '복사됨! ✓';
           setTimeout(() => { btn.innerText = original; }, 1500);
