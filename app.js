@@ -994,8 +994,8 @@
           <div class="space-y-1">
             <div class="flex items-center gap-1.5 flex-wrap">
               <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">${card.subject}</span>
-              <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">${card.category}</span>
-              <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-teal-500/20 text-teal-300">${card.badge}</span>
+              ${card.category ? `<span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">${card.category}</span>` : ''}
+              ${card.badge ? `<span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-teal-500/20 text-teal-300">${card.badge}</span>` : ''}
             </div>
             <h3 class="text-sm sm:text-base font-bold text-slate-100">${card.title}</h3>
             <p class="text-xs text-slate-400">${card.summary}</p>
