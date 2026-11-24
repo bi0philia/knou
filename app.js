@@ -428,9 +428,19 @@
     els.quizProgressBar.style.width = `${pct}%`;
 
     // Badges
-    els.qBadgeSubject.innerText = q.subject;
-    els.qBadgeYear.innerText = q.examType === '기초평가' ? '기초 핵심 문항' : `${q.year} 실전 ${q.number}번`;
-    els.qBadgeRange.innerText = q.lectureTitle ? `${q.lecture}강 · ${q.range}` : (q.range || '전체');
+    els.qBadgeSubject.innerText = q.subject || '';
+    if (q.examType === '기초평가') {
+      els.qBadgeYear.innerText = '기초 핵심 문항';
+    } else if (q.examType === '워크북') {
+      els.qBadgeYear.innerText = q.lecture ? `${q.lecture}강 워크북 ${q.number}번` : `워크북 ${q.number || ''}번`;
+    } else if (q.examType === '강의퀴즈') {
+      els.qBadgeYear.innerText = q.lecture ? `${q.lecture}강 퀴즈 ${q.number}번` : `강의 퀴즈 ${q.number || ''}번`;
+    } else if (q.examType === '기출복원') {
+      els.qBadgeYear.innerText = `${q.year || '2025'} 기출 복원`;
+    } else {
+      els.qBadgeYear.innerText = q.year && q.number ? `${q.year} 실전 ${q.number}번` : (q.examType || '실전 문제');
+    }
+    els.qBadgeRange.innerText = q.lectureTitle ? `${q.lecture}강 · ${q.range || '전체'}` : (q.range || '전체');
 
     // Bookmark status
     const isBookmarked = state.bookmarks.has(q.id);
@@ -441,7 +451,7 @@
     }
 
     // Question text
-    els.qText.innerText = q.text;
+    els.qText.innerText = q.text || q.question || '';
 
     // Example Box / Passage
     if (q.example || q.sharedExample) {
@@ -513,11 +523,14 @@
     const isAnswered = userAnswer !== undefined;
     const isStudyMode = state.currentMode === 'study';
     const isExamMode = state.currentMode === 'exam';
+    const correctAnswers = Array.isArray(q.correctAnswers) ? q.correctAnswers : (q.answer !== undefined ? [q.answer] : [1]);
 
-    q.choices.forEach(ch => {
+    (q.choices || []).forEach((ch, idx) => {
       const choiceBtn = document.createElement('button');
-      const isSelected = userAnswer === ch.number;
-      const isCorrect = q.correctAnswers.includes(ch.number);
+      const choiceNum = (typeof ch === 'object' && ch.number !== undefined) ? ch.number : (idx + 1);
+      const choiceText = (typeof ch === 'object' && ch.text !== undefined) ? ch.text : String(ch);
+      const isSelected = userAnswer === choiceNum;
+      const isCorrect = correctAnswers.includes(choiceNum);
 
       let btnClasses = 'w-full min-h-[52px] p-3 rounded-xl border text-left text-sm font-medium transition-all flex items-start gap-3 touch-card ';
 
@@ -544,7 +557,7 @@
       choiceBtn.className = btnClasses;
 
       // Circle number icon (①, ②, ③, ④)
-      const numLabel = ['①', '②', '③', '④', '⑤'][ch.number - 1] || `${ch.number}.`;
+      const numLabel = ['①', '②', '③', '④', '⑤'][choiceNum - 1] || `${choiceNum}.`;
       let badgeHtml = `<span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
         isSelected
           ? (isStudyMode ? (isCorrect ? 'bg-emerald-500 text-slate-950' : 'bg-rose-500 text-white') : 'bg-indigo-500 text-white')
@@ -562,12 +575,12 @@
 
       choiceBtn.innerHTML = `
         ${badgeHtml}
-        <span class="flex-1 leading-snug pt-0.5">${ch.text}</span>
+        <span class="flex-1 leading-snug pt-0.5">${choiceText}</span>
         ${iconFeedback}
       `;
 
       choiceBtn.onclick = () => {
-        handleChoiceSelect(q, ch.number);
+        handleChoiceSelect(q, choiceNum);
       };
 
       els.qChoices.appendChild(choiceBtn);
@@ -581,7 +594,8 @@
     }
 
     state.userAnswers[q.id] = choiceNumber;
-    const isCorrect = q.correctAnswers.includes(choiceNumber);
+    const correctAnswers = Array.isArray(q.correctAnswers) ? q.correctAnswers : (q.answer !== undefined ? [q.answer] : [1]);
+    const isCorrect = correctAnswers.includes(choiceNumber);
 
     // Update history & mistakes
     if (!state.history[q.id]) {
@@ -614,7 +628,8 @@
   function renderExplanation(q) {
     els.qExplanationBox.classList.remove('hidden');
     const userAnswer = state.userAnswers[q.id];
-    const isCorrect = q.correctAnswers.includes(userAnswer);
+    const correctAnswers = Array.isArray(q.correctAnswers) ? q.correctAnswers : (q.answer !== undefined ? [q.answer] : [1]);
+    const isCorrect = correctAnswers.includes(userAnswer);
 
     if (isCorrect) {
       els.qResultBadge.className = 'text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
@@ -624,9 +639,10 @@
       els.qResultBadge.innerText = '오답입니다 💡';
     }
 
-    const correctNum = q.correctAnswers[0];
-    const correctChoice = q.choices.find(c => c.number === correctNum);
-    els.qCorrectChoiceText.innerText = `정답: ${correctNum}번 (${correctChoice ? correctChoice.text : ''})`;
+    const correctNum = correctAnswers[0] || 1;
+    const correctChoice = (q.choices || []).find((c, idx) => ((typeof c === 'object' && c.number !== undefined) ? c.number : idx + 1) === correctNum);
+    const correctChoiceText = correctChoice ? ((typeof correctChoice === 'object' && correctChoice.text !== undefined) ? correctChoice.text : String(correctChoice)) : '';
+    els.qCorrectChoiceText.innerText = `정답: ${correctNum}번 (${correctChoiceText})`;
 
     els.qExplanationContent.innerHTML = q.explanation
       ? formatMarkdown(q.explanation)
