@@ -26,11 +26,49 @@ body, p, span, div, h1, h2, h3, h4, h5, h6, input, textarea, pre, code, .katex {
 html {
   scroll-behavior: smooth;
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard Variable", Pretendard, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
   padding-top: var(--safe-area-top);
   min-height: 100vh;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Prevent horizontal overflow outside table wrappers in concept cards */
+#viewConcepts,
+#conceptCardsList,
+#conceptCardsList > div,
+.concept-header,
+.concept-body {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.concept-body {
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.concept-body pre,
+.concept-body code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.concept-body svg,
+.concept-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.concept-body .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Safe area padding for mobile bottom bar */

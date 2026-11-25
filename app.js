@@ -196,8 +196,38 @@
     renderCurrentQuestion();
     renderConcepts();
     updateSavedBadges();
+    updateDynamicDdays();
     attachEventListeners();
     refreshIcons();
+  }
+
+  // ================= DYNAMIC D-DAY CALCULATOR =================
+  function updateDynamicDdays() {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const midDate = new Date(2026, 10, 29);   // 2026-11-29 (월은 0-indexed)
+    const finalDate = new Date(2026, 11, 13); // 2026-12-13
+
+    const calcDiff = (target) => Math.round((target - today) / (1000 * 60 * 60 * 24));
+    const fmt = (diff) => {
+      if (diff > 0) return `D-${diff}`;
+      if (diff === 0) return 'D-Day';
+      return `D+${Math.abs(diff)}`;
+    };
+
+    const midDiff = calcDiff(midDate);
+    const finalDiff = calcDiff(finalDate);
+    const midStr = fmt(midDiff);
+    const finalStr = fmt(finalDiff);
+
+    // Next upcoming exam badge
+    const nextStr = midDiff >= 0 ? `중간 ${midStr}` : `기말 ${finalStr}`;
+    const bothStr = midDiff >= 0 ? `중간 ${midStr} · 기말 ${finalStr}` : `기말 ${finalStr}`;
+
+    document.querySelectorAll('.js-dday-next').forEach(el => { el.textContent = nextStr; });
+    document.querySelectorAll('.js-dday-mid').forEach(el => { el.textContent = midStr; });
+    document.querySelectorAll('.js-dday-final').forEach(el => { el.textContent = `기말 ${finalStr}`; });
+    document.querySelectorAll('.js-dday-both').forEach(el => { el.textContent = bothStr; });
   }
 
   // ================= THEME & FONT =================
@@ -934,18 +964,18 @@
 
     filtered.forEach((card, idx) => {
       const cardEl = document.createElement('div');
-      cardEl.className = 'bg-slate-800/90 rounded-2xl border border-slate-700/80 overflow-hidden shadow-md transition';
+      cardEl.className = 'bg-slate-800/90 rounded-2xl border border-slate-700/80 overflow-hidden shadow-md transition min-w-0 max-w-full';
       cardEl.setAttribute('data-concept-id', card.id);
 
       const itemsHtml = card.items.map((it, itemIdx) => `
-        <div class="py-2.5 border-b border-slate-700/40 last:border-0">
-          <div class="flex items-center justify-between gap-2">
-            <span class="text-xs font-bold text-emerald-400">${it.label}</span>
-            <button class="btn-copy-formula text-[10px] text-slate-400 hover:text-slate-200 bg-slate-700/60 px-1.5 py-0.5 rounded transition" data-concept-id="${card.id}" data-item-idx="${itemIdx}">
+        <div class="py-2.5 border-b border-slate-700/40 last:border-0 min-w-0 max-w-full">
+          <div class="flex items-center justify-between gap-2 min-w-0">
+            <span class="text-xs font-bold text-emerald-400 break-words min-w-0">${it.label}</span>
+            <button class="btn-copy-formula shrink-0 text-[10px] text-slate-400 hover:text-slate-200 bg-slate-700/60 px-1.5 py-0.5 rounded transition" data-concept-id="${card.id}" data-item-idx="${itemIdx}">
               복사
             </button>
           </div>
-          <div class="text-xs text-slate-200 mt-1 leading-relaxed">${formatMarkdown(it.desc)}</div>
+          <div class="text-xs text-slate-200 mt-1 leading-relaxed min-w-0 max-w-full break-words">${formatMarkdown(it.desc)}</div>
         </div>
       `).join('');
 
@@ -1009,19 +1039,19 @@
       }
 
       cardEl.innerHTML = `
-        <div class="p-4 cursor-pointer flex items-center justify-between gap-3 concept-header">
-          <div class="space-y-1">
+        <div class="p-4 cursor-pointer flex items-center justify-between gap-3 concept-header min-w-0">
+          <div class="space-y-1 min-w-0 flex-1">
             <div class="flex items-center gap-1.5 flex-wrap">
               <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">${card.subject}</span>
               ${card.category ? `<span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">${card.category}</span>` : ''}
               ${card.badge ? `<span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-teal-500/20 text-teal-300">${card.badge}</span>` : ''}
             </div>
-            <h3 class="text-sm sm:text-base font-bold text-slate-100">${card.title}</h3>
-            <p class="text-xs text-slate-400">${card.summary}</p>
+            <h3 class="text-sm sm:text-base font-bold text-slate-100 break-words">${card.title}</h3>
+            <p class="text-xs text-slate-400 break-words">${card.summary}</p>
           </div>
           <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform chevron-icon"></i>
         </div>
-        <div class="px-4 pb-4 pt-1 border-t border-slate-700/60 concept-body">
+        <div class="px-4 pb-4 pt-1 border-t border-slate-700/60 concept-body min-w-0 max-w-full overflow-hidden">
           ${figureHtml}
           ${itemsHtml}
           ${practiceHtml}
