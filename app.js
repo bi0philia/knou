@@ -386,9 +386,12 @@
         filtered = filtered.filter(q => {
           if (q.range === state.currentRange) return true;
           if (q.range && state.currentRange.startsWith(q.range)) return true;
+          if (state.currentRange.includes('1~6강') && q.range === '1~6강') return true;
+          if (state.currentRange.includes('7~15강') && q.range === '7~15강') return true;
           if (state.currentRange.includes('1~5강') && q.range === '1~5강') return true;
           if (state.currentRange.includes('6~10강') && q.range === '6~10강') return true;
           if (state.currentRange.includes('11~15강') && q.range === '11~15강') return true;
+          if (state.currentRange.includes('미분류') && q.range === '미분류') return true;
           return false;
         });
       }
@@ -440,7 +443,7 @@
     } else {
       els.qBadgeYear.innerText = q.year && q.number ? `${q.year} 실전 ${q.number}번` : (q.examType || '실전 문제');
     }
-    els.qBadgeRange.innerText = q.lectureTitle ? `${q.lecture}강 · ${q.range || '전체'}` : (q.range || '전체');
+    els.qBadgeRange.innerText = q.lecture ? `${q.lecture}강 · ${q.range || '전체'}` : (q.lectureTitle || q.range || '단원 미분류');
 
     // Bookmark status
     const isBookmarked = state.bookmarks.has(q.id);
