@@ -468,12 +468,19 @@
     }
     els.qBadgeRange.innerText = q.lecture ? `${q.lecture}강 · ${q.range || '전체'}` : (q.lectureTitle || q.range || '단원 미분류');
 
-    // Bookmark status
+    // Bookmark status (query live SVG inside btnBookmark since Lucide replaces <i> with <svg>)
     const isBookmarked = state.bookmarks.has(q.id);
-    if (isBookmarked) {
-      els.bookmarkIcon.setAttribute('class', 'w-5 h-5 text-amber-400 fill-amber-400');
-    } else {
-      els.bookmarkIcon.setAttribute('class', 'w-5 h-5 text-slate-400');
+    if (els.btnBookmark) {
+      els.btnBookmark.className = isBookmarked
+        ? 'p-2 rounded-xl text-amber-300 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 transition flex items-center gap-1.5 text-xs shadow-sm'
+        : 'p-2 rounded-xl text-slate-400 hover:text-amber-400 hover:bg-slate-700/60 border border-transparent hover:border-slate-600 transition flex items-center gap-1.5 text-xs';
+      const liveIcon = els.btnBookmark.querySelector('svg') || els.btnBookmark.querySelector('i');
+      if (liveIcon) {
+        liveIcon.setAttribute('class', isBookmarked ? 'w-5 h-5 text-amber-400 fill-amber-400' : 'w-5 h-5 text-slate-400');
+        liveIcon.style.fill = isBookmarked ? '#fbbf24' : 'none';
+      }
+      const labelSpan = els.btnBookmark.querySelector('span');
+      if (labelSpan) labelSpan.textContent = isBookmarked ? '북마크됨' : '북마크';
     }
 
     // Question text
@@ -728,14 +735,16 @@
   function toggleBookmark() {
     if (!state.activeQuestions || state.activeQuestions.length === 0) return;
     const q = state.activeQuestions[state.currentIndex];
-    if (state.bookmarks.has(q.id)) {
-      state.bookmarks.delete(q.id);
-    } else {
+    const added = !state.bookmarks.has(q.id);
+    if (added) {
       state.bookmarks.add(q.id);
+    } else {
+      state.bookmarks.delete(q.id);
     }
     localStorage.setItem('knou_bookmarks', JSON.stringify(Array.from(state.bookmarks)));
     renderCurrentQuestion();
     updateSavedBadges();
+    showToast(added ? '북마크에 저장했습니다 ★' : '북마크를 해제했습니다');
   }
 
   function updateSavedBadges() {
@@ -761,8 +770,14 @@
     if (mode === 'exam') {
       if (els.btnModeToggle) {
         els.btnModeToggle.className = 'px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-sm transition-all flex items-center gap-1.5 text-xs font-bold whitespace-nowrap shrink-0';
+        const oldIcon = els.btnModeToggle.querySelector('svg, i');
+        if (oldIcon) {
+          const newIcon = document.createElement('i');
+          newIcon.setAttribute('data-lucide', 'timer');
+          newIcon.className = 'w-3.5 h-3.5';
+          oldIcon.replaceWith(newIcon);
+        }
       }
-      if (els.modeToggleIcon) els.modeToggleIcon.setAttribute('data-lucide', 'timer');
       if (els.modeToggleLabel) els.modeToggleLabel.innerText = '실전 테스트';
       els.examTimerBadge.classList.remove('hidden');
       els.examTimerBadge.classList.add('flex');
@@ -770,8 +785,14 @@
     } else {
       if (els.btnModeToggle) {
         els.btnModeToggle.className = 'px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition-all flex items-center gap-1.5 text-xs font-bold whitespace-nowrap shrink-0';
+        const oldIcon = els.btnModeToggle.querySelector('svg, i');
+        if (oldIcon) {
+          const newIcon = document.createElement('i');
+          newIcon.setAttribute('data-lucide', 'book-open-check');
+          newIcon.className = 'w-3.5 h-3.5';
+          oldIcon.replaceWith(newIcon);
+        }
       }
-      if (els.modeToggleIcon) els.modeToggleIcon.setAttribute('data-lucide', 'book-open-check');
       if (els.modeToggleLabel) els.modeToggleLabel.innerText = '학습 모드';
       els.examTimerBadge.classList.add('hidden');
       els.examTimerBadge.classList.remove('flex');
