@@ -11,6 +11,8 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>스마트 스터디 랩 - 실전문항 퀴즈 & 핵심 개념노트</title>
+  <link rel="icon" type="image/png" href="assets/farmer-cat.png">
+  <link rel="apple-touch-icon" href="assets/farmer-cat.png">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -56,12 +58,9 @@
   <header class="sticky top-0 z-30 bg-slate-900/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 sm:px-6 lg:px-8 py-3">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- Logo & Title -->
-      <div class="flex items-center space-x-2 shrink-0">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-md shadow-emerald-500/20 text-white font-black text-lg shrink-0">
-          S
-        </div>
-        <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold tracking-wide">SCIENCE</span>
+      <!-- Logo Icon -->
+      <div class="flex items-center shrink-0">
+        <img src="assets/farmer-cat.png" alt="농부 고양이" class="w-10 h-10 rounded-xl object-contain bg-slate-800/80 border border-slate-700/70 p-0.5 shadow-md">
       </div>
 
       <!-- Desktop Nav Tabs (Hidden on mobile, visible on tablet/PC) -->
@@ -173,25 +172,18 @@
             </div>
           </div>
 
-          <!-- Mode Toggle & Shuffle -->
-          <div class="flex items-center gap-3 justify-between sm:justify-end">
-            <!-- Shuffle Checkbox -->
-            <label class="cursor-pointer flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-200">
-              <input type="checkbox" id="checkShuffle" class="rounded border-slate-700 bg-slate-800 text-emerald-500 focus:ring-emerald-400 w-3.5 h-3.5">
-              <span>무작위 셔플</span>
-            </label>
+          <!-- Mode Toggle & Shuffle Icon -->
+          <div class="flex items-center gap-2 justify-end shrink-0">
+            <!-- Shuffle Icon Toggle -->
+            <button id="btnShuffleToggle" type="button" class="p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 border border-slate-700/80 transition flex items-center justify-center shrink-0" title="무작위 셔플 켜기/끄기" aria-label="무작위 셔플">
+              <i data-lucide="shuffle" class="w-4 h-4"></i>
+            </button>
 
-            <!-- Mode Buttons -->
-            <div class="flex p-0.5 bg-slate-800 rounded-xl border border-slate-700/80 text-xs font-bold text-center">
-              <button id="btnModeStudy" class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white shadow-sm transition-all flex items-center gap-1.5">
-                <i data-lucide="book-open-check" class="w-3.5 h-3.5"></i>
-                <span>학습 모드</span>
-              </button>
-              <button id="btnModeExam" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all flex items-center gap-1.5">
-                <i data-lucide="timer" class="w-3.5 h-3.5"></i>
-                <span>실전 테스트</span>
-              </button>
-            </div>
+            <!-- Single Study / Exam Mode Toggle -->
+            <button id="btnModeToggle" type="button" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition-all flex items-center gap-1.5 text-xs font-bold whitespace-nowrap shrink-0" title="클릭하여 학습 모드 / 실전 테스트 전환">
+              <i id="modeToggleIcon" data-lucide="book-open-check" class="w-3.5 h-3.5 shrink-0"></i>
+              <span id="modeToggleLabel">학습 모드</span>
+            </button>
           </div>
 
         </div>
@@ -888,7 +880,7 @@
   </div>
 
   <!-- Data & Application Script -->
-  <script src="data/bundle.js?v=20261125_01"></script>
-  <script src="app.js?v=20261125_01"></script>
+  <script src="data/bundle.js?v=20261125_02"></script>
+  <script src="app.js?v=20261125_02"></script>
 </body>
 </html>

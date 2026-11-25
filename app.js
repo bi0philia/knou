@@ -82,9 +82,10 @@
     subjectChips: document.getElementById('subjectChips'),
     questionCountSummary: document.getElementById('questionCountSummary'),
     rangePills: document.getElementById('rangePills'),
-    checkShuffle: document.getElementById('checkShuffle'),
-    btnModeStudy: document.getElementById('btnModeStudy'),
-    btnModeExam: document.getElementById('btnModeExam'),
+    btnShuffleToggle: document.getElementById('btnShuffleToggle'),
+    btnModeToggle: document.getElementById('btnModeToggle'),
+    modeToggleIcon: document.getElementById('modeToggleIcon'),
+    modeToggleLabel: document.getElementById('modeToggleLabel'),
     quizProgressText: document.getElementById('quizProgressText'),
     quizAccuracyRate: document.getElementById('quizAccuracyRate'),
     btnOpenGridDrawer: document.getElementById('btnOpenGridDrawer'),
@@ -766,19 +767,26 @@
     state.userAnswers = {};
 
     if (mode === 'exam') {
-      els.btnModeExam.className = 'py-2 rounded-lg bg-emerald-600 text-white shadow-sm transition-all flex items-center justify-center gap-1.5';
-      els.btnModeStudy.className = 'py-2 rounded-lg text-slate-400 hover:text-white transition-all flex items-center justify-center gap-1.5';
+      if (els.btnModeToggle) {
+        els.btnModeToggle.className = 'px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-sm transition-all flex items-center gap-1.5 text-xs font-bold whitespace-nowrap shrink-0';
+      }
+      if (els.modeToggleIcon) els.modeToggleIcon.setAttribute('data-lucide', 'timer');
+      if (els.modeToggleLabel) els.modeToggleLabel.innerText = '실전 테스트';
       els.examTimerBadge.classList.remove('hidden');
       els.examTimerBadge.classList.add('flex');
       startExamTimer();
     } else {
-      els.btnModeStudy.className = 'py-2 rounded-lg bg-emerald-600 text-white shadow-sm transition-all flex items-center justify-center gap-1.5';
-      els.btnModeExam.className = 'py-2 rounded-lg text-slate-400 hover:text-white transition-all flex items-center justify-center gap-1.5';
+      if (els.btnModeToggle) {
+        els.btnModeToggle.className = 'px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition-all flex items-center gap-1.5 text-xs font-bold whitespace-nowrap shrink-0';
+      }
+      if (els.modeToggleIcon) els.modeToggleIcon.setAttribute('data-lucide', 'book-open-check');
+      if (els.modeToggleLabel) els.modeToggleLabel.innerText = '학습 모드';
       els.examTimerBadge.classList.add('hidden');
       els.examTimerBadge.classList.remove('flex');
       stopExamTimer();
     }
 
+    refreshIcons();
     renderCurrentQuestion();
   }
 
@@ -1455,16 +1463,27 @@
     els.btnThemeToggle.onclick = toggleTheme;
     els.btnFontSize.onclick = cycleFontSize;
 
-    // Modes
-    els.btnModeStudy.onclick = () => setMode('study');
-    els.btnModeExam.onclick = () => setMode('exam');
+    // Mode single toggle (default: study <-> exam)
+    if (els.btnModeToggle) {
+      els.btnModeToggle.onclick = () => {
+        const nextMode = state.currentMode === 'study' ? 'exam' : 'study';
+        setMode(nextMode);
+        showToast(nextMode === 'exam' ? '실전 테스트 모드 (타이머 시작)' : '학습 모드 (즉시 해설)');
+      };
+    }
 
-    // Shuffle
-    els.checkShuffle.onchange = (e) => {
-      state.isShuffled = e.target.checked;
-      filterAndPrepareQuestions();
-      renderCurrentQuestion();
-    };
+    // Shuffle icon toggle
+    if (els.btnShuffleToggle) {
+      els.btnShuffleToggle.onclick = () => {
+        state.isShuffled = !state.isShuffled;
+        els.btnShuffleToggle.className = state.isShuffled
+          ? 'p-2 rounded-xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 shadow-sm transition flex items-center justify-center shrink-0'
+          : 'p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 border border-slate-700/80 transition flex items-center justify-center shrink-0';
+        filterAndPrepareQuestions();
+        renderCurrentQuestion();
+        showToast(state.isShuffled ? '무작위 셔플 켜짐' : '순서대로 보기');
+      };
+    }
 
     // Prev / Next
     els.btnPrevQ.onclick = () => {
