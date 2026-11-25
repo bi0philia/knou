@@ -69,12 +69,13 @@
     viewConcepts: document.getElementById('viewConcepts'),
     viewSaved: document.getElementById('viewSaved'),
     viewStats: document.getElementById('viewStats'),
+    viewProfile: document.getElementById('viewProfile'),
 
     // Top Bar
+    btnOpenProfile: document.getElementById('btnOpenProfile'),
+    btnProfileBackQuiz: document.getElementById('btnProfileBackQuiz'),
     topSubjectBadge: document.getElementById('topSubjectBadge'),
     btnFontSize: document.getElementById('btnFontSize'),
-    btnThemeToggle: document.getElementById('btnThemeToggle'),
-    themeIcon: document.getElementById('themeIcon'),
     examTimerBadge: document.getElementById('examTimerBadge'),
     timerText: document.getElementById('timerText'),
 
@@ -126,6 +127,7 @@
     savedMistakesCountLabel: document.getElementById('savedMistakesCountLabel'),
     btnPracticeSaved: document.getElementById('btnPracticeSaved'),
     btnClearSavedCategory: document.getElementById('btnClearSavedCategory'),
+    savedSubjectFilter: document.getElementById('savedSubjectFilter'),
     savedListContainer: document.getElementById('savedListContainer'),
 
     // Stats View
@@ -231,22 +233,9 @@
     document.querySelectorAll('.js-dday-both').forEach(el => { el.textContent = bothStr; });
   }
 
-  // ================= THEME & FONT =================
+  // ================= THEME (DARK MODE FIXED) & FONT =================
   function initTheme() {
-    if (state.theme === 'light') {
-      document.documentElement.classList.remove('dark');
-      els.themeIcon.setAttribute('data-lucide', 'sun');
-    } else {
-      document.documentElement.classList.add('dark');
-      els.themeIcon.setAttribute('data-lucide', 'moon');
-    }
-  }
-
-  function toggleTheme() {
-    state.theme = state.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('knou_theme', state.theme);
-    initTheme();
-    refreshIcons();
+    document.documentElement.classList.add('dark');
   }
 
   function initFontSize() {
@@ -308,6 +297,7 @@
     els.viewConcepts.classList.add('hidden');
     els.viewSaved.classList.add('hidden');
     els.viewStats.classList.add('hidden');
+    if (els.viewProfile) els.viewProfile.classList.add('hidden');
 
     // Reset mobile tab button colors
     const mobileNavButtons = [els.navTabQuiz, els.navTabConcepts, els.navTabSaved, els.navTabStats];
@@ -342,6 +332,8 @@
       if (els.navTabStats) els.navTabStats.className = 'flex flex-col items-center py-1 text-emerald-400 font-bold transition';
       if (els.deskTabStats) els.deskTabStats.className = deskActiveClasses;
       renderStats();
+    } else if (tabId === 'profile') {
+      if (els.viewProfile) els.viewProfile.classList.remove('hidden');
     }
 
     refreshIcons();
@@ -1200,40 +1192,104 @@
     const targetSet = isBookmarks ? state.bookmarks : state.mistakes;
     const targetIds = Array.from(targetSet);
 
+    if (!state.savedSubjectFilter) state.savedSubjectFilter = '전체';
+
+    const allSavedQuestions = state.questions.filter(q => targetSet.has(q.id));
+
+    // Render subject filter chips inside Saved view
+    if (els.savedSubjectFilter) {
+      els.savedSubjectFilter.innerHTML = '';
+      const subCounts = {};
+      allSavedQuestions.forEach(q => {
+        subCounts[q.subject] = (subCounts[q.subject] || 0) + 1;
+      });
+      const filterList = ['전체', ...Object.keys(subCounts)];
+      if (!filterList.includes(state.savedSubjectFilter)) {
+        state.savedSubjectFilter = '전체';
+      }
+      filterList.forEach(sub => {
+        const cnt = sub === '전체' ? allSavedQuestions.length : (subCounts[sub] || 0);
+        const isSelected = state.savedSubjectFilter === sub;
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = `px-2.5 py-1 rounded-lg text-[11px] font-bold whitespace-nowrap transition ${
+          isSelected
+            ? 'bg-emerald-500 text-slate-950 shadow-sm'
+            : 'bg-slate-900/80 text-slate-300 hover:bg-slate-700 border border-slate-700/70'
+        }`;
+        chip.innerText = `${sub} (${cnt})`;
+        chip.onclick = () => {
+          state.savedSubjectFilter = sub;
+          renderSavedList();
+        };
+        els.savedSubjectFilter.appendChild(chip);
+      });
+    }
+
     els.savedListContainer.innerHTML = '';
     if (targetIds.length === 0) {
-      els.savedListContainer.innerHTML = `<div class="py-16 text-center text-slate-400 text-sm">${
+      els.savedListContainer.innerHTML = `<div class="col-span-full py-16 text-center text-slate-400 text-sm">${
         isBookmarks ? '저장된 북마크가 없습니다. 문제의 별표(★)를 눌러 추가해보세요.' : '누적된 오답이 없습니다. 훌륭합니다!'
       }</div>`;
       return;
     }
 
-    const savedQuestions = state.questions.filter(q => targetSet.has(q.id));
+    const savedQuestions = state.savedSubjectFilter === '전체'
+      ? allSavedQuestions
+      : allSavedQuestions.filter(q => q.subject === state.savedSubjectFilter);
+
+    const circled = ['①', '②', '③', '④', '⑤'];
 
     savedQuestions.forEach(q => {
       const card = document.createElement('div');
-      card.className = 'bg-slate-800/90 rounded-2xl p-4 border border-slate-700/80 space-y-2.5 shadow-md';
+      card.className = 'bg-slate-800/90 rounded-2xl p-4 sm:p-5 border border-slate-700/80 space-y-3 shadow-md min-w-0 max-w-full';
+
+      const ansNum = q.correctAnswers && q.correctAnswers[0] ? q.correctAnswers[0] : 1;
+      const yearLabel = q.year && q.number ? `${q.year} ${q.examType || '실전'} ${q.number}번` : (q.examType || '실전');
+      const lecLabel = q.lecture ? `${q.lecture}강 · ${q.range || ''}` : (q.range || '미분류');
+
+      const exampleHtml = (q.example || q.sharedExample)
+        ? `<div class="p-3 rounded-xl bg-slate-900/90 border border-slate-700/70 text-xs text-slate-300 leading-relaxed">${formatMarkdown(q.example || q.sharedExample)}</div>`
+        : '';
+
+      const choicesHtml = (q.choices || []).map((ch, idx) => {
+        const cNum = ch.number || (idx + 1);
+        const cText = typeof ch === 'string' ? ch : (ch.text || '');
+        const isCorrect = cNum === ansNum;
+        return `
+          <div class="flex items-start gap-2 px-3 py-2 rounded-xl text-xs leading-relaxed border ${
+            isCorrect
+              ? 'bg-emerald-950/50 border-emerald-500/50 text-emerald-200 font-semibold'
+              : 'bg-slate-900/50 border-slate-700/50 text-slate-300'
+          }">
+            <span class="shrink-0 font-bold ${isCorrect ? 'text-emerald-400' : 'text-slate-400'}">${circled[cNum - 1] || cNum + '.'}</span>
+            <span class="flex-1 break-words">${cText}</span>
+            ${isCorrect ? '<span class="shrink-0 text-[10px] px-1.5 py-0.5 rounded bg-emerald-500 text-slate-950 font-black">정답</span>' : ''}
+          </div>
+        `;
+      }).join('');
 
       card.innerHTML = `
-        <div class="flex items-center justify-between gap-2 border-b border-slate-700/60 pb-2">
+        <div class="flex items-center justify-between gap-2 border-b border-slate-700/60 pb-2.5">
           <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400">${q.subject}</span>
-            <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">${q.year} 실전 ${q.number}번</span>
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">${q.subject}</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-700 text-slate-300">${yearLabel}</span>
+            <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-900/80 text-teal-300 border border-slate-700/70">${lecLabel}</span>
           </div>
-          <button class="btn-remove-saved p-1 text-slate-400 hover:text-red-400 transition" title="항목 삭제">
+          <button class="btn-remove-saved shrink-0 p-1.5 rounded-lg text-slate-400 hover:text-red-400 hover:bg-slate-700/60 transition" title="항목 삭제">
             <i data-lucide="trash-2" class="w-4 h-4"></i>
           </button>
         </div>
-        <p class="text-sm font-semibold text-slate-100 leading-snug">${q.text}</p>
-        <div class="pt-1 flex items-center justify-between text-xs">
-          <button class="btn-toggle-answer text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">
-            <span>정답 및 해설 보기</span>
-            <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
-          </button>
+
+        <p class="text-sm font-bold text-slate-100 leading-relaxed break-words">${q.text}</p>
+        ${exampleHtml}
+
+        <div class="space-y-1.5">
+          ${choicesHtml}
         </div>
-        <div class="hidden saved-answer-box bg-slate-900/80 p-3 rounded-xl border border-slate-700/50 text-xs text-slate-200 space-y-1">
-          <div class="font-bold text-emerald-400">정답: ${q.correctAnswers[0]}번</div>
-          <div class="leading-relaxed text-slate-300">${q.explanation ? formatMarkdown(q.explanation) : '해설 없음'}</div>
+
+        <div class="bg-slate-900/85 p-3.5 rounded-xl border border-slate-700/60 text-xs text-slate-200 space-y-1.5">
+          <div class="leading-relaxed text-slate-300 break-words">${q.explanation ? formatMarkdown(q.explanation) : '해설 없음'}</div>
         </div>
       `;
 
@@ -1247,15 +1303,6 @@
         }
         updateSavedBadges();
         renderSavedList();
-      };
-
-      // Toggle Answer
-      const toggleBtn = card.querySelector('.btn-toggle-answer');
-      const answerBox = card.querySelector('.saved-answer-box');
-      toggleBtn.onclick = () => {
-        const isHidden = answerBox.classList.toggle('hidden');
-        toggleBtn.querySelector('span').innerText = isHidden ? '정답 및 해설 보기' : '해설 닫기';
-        if (!isHidden) renderMath();
       };
 
       els.savedListContainer.appendChild(card);
@@ -1460,8 +1507,32 @@
     if (els.deskTabStats) els.deskTabStats.onclick = () => switchTab('stats');
 
     // Theme & Font
-    els.btnThemeToggle.onclick = toggleTheme;
-    els.btnFontSize.onclick = cycleFontSize;
+    // Font size
+    if (els.btnFontSize) els.btnFontSize.onclick = cycleFontSize;
+
+    // Profile / Farmer Cat Archive page
+    if (els.btnOpenProfile) {
+      els.btnOpenProfile.onclick = () => {
+        switchTab(state.currentTab === 'profile' ? 'quiz' : 'profile');
+      };
+    }
+    if (els.btnProfileBackQuiz) {
+      els.btnProfileBackQuiz.onclick = () => switchTab('quiz');
+    }
+    document.querySelectorAll('.btn-profile-jump').forEach(btn => {
+      btn.onclick = () => {
+        const subj = btn.getAttribute('data-subj');
+        if (subj) {
+          state.currentSubject = subj;
+          state.currentRange = '전체';
+          renderSubjectChips();
+          renderRangePills();
+          filterAndPrepareQuestions();
+          renderCurrentQuestion();
+        }
+        switchTab('quiz');
+      };
+    });
 
     // Mode single toggle (default: study <-> exam)
     if (els.btnModeToggle) {

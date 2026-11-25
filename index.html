@@ -58,10 +58,10 @@
   <header class="sticky top-0 z-30 bg-slate-900/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 sm:px-6 lg:px-8 py-3">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- Logo Icon -->
-      <div class="flex items-center shrink-0">
-        <img src="assets/farmer-cat.png" alt="농부 고양이" class="w-10 h-10 rounded-xl object-contain bg-slate-800/80 border border-slate-700/70 p-0.5 shadow-md">
-      </div>
+      <!-- Logo Icon (Click to open Profile / Archive) -->
+      <button id="btnOpenProfile" type="button" class="flex items-center shrink-0 rounded-xl focus:outline-none group relative" title="내 아카이브 (관심사 · 수강 내역 · 자격증 테크트리)" aria-label="내 아카이브 열기">
+        <img src="assets/farmer-cat.png" alt="농부 고양이" class="w-10 h-10 rounded-xl object-contain bg-slate-800/80 border border-slate-700/70 group-hover:border-emerald-400/80 group-hover:scale-105 p-0.5 shadow-md transition-all">
+      </button>
 
       <!-- Desktop Nav Tabs (Hidden on mobile, visible on tablet/PC) -->
       <nav class="hidden md:flex items-center gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/70 text-xs font-semibold">
@@ -100,16 +100,10 @@
         </div>
 
         <!-- Font Size Button with Visual Badge -->
-        <button id="btnFontSize" class="px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 border border-slate-700/60 transition flex items-center gap-1.5 text-xs font-semibold" title="글자 크기 변경 (기본 / 크게 / 아주 크게)">
+        <button id="btnFontSize" class="px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 border border-slate-700/60 transition flex items-center gap-1.5 text-xs font-semibold shrink-0" title="글자 크기 변경 (기본 / 크게 / 아주 크게)">
           <i data-lucide="type" class="w-4 h-4 text-emerald-400"></i>
           <span class="hidden sm:inline text-slate-300">글자</span>
           <span id="fontSizeBadge" class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">보통</span>
-        </button>
-
-        <!-- Dark/Light Theme Toggle -->
-        <button id="btnThemeToggle" class="p-2 sm:px-2.5 sm:py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700/60 transition flex items-center gap-1 text-xs" title="다크/라이트 모드">
-          <i id="themeIcon" data-lucide="moon" class="w-4 h-4"></i>
-          <span class="hidden sm:inline font-medium">테마</span>
         </button>
       </div>
 
@@ -392,20 +386,25 @@
         </div>
       </div>
 
-      <!-- Quick Action Controls -->
-      <div class="flex items-center justify-between gap-3 bg-slate-800/80 p-3 rounded-2xl border border-slate-700/60">
-        <button id="btnPracticeSaved" class="py-2.5 px-5 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-600 text-slate-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md touch-card">
-          <i data-lucide="play" class="w-4 h-4 fill-current"></i>
-          <span>선택 항목 모아 풀기</span>
-        </button>
-        <button id="btnClearSavedCategory" class="py-2.5 px-4 rounded-xl bg-slate-700 hover:bg-slate-600 text-slate-300 hover:text-red-400 text-xs font-semibold flex items-center gap-1.5 transition">
-          <i data-lucide="trash-2" class="w-4 h-4"></i>
-          <span>비우기</span>
-        </button>
+      <!-- Quick Action Controls & Subject Filter -->
+      <div class="bg-slate-800/80 p-3 rounded-2xl border border-slate-700/60 space-y-2.5">
+        <div class="flex items-center justify-between gap-2 flex-wrap">
+          <button id="btnPracticeSaved" class="py-2 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-600 text-slate-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md touch-card whitespace-nowrap">
+            <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+            <span>선택 항목 모아 풀기</span>
+          </button>
+          <button id="btnClearSavedCategory" class="py-2 px-3.5 rounded-xl bg-slate-700 hover:bg-slate-600 text-slate-300 hover:text-red-400 text-xs font-semibold flex items-center gap-1.5 transition whitespace-nowrap">
+            <i data-lucide="trash-2" class="w-4 h-4"></i>
+            <span>비우기</span>
+          </button>
+        </div>
+        <div id="savedSubjectFilter" class="flex gap-1.5 overflow-x-auto pb-0.5 no-scrollbar sm:flex-wrap">
+          <!-- Injected dynamically -->
+        </div>
       </div>
 
-      <!-- Responsive Saved Questions Grid (1 col on mobile, 2 col on tablet, 3 col on PC) -->
-      <div id="savedListContainer" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4.5 items-start">
+      <!-- Full At-a-Glance Saved Questions Grid (1 col on mobile, 2 col on desktop) -->
+      <div id="savedListContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
         <!-- Injected dynamically -->
       </div>
     </section>
@@ -426,7 +425,7 @@
           <span class="text-xs text-slate-400 font-medium">총 풀이 문항</span>
           <div class="mt-3 flex items-baseline gap-1.5">
             <span id="statTotalSolved" class="text-3xl font-black text-slate-100">0</span>
-            <span class="text-xs text-slate-400">/ 415</span>
+            <span id="statTotalCount" class="text-xs text-slate-400">/ 1,551</span>
           </div>
         </div>
         <div class="bg-slate-800/90 p-4 rounded-2xl border border-slate-700 flex flex-col justify-between shadow-md">
@@ -495,9 +494,266 @@
 
       <!-- App Info Footer -->
       <div class="text-center text-xs text-slate-400 space-y-1.5 pt-4">
-        <p class="font-medium text-slate-300">Science Study Lab v1.0</p>
+        <p class="font-medium text-slate-300">Science Study Lab</p>
         <p>환경화학 · 농업생태학 · 생물통계학 · 생명과학 전문 아카이브</p>
         <p class="text-[11px] text-slate-400">기초 핵심 평가(1~6강) & 심화 종합 평가(7~15강) 단계별 마스터</p>
+      </div>
+    </section>
+
+    <!-- ----------------- VIEW 5: FARMER CAT ARCHIVE / PROFILE VIEW ----------------- -->
+    <section id="viewProfile" class="hidden space-y-6">
+      <!-- Profile Hero Banner -->
+      <div class="bg-gradient-to-br from-slate-800/95 via-slate-850 to-emerald-950/40 rounded-2xl border border-emerald-500/30 p-5 sm:p-6 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <img src="assets/farmer-cat.png" alt="농부 고양이" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-contain bg-slate-900/90 border border-emerald-500/40 p-1 shadow-lg shrink-0">
+          <div class="space-y-1 min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <h2 class="text-lg sm:text-xl font-black text-slate-100">농부 고양이의 연구 노트</h2>
+              <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">2026 · 3학년 2학기</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              농학과 재학 중 → <b class="text-emerald-300">2027.01 보건환경안전학과 복수전공</b> 예정
+            </p>
+            <p class="text-[11px] text-slate-400">
+              “이론에서 손에 흙을 묻히는 쪽으로 — 농생태학 × 흙의 생태정치 × 환경보건·농작업 안전”
+            </p>
+          </div>
+        </div>
+        <button id="btnProfileBackQuiz" type="button" class="shrink-0 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition whitespace-nowrap">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>문제 풀기로 돌아가기</span>
+        </button>
+      </div>
+
+      <!-- 1. 내 관심사 (Interests) -->
+      <div class="space-y-3">
+        <h3 class="text-sm sm:text-base font-bold text-slate-100 flex items-center gap-2">
+          <i data-lucide="sprout" class="w-5 h-5 text-emerald-400"></i>
+          <span>내 관심사 (Interests & Focus)</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-slate-700/80 space-y-2 shadow-sm">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">🌱</span>
+              <span class="text-sm font-bold text-emerald-300">생태 전환 & 흙의 생태정치</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              자본주의적 추출 농업을 넘어선 <b>농생태학(Agroecology)</b>, 흙 커먼즈, 다종 얽힘, 유기농 순환과 식량주권 실천.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">#농생태학</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">#흙커먼즈</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">#유기순환</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-slate-700/80 space-y-2 shadow-sm">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">🛡️</span>
+              <span class="text-sm font-bold text-amber-300">취약계층 안전 & 커먼즈</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              농어촌 고령 농민의 건강 불평등, 독성 농약 노출과 농작업 안전, 기후재난 취약성 및 생활권 대피소·인프라 감사.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/25">#농작업안전</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/25">#기후재난</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/25">#커먼즈</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-slate-700/80 space-y-2 shadow-sm">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">🔬</span>
+              <span class="text-sm font-bold text-sky-300">Agro-Eco Health 융합</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              농학(토양·작물·식물분류)과 보건환경안전(토양지하수 정화·환경독성·위해성평가)을 잇는 생태·보건 융합 전문성.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-sky-500/15 text-sky-300 border border-sky-500/25">#토양복원</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-sky-500/15 text-sky-300 border border-sky-500/25">#생태계복원</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-sky-500/15 text-sky-300 border border-sky-500/25">#환경독성</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 학기 수강 내역 (2026-3학년 2학기 & 4학년 계획) -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <h3 class="text-sm sm:text-base font-bold text-slate-100 flex items-center gap-2">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-teal-400"></i>
+            <span>학기 수강 내역 (현재: 2026-3학년 2학기 · 6과목 18학점)</span>
+          </h3>
+          <span class="text-[11px] text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-semibold">복수전공 소급 6학점 선확보</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-emerald-500/30 space-y-2 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-bold text-slate-100 text-sm">🧪 환경화학</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold">보건환경 (타과 3학점)</span>
+              </div>
+              <p class="text-[11px] text-slate-400">출석대체(11/29, 1~6강) · 기말(12/13, 7~15강) · 128문항</p>
+              <p class="text-[11px] text-emerald-300/90">연계: 토양환경기사 · 수질환경기사 · 환경위해관리기사</p>
+            </div>
+            <button type="button" class="btn-profile-jump mt-2 w-full py-1.5 rounded-lg bg-slate-700/80 hover:bg-emerald-600 text-slate-200 hover:text-white text-xs font-bold transition" data-subj="환경화학">문제 풀기 →</button>
+          </div>
+
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-emerald-500/30 space-y-2 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-bold text-slate-100 text-sm">🦠 환경미생물학</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold">보건환경 (타과 3학점)</span>
+              </div>
+              <p class="text-[11px] text-slate-400">중간과제(5~6장) · 기말(1~4장, 7~9장) · 85문항</p>
+              <p class="text-[11px] text-emerald-300/90">연계: 자연생태복원기사 · 수질환경기사</p>
+            </div>
+            <button type="button" class="btn-profile-jump mt-2 w-full py-1.5 rounded-lg bg-slate-700/80 hover:bg-emerald-600 text-slate-200 hover:text-white text-xs font-bold transition" data-subj="환경미생물학">문제 풀기 →</button>
+          </div>
+
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-slate-700/80 space-y-2 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-bold text-slate-100 text-sm">🌾 환경친화형농업</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">농학전공 (3학점)</span>
+              </div>
+              <p class="text-[11px] text-slate-400">중간과제 · 기말(전범위) · 391문항</p>
+              <p class="text-[11px] text-emerald-300/90">연계: 유기농업기사 · 도시농업관리사</p>
+            </div>
+            <button type="button" class="btn-profile-jump mt-2 w-full py-1.5 rounded-lg bg-slate-700/80 hover:bg-emerald-600 text-slate-200 hover:text-white text-xs font-bold transition" data-subj="환경친화형농업">문제 풀기 →</button>
+          </div>
+
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-slate-700/80 space-y-2 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-bold text-slate-100 text-sm">🌿 식물분류학</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">농학전공 (3학점)</span>
+              </div>
+              <p class="text-[11px] text-slate-400">중간과제 · 기말(전범위) · 331문항</p>
+              <p class="text-[11px] text-emerald-300/90">연계: 생물분류기사(식물) · 자연생태복원기사</p>
+            </div>
+            <button type="button" class="btn-profile-jump mt-2 w-full py-1.5 rounded-lg bg-slate-700/80 hover:bg-emerald-600 text-slate-200 hover:text-white text-xs font-bold transition" data-subj="식물분류학">문제 풀기 →</button>
+          </div>
+
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-slate-700/80 space-y-2 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-bold text-slate-100 text-sm">📊 생물통계학</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">농학전공 (3학점)</span>
+              </div>
+              <p class="text-[11px] text-slate-400">출석과제 · 기말(전범위) · 217문항</p>
+              <p class="text-[11px] text-emerald-300/90">연계: 실험설계 · 보건통계·역학 데이터 분석</p>
+            </div>
+            <button type="button" class="btn-profile-jump mt-2 w-full py-1.5 rounded-lg bg-slate-700/80 hover:bg-emerald-600 text-slate-200 hover:text-white text-xs font-bold transition" data-subj="생물통계학">문제 풀기 →</button>
+          </div>
+
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-slate-700/80 space-y-2 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-bold text-slate-100 text-sm">🧬 생물과학</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">농학전공 (3학점)</span>
+              </div>
+              <p class="text-[11px] text-slate-400">중간과제 · 기말(전범위) · 399문항</p>
+              <p class="text-[11px] text-emerald-300/90">연계: 생명과학 기초 · 생태계 물질순환</p>
+            </div>
+            <button type="button" class="btn-profile-jump mt-2 w-full py-1.5 rounded-lg bg-slate-700/80 hover:bg-emerald-600 text-slate-200 hover:text-white text-xs font-bold transition" data-subj="생물과학">문제 풀기 →</button>
+          </div>
+        </div>
+
+        <!-- Upcoming 4th Year Plan -->
+        <div class="bg-slate-800/60 rounded-2xl p-4 border border-slate-700/70 text-xs text-slate-300 space-y-1.5">
+          <div class="font-bold text-teal-300 flex items-center gap-1.5">
+            <span>🗓️</span>
+            <span>2027학년도 복수전공(보건환경안전학과) 잔여 30학점 수강 계획</span>
+          </div>
+          <p>• <b>4학년 1학기 (15학점)</b>: 환경보건학개론 · 공중보건학 · 수질관리 · 환경생화학 · 산업안전</p>
+          <p>• <b>4학년 2학기 (15학점)</b>: 산업보건학 · 토양지하수관리 · 산업독성학 · 환경보건역학 · 상하수도관리</p>
+        </div>
+      </div>
+
+      <!-- 3. 자격증 테크 트리 (Certification Tech Tree) -->
+      <div class="space-y-3">
+        <h3 class="text-sm sm:text-base font-bold text-slate-100 flex items-center gap-2">
+          <i data-lucide="git-branch" class="w-5 h-5 text-amber-400"></i>
+          <span>자격증 테크 트리 (Certification Tech Tree)</span>
+        </h3>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <!-- Track 1 -->
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-emerald-500/40 space-y-3 shadow-md">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">Track 01 · 최우선 추천</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">토양 · 생태 복원</span>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-700/70">
+                <div class="text-[10px] text-slate-400 font-bold">STEP 1 · 기반 교과목</div>
+                <div class="text-slate-200 font-semibold mt-0.5">환경화학 · 식물분류학 · 토양지하수관리 · 환경생화학</div>
+              </div>
+              <div class="text-center text-emerald-400 text-xs font-bold">↓</div>
+              <div class="p-2.5 rounded-xl bg-emerald-950/50 border border-emerald-500/50">
+                <div class="text-[10px] text-emerald-400 font-bold">STEP 2 · 핵심 국가기술자격</div>
+                <div class="text-slate-100 font-bold mt-0.5">토양환경기사 · 자연생태복원기사</div>
+              </div>
+              <div class="text-center text-emerald-400 text-xs font-bold">↓</div>
+              <div class="p-2.5 rounded-xl bg-slate-900/70 border border-slate-700/60">
+                <div class="text-[10px] text-teal-400 font-bold">STEP 3 · 확장 전문성</div>
+                <div class="text-slate-200 font-medium mt-0.5">생물분류기사(식물) · 수질환경기사</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Track 2 -->
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-amber-500/40 space-y-3 shadow-md">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black text-amber-400 uppercase tracking-wider">Track 02 · 2027.03 첫 도전</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold">농생태 · 커먼즈</span>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-700/70">
+                <div class="text-[10px] text-slate-400 font-bold">STEP 1 · 기반 교과목</div>
+                <div class="text-slate-200 font-semibold mt-0.5">환경친화형농업 · 토양비옥도 · 재배학 (농학 전공 95% 일치)</div>
+              </div>
+              <div class="text-center text-amber-400 text-xs font-bold">↓</div>
+              <div class="p-2.5 rounded-xl bg-amber-950/40 border border-amber-500/50">
+                <div class="text-[10px] text-amber-400 font-bold">STEP 2 · 핵심 국가기술자격</div>
+                <div class="text-slate-100 font-bold mt-0.5">유기농업기사 (2027 1회차 목표)</div>
+              </div>
+              <div class="text-center text-amber-400 text-xs font-bold">↓</div>
+              <div class="p-2.5 rounded-xl bg-slate-900/70 border border-slate-700/60">
+                <div class="text-[10px] text-amber-300 font-bold">STEP 3 · 현장 실천 라이선스</div>
+                <div class="text-slate-200 font-medium mt-0.5">도시농업관리사 (80h 교육) · 치유농업사</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Track 3 -->
+          <div class="bg-slate-800/90 rounded-2xl p-4 border border-sky-500/40 space-y-3 shadow-md">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black text-sky-400 uppercase tracking-wider">Track 03 · 복수전공 시너지</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-300 font-bold">농작업 안전 · 보건</span>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-700/70">
+                <div class="text-[10px] text-slate-400 font-bold">STEP 1 · 기반 교과목</div>
+                <div class="text-slate-200 font-semibold mt-0.5">산업안전 · 산업보건학 · 산업독성학 · 환경보건역학</div>
+              </div>
+              <div class="text-center text-sky-400 text-xs font-bold">↓</div>
+              <div class="p-2.5 rounded-xl bg-sky-950/40 border border-sky-500/50">
+                <div class="text-[10px] text-sky-400 font-bold">STEP 2 · 핵심 국가기술자격</div>
+                <div class="text-slate-100 font-bold mt-0.5">농작업안전보건기사 · 환경위해관리기사</div>
+              </div>
+              <div class="text-center text-sky-400 text-xs font-bold">↓</div>
+              <div class="p-2.5 rounded-xl bg-slate-900/70 border border-slate-700/60">
+                <div class="text-[10px] text-sky-300 font-bold">STEP 3 · 확장 면허</div>
+                <div class="text-slate-200 font-medium mt-0.5">산업안전기사 · 위생사 / 보건교육사</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -880,7 +1136,7 @@
   </div>
 
   <!-- Data & Application Script -->
-  <script src="data/bundle.js?v=20261125_02"></script>
-  <script src="app.js?v=20261125_02"></script>
+  <script src="data/bundle.js?v=20261125_03"></script>
+  <script src="app.js?v=20261125_03"></script>
 </body>
 </html>
