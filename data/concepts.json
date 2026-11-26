@@ -539,7 +539,7 @@
       },
       {
         "label": "📸 [실물 사진 도감] 적정·분광 실험 기구 & 갈바니 전지 (클릭 시 확대)",
-        "desc": "![뷰렛(Burette) — 적정 시 표준 용액을 넣고 적하 부피를 정밀 측정하는 유리 기구](https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/A_burette_clamp.jpg/960px-A_burette_clamp.jpg)\n![부피플라스크(Volumetric Flask) — 정확한 몰농도(M) 표준 용액을 제조할 때 사용](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Brand_volumetric_flask_100ml.jpg/330px-Brand_volumetric_flask_100ml.jpg)\n![피펫(Pipette) — 일정 부피의 액체 시료를 정밀하게 채취·이송](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Pipette_gallery.jpg/330px-Pipette_gallery.jpg)\n![삼각플라스크(Erlenmeyer Flask) — 적정 시 미지 시료를 담아 흔들며 반응시키는 용기](https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/250_mL_Erlenmeyer_flask.jpg/330px-250_mL_Erlenmeyer_flask.jpg)\n![UV-Vis 분광광도계(Spectrophotometer) — 시료의 빛 흡광도를 측정해 농도 분석](https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Spektrofotometri.jpg/330px-Spektrofotometri.jpg)\n![갈바니 전지(Galvanic Cell) & 염다리(Salt Bridge) 구조 도해](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Galvanic_cell_with_no_cation_flow.svg/330px-Galvanic_cell_with_no_cation_flow.svg.png)"
+        "desc": "![뷰렛(Burette) — 적정 시 표준 용액을 넣고 적하 부피를 정밀 측정하는 유리 기구](https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/A_burette_clamp.jpg/960px-A_burette_clamp.jpg)\n![부피플라스크(Volumetric Flask) — 정확한 몰농도(M) 표준 용액 제조](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Brand_volumetric_flask_100ml.jpg/330px-Brand_volumetric_flask_100ml.jpg)\n![피펫(Pipette) — 일정 부피의 액체 시료를 정밀 채취·이송](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Pipette_gallery.jpg/330px-Pipette_gallery.jpg)\n![삼각플라스크(Erlenmeyer Flask) — 적정 시 미지 시료를 담아 흔들며 반응시키는 용기](https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/250_mL_Erlenmeyer_flask.jpg/330px-250_mL_Erlenmeyer_flask.jpg)\n![UV-Vis 분광광도계(Spectrophotometer) — 빛의 흡광도로 농도 분석](https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Spektrofotometri.jpg/330px-Spektrofotometri.jpg)\n![갈바니 전지(Galvanic Cell) & 염다리(Salt Bridge) 구조 도해](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Galvanic_cell_with_no_cation_flow.svg/330px-Galvanic_cell_with_no_cation_flow.svg.png)"
       }
     ],
     "relatedQuestionIds": [
@@ -637,6 +637,10 @@
       {
         "label": "편모(Flagella)와 선모(Pili / Fimbriae)",
         "desc": "• 편모: 단백질 플라젤린(Flagellin)으로 구성, 회전 운동을 통해 화학주성(Chemotaxis) 발휘.<br>• 선모(Fimbriae): 세포 표면 부착 관여.<br>• 성선모(Sex pili): 세균 접합(Conjugation) 시 플라스미드 유전물질 수평 전달 통로."
+      },
+      {
+        "label": "📸 [실제 현미경] 그람 양성균(보라색 구균) vs 그람 음성균(분홍색 간균)",
+        "desc": "![그람 염색 현미경 사진 — 펩티도글리칸 두꺼운 그람양성(보라) vs 얇은 그람음성(분홍)](https://upload.wikimedia.org/wikipedia/commons/5/5d/Gram_positive_coccus_and_gram_negative_rod.png)"
       }
     ],
     "figure": {
@@ -789,6 +793,10 @@
       {
         "label": "산화지(Oxidation Pond) 공정과 조류-세균 공생계 (시험 단골)",
         "desc": "수심 1~2m의 얕은 자연정화 못.<br>• **상부 미세조류(*Chlorella*, *Scenedesmus*)**: 햇빛을 받아 광합성 수행 $\\rightarrow$ 산소($O_2$)를 물속으로 방출.<br>• **호기성 종속세균(*Pseudomonas* 등)**: 조류가 방출한 $O_2$를 소비하여 유기물을 산화분해 $\\rightarrow CO_2$와 무기염류($NH_4^+, PO_4^{3-}$)를 조류에게 공급.<br>• **하부 혐기성 세균**: 침전된 잉여 바이오매스를 혐기분해($CH_4, H_2S$ 발생)."
+      },
+      {
+        "label": "📸 [실물 사진] 생물학적 하수처리장 활성슬러지 폭기조",
+        "desc": "![활성슬러지(Activated Sludge) 폭기조 — 산소를 공급해 호기성 미생물 플록으로 유기물 분해](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Beckton_STP%2C_Activated_Sludge_Tank_-_geograph.org.uk_-_1481906.jpg/330px-Beckton_STP%2C_Activated_Sludge_Tank_-_geograph.org.uk_-_1481906.jpg)"
       }
     ],
     "practiceQuestions": [
@@ -1023,6 +1031,10 @@
       {
         "label": "2. 분자생물학적 환경 미생물 군집 분석 기법 비교 (100% 출제)",
         "desc": "• **표적 유전자**: 세균 분류·동정에 가장 많이 쓰이는 보존적 유전자 = **16S rRNA 유전자**.<br>\n\n| 분석 기법 | 핵심 원리 및 기출 키워드 |\n| :--- | :--- |\n| **PCR / qPCR** | 프라이머로 특정 유전자 증폭 / **qPCR**은 실시간 형광 측정으로 **정량 분석** |\n| **DGGE** | 변성제 농도 구배 젤 **전기영동**으로 같은 길이 DNA를 염기서열(GC 함량) 차이로 분리 → 환경변화에 따라 **밴드가 나타나거나 줄어듦** |\n| **T-RFLP** | **프라이머에 형광물질** 결합해 증폭 후 **제한효소로 절단** → **말단절편** 길이 차이로 다양성 분석 |\n| **FISH** | **형광발현 탐침자(probe)**를 세포 내 rRNA에 결합시켜 **형광현미경으로 직접 시각화·계수** (배양 불필요) |\n| **DNA 마이크로어레이** | **고체 기판**에 수천 개의 **다중 뉴클레오타이드 탐침자**를 고밀도 고정 → 한 번에 다수 유전자 발현·존재 여부 동시 분석 (탐침자 설계 사전 정보 필요) |"
+      },
+      {
+        "label": "📸 [실제 형광현미경] FISH(형광 제자리 부합법) 세포 시각화",
+        "desc": "![FISH(Fluorescence In Situ Hybridization) — 형광 탐침자를 세포 내 rRNA에 결합시켜 직접 시각화](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Multiplex_ViewRNA_FISH_Assay_in_Jurkat_and_HeLa_cells.jpg/330px-Multiplex_ViewRNA_FISH_Assay_in_Jurkat_and_HeLa_cells.jpg)"
       }
     ],
     "relatedQuestionIds": [
@@ -1902,7 +1914,7 @@
       },
       {
         "label": "📸 [실제 도해] 미토콘드리아 구조 (기질·내막 크리스타)",
-        "desc": "![미토콘드리아 구조: TCA 회로는 기질(Matrix), 산화적 인산화는 내막(Cristae)에서 진행](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Animal_mitochondrion_diagram_en.svg/330px-Animal_mitochondrion_diagram_en.svg.png)"
+        "desc": "![미토콘드리아 구조: TCA 회로는 기질(Matrix), 산화적 인산화는 내막(Cristae)](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Animal_mitochondrion_diagram_en.svg/330px-Animal_mitochondrion_diagram_en.svg.png)"
       }
     ],
     "practiceQuestions": [
@@ -1961,6 +1973,10 @@
       {
         "label": "멘델의 3대 유전법칙",
         "desc": "1) **우열의 원리**: 대립유전자 중 우성이 열성을 누르고 표현형으로 발현.<br>2) **분리의 법칙**: 대립유전자 쌍은 생식세포 형성 시 분리되어 서로 다른 배우자로 들어감 ($F_2$ 표현형 분리비 3:1).<br>3) **독립의 법칙**: 서로 다른 염색체에 있는 대립유전자 쌍은 서로 독립적으로 분리/수정됨 ($F_2$ 양성잡종 분리비 9:3:3:1)."
+      },
+      {
+        "label": "📸 [실제 도해] 세포주기 (G1·S·G2 간기 및 M기 체세포분열)",
+        "desc": "![진핵세포의 세포주기(Cell Cycle) — S기 DNA 복제 후 M기(전기·중기·후기·말기) 분열](https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Animal_cell_cycle-en.svg/330px-Animal_cell_cycle-en.svg.png)"
       }
     ],
     "practiceQuestions": [
@@ -2052,6 +2068,10 @@
       {
         "label": "생장 억제 및 성숙 2대 호르몬 (빈출)",
         "desc": "• **앱시스산(Abscisic acid, ABA)**: 스트레스 호르몬. 가뭄 시 **기공 폐쇄**, 종자 및 눈의 **휴면 유도**, 낙엽/낙과 촉진.<br>• **에틸렌(Ethylene)**: 유일한 기체상 호르몬. **과실 성숙 촉진**, 잎과 열매의 이층(탈락층) 형성 및 낙엽 촉진."
+      },
+      {
+        "label": "📸 [실제 현미경] 식물 잎 표피 기공(Stoma) & 공변세포",
+        "desc": "![식물 잎 기공(Stoma) 전자현미경 사진 — ABA(앱시스산) 신호로 공변세포 팽압이 줄면 기공 폐쇄](https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Tomato_leaf_stomate_1-color.jpg/330px-Tomato_leaf_stomate_1-color.jpg)"
       }
     ],
     "practiceQuestions": [
@@ -2129,7 +2149,7 @@
       },
       {
         "label": "📸 [실제 도해] 대뇌피질 4엽 & 화학적 시냅스 전달 구조",
-        "desc": "![대뇌피질 4엽: 전두엽(언어·사고·운동), 두정엽(감각), 측두엽(청각), 후두엽(시각)](https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/LobesCaptsLateral.png/330px-LobesCaptsLateral.png)\n![화학적 시냅스 구조: 시냅스 소낭에서 신경전달물질(아세틸콜린 등) 방출 → 수용체 결합](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Chemical_synapse_schema_cropped.jpg/330px-Chemical_synapse_schema_cropped.jpg)"
+        "desc": "![대뇌피질 4엽: 전두엽(언어·사고·운동), 두정엽(감각), 측두엽(청각), 후두엽(시각)](https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/LobesCaptsLateral.png/330px-LobesCaptsLateral.png)\n![화학적 시냅스 구조: 시냅스 소낭에서 아세틸콜린 등 신경전달물질 방출 → 수용체 결합](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Chemical_synapse_schema_cropped.jpg/330px-Chemical_synapse_schema_cropped.jpg)"
       }
     ],
     "relatedQuestionIds": [
@@ -2197,6 +2217,10 @@
       {
         "label": "동정(Identification)과 분류 계급 접미사",
         "desc": "• **동정**: 미지의 식물을 이미 알려진 분류군과 대조하여 같고 다름을 확인·판별하는 작업.<br>• **분류 계급 어미(Suffix)**: 문(`-phyta`), 강(`-opsida`), 목(`-ales`), 과(`-aceae`), 아과(`-oideae`), 족(`-eae`)."
+      },
+      {
+        "label": "📸 [실물 사진] 식물 석엽표본(Herbarium Specimen)",
+        "desc": "![식물 표본(Herbarium) — 채집지·채집일·채집자 라벨과 함께 압착 건조해 보관하는 기준표본](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Archive-ugent-be-500C7CB6-DFDB-11E5-9D50-9943D43445F2_DS-266_%28cropped%29.jpg/330px-Archive-ugent-be-500C7CB6-DFDB-11E5-9D50-9943D43445F2_DS-266_%28cropped%29.jpg)"
       }
     ],
     "practiceQuestions": [
@@ -2312,6 +2336,10 @@
       {
         "label": "잎의 형태학적 식별 키워드 (엽연·엽선·엽저)",
         "desc": "• **엽연 (가장자리)**: 전연(밋밋함), 거치(톱니), 둔거치, 예거치, 결각(깊게 파임).<br>• **엽저 (잎 밑)**: 왜저(비대칭 밑-느릅나무과 특유), 심장저(하트형-제비꽃속), 이저(귓볼형-신갈나무), 쐐기형.<br>• **복엽 (겹잎)**: 단신복엽(귤), 3출복엽(토끼풀), 기수우상복엽(아카시나무-끝에 1개), 우수우상복엽(자귀나무-끝에 2개), 장상복엽(인삼)."
+      },
+      {
+        "label": "📸 [실제 도해 & 사진] 잎의 형태·거치·엽맥 분류표 & 지하경(Rhizome)",
+        "desc": "![잎의 형태·가장자리(거치)·배열(엽서) 종합 분류 도해 (클릭하여 확대)](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Leaf_morphology.svg/330px-Leaf_morphology.svg.png)\n![지하경(Rhizome, 뿌리줄기) — 마디가 있어 뿌리가 아니라 변형된 줄기!](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Euphorbia_rhizophora2_ies.jpg/330px-Euphorbia_rhizophora2_ies.jpg)"
       }
     ],
     "practiceQuestions": [
@@ -2367,6 +2395,10 @@
       {
         "label": "시험에 100% 출제되는 수술(웅예) 5대 특수 유형",
         "desc": "• **사강웅예 (Tetradynamous)**: 수술 6개 중 **4개는 길고 2개는 짧음** $\\rightarrow$ **십자화과 (배추, 무)**.<br>• **이강웅예 (Didynamous)**: 수술 4개 중 **2개는 길고 2개는 짧음** $\\rightarrow$ **꿀풀과 (들깨, 배초향), 현삼과**.<br>• **양체웅예 (Diadelphous)**: 수술의 화사가 두 묶음으로 합착 (**9개 합착 + 1개 분리**) $\\rightarrow$ **콩과 (완두, 칡)**.<br>• **단체웅예 (Monadelphous)**: 모든 수술의 화사가 하나로 합쳐져 원통형을 이룸 $\\rightarrow$ **아욱과 (무궁화, 목화)**.<br>• **집약웅예 (Syngenesious)**: 화사는 분리되어 있으나 **꽃밥(약)들이 원통형으로 서로 합착** $\\rightarrow$ **국화과 (민들레, 해바라기)**."
+      },
+      {
+        "label": "📸 [실물 사진] 원시 꽃 구조 · 거(Spur) · 단체수술(무궁화)",
+        "desc": "![목련 꽃 내부 — 다수의 수술과 심피가 나선상으로 배열된 원시적 꽃 구조](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Magnolia_grandiflora_-_flower_1.jpg/330px-Magnolia_grandiflora_-_flower_1.jpg)\n![거(Spur, 꿀주머니) — 화피 일부가 뒤로 길게 돌출해 꿀을 저장하는 구조](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Utricularia_sandersonii_flower1.jpg/330px-Utricularia_sandersonii_flower1.jpg)\n![무궁화(Hibiscus syriacus) — 수많은 수술대가 하나의 통으로 합착된 단체수술](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Hibiscus_Syriacus.JPG/330px-Hibiscus_Syriacus.JPG)"
       }
     ],
     "practiceQuestions": [
@@ -2422,6 +2454,10 @@
       {
         "label": "진과(True fruit) vs 위과(False fruit) 및 취과",
         "desc": "• **진과**: 오직 **씨방(자방)벽**만이 발달한 열매 (감, 복숭아, 토마토).<br>• **위과**: 씨방 외에 **꽃받침, 화탁(꽃턱)** 등이 함께 자라 과육 형성 (사과, 배-화탁 발달, 딸기-화탁 비대, 석류).<br>• **취과 (Aggregate fruit)**: 1개 꽃에 여러 암술(이생심피)이 각각 소핵과를 이뤄 뭉침 (**산딸기속 Rubus**)."
+      },
+      {
+        "label": "📸 [실물 사진 & 도해] 주요 과실 유형: 시과 · 협과 · 수과(화탁통)",
+        "desc": "![시과(Samara, 단풍나무 열매) — 과피에 날개가 달려 바람에 날리는 건과](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Acer_circinatum_9468.JPG/330px-Acer_circinatum_9468.JPG)\n![협과(Legume, 콩과 꼬투리) — 1심피가 성숙하면 양쪽 봉합선 2곳으로 터짐](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Various_legumes.jpg/330px-Various_legumes.jpg)\n![수과(Achene)와 장미과 화탁통(Hypanthium) 종단면 구조 도해](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Flower_morphology_-_longitudinal_section_showing_achene_formation_and_hypanthium_in_Rosa-01.svg/330px-Flower_morphology_-_longitudinal_section_showing_achene_formation_and_hypanthium_in_Rosa-01.svg.png)"
       }
     ],
     "practiceQuestions": [
@@ -2577,8 +2613,8 @@
         "desc": "꽃은 좌우상칭, 기부에 꿀주머니인 **거(Spur)** 1개 돌출.<br>• **괴경 발달 유무**: 지하에 둥근 괴경(덩이줄기)이 발달하는 '현호색류' vs 괴경이 없고 직근이 발달하는 '괴불주머니류'.<br>• 다수의 둥근 괴경이 발달하고 잎 가장자리에 뚜렷한 톱니가 있는 종 = **왜현호색 / 현호색** (2019 기출)."
       },
       {
-        "label": "📸 [실물 사진] 목련아강 대표종: 목련 & 미나리아재비",
-        "desc": "![목련(Magnolia kobus) — 다수의 꽃잎·수술·심피가 나선상으로 배열된 원시 피자식물](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Magnolia_kobus_borealis.jpg/330px-Magnolia_kobus_borealis.jpg)\n![미나리아재비(Ranunculus japonicus) — 다수의 이생심피와 수술을 지닌 미나리아재비과](https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Ranunculus_japonicus_Keelung.jpg/960px-Ranunculus_japonicus_Keelung.jpg)"
+        "label": "📸 [실물 사진 도감] 목련아강 5대 대표종 (목련·수련·미나리아재비·현호색·할미꽃)",
+        "desc": "![목련(Magnolia kobus) — 나선상 배열·다수의 이생심피를 지닌 원시 피자식물](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Magnolia_kobus_borealis.jpg/330px-Magnolia_kobus_borealis.jpg)\n![수련(Nymphaea alba) — 수생 초본, 다수의 꽃잎과 수술이 점진적으로 이행](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Nymphaea_alba.001_-_Breendonk.jpg/330px-Nymphaea_alba.001_-_Breendonk.jpg)\n![미나리아재비(Ranunculus japonicus) — 다수의 수술과 이생심피, 취과](https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Ranunculus_japonicus_Keelung.jpg/960px-Ranunculus_japonicus_Keelung.jpg)\n![현호색류(Corydalis) — 좌우대칭 꽃에 뒤쪽으로 길게 뻗은 거(꿀주머니) 발달](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Corydalis_solida_-_Bois_d%27Havr%C3%A9_%281%29.jpg/330px-Corydalis_solida_-_Bois_d%27Havr%C3%A9_%281%29.jpg)\n![할미꽃류(Pulsatilla) — 꽃잎 없이 꽃받침이 꽃잎처럼 발달, 열매에 긴 깃털형 암술대](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Pasque_Flower_%28Pulsatilla_vulgaris%29_%2817022184800%29.jpg/330px-Pasque_Flower_%28Pulsatilla_vulgaris%29_%2817022184800%29.jpg)"
       }
     ],
     "practiceQuestions": [
@@ -2664,8 +2700,8 @@
         "desc": "목본성, 단엽 호생, 우상맥.<br>• **왜저 (歪底, Oblique base)**: **잎 밑 좌우가 뚜렷하게 비대칭**을 이룸.<br>• **난티나무 (Ulmus laciniata)**: 잎 끝부분이 3~5개로 깊게 갈라져 **거북꼬리 모양 결각**을 나타냄 (2019 기출)."
       },
       {
-        "label": "📸 [실물 사진] 마디풀과 핵심 식별형질: 초상탁엽(Ochrea)",
-        "desc": "![마디풀과(Persicaria)의 초상탁엽(Ochrea) — 잎자루 밑의 턱잎이 줄기 마디를 원통 모양으로 감쌈](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Ocreae_of_a_Persicaria_maculosa_2006-aug-10_Gothenburg_Sweden.jpg/330px-Ocreae_of_a_Persicaria_maculosa_2006-aug-10_Gothenburg_Sweden.jpg)"
+        "label": "📸 [실물 사진 도감] 석죽아강 & 조록나무아강 I (패랭이·초상탁엽·명아주·느릅·뽕나무)",
+        "desc": "![패랭이꽃(Dianthus chinensis, 한국) — 마디가 굵고 잎은 대생, 석죽과 대표](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Dianthus_chinensis_korea_2010.JPG/330px-Dianthus_chinensis_korea_2010.JPG)\n![마디풀과(Persicaria) 초상탁엽(Ochrea) — 턱잎이 줄기 마디를 원통 모양으로 감쌈](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Ocreae_of_a_Persicaria_maculosa_2006-aug-10_Gothenburg_Sweden.jpg/330px-Ocreae_of_a_Persicaria_maculosa_2006-aug-10_Gothenburg_Sweden.jpg)\n![명아주(Chenopodium album) — 어린잎에 흰 가루, 꽃잎 없는 풍매화(명아주과)](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Melganzenvoet_bloeiwijze_Chenopodium_album.jpg/330px-Melganzenvoet_bloeiwijze_Chenopodium_album.jpg)\n![느릅나무류(Ulmus) — 잎 밑부분이 비대칭인 왜저(歪底) 특징, 시과 열매](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Image-Ulmus_pumila_%28Ulmus_gobicus%29_in_Gobi_Desert.jpg/330px-Image-Ulmus_pumila_%28Ulmus_gobicus%29_in_Gobi_Desert.jpg)\n![뽕나무(Morus alba) — 유액 분비, 다수의 수과가 모인 다화과(오디)](https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Rosales_-_Morus_alba_-_3.jpg/330px-Rosales_-_Morus_alba_-_3.jpg)"
       }
     ],
     "practiceQuestions": [
@@ -2732,8 +2768,8 @@
         "desc": "참나무과는 수꽃만 미상화서이고 암꽃은 총포에 1개씩 달려 견과(도토리)를 맺는 반면, 자작나무과는 **암꽃과 수꽃 모두 미상화서**이며 열매는 소견과나 날개 달린 시과를 이룸."
       },
       {
-        "label": "📸 [실물 사진] 참나무과 도토리 각두(Cupule) 비교: 상수리나무 vs 물참나무/신갈나무계",
-        "desc": "![상수리나무(Quercus acutissima) 도토리 — 각두 비늘(인편)이 길고 젖혀지는 가시 모양](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Quercus_acutissima_BW-1237024.jpg/960px-Quercus_acutissima_BW-1237024.jpg)\n![물참나무·신갈나무계(Quercus crispula) 도토리 — 각두 비늘이 기와처럼 납작하게 포개짐](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Acorn_of_Quercus_crispula.JPG/960px-Acorn_of_Quercus_crispula.JPG)"
+        "label": "📸 [실물 사진 도감] 참나무과 도토리 6형제 + 자작나무과 비교 (클릭 시 확대)",
+        "desc": "![① 상수리나무(Quercus acutissima) — 밤나무 잎 모양, 각두 비늘이 길고 젖혀짐](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Quercus_acutissima_BW-1237024.jpg/960px-Quercus_acutissima_BW-1237024.jpg)\n![② 굴참나무(Quercus variabilis) — 잎 뒷면 흰 성모, 두꺼운 코르크 수피, 젖혀진 각두](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Quercus_Variabilis.jpg/330px-Quercus_Variabilis.jpg)\n![③ 신갈·물참나무계(Quercus crispula) — 잎자루 매우 짧고 귀 모양, 기와처럼 포개진 각두](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Acorn_of_Quercus_crispula.JPG/960px-Acorn_of_Quercus_crispula.JPG)\n![④ 갈참나무(Quercus aliena) — 잎자루 길고 잎 뒷면 회백색 성모, 물결 거치](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Quercus_aliena5.jpg/330px-Quercus_aliena5.jpg)\n![⑤ 떡갈나무(Quercus dentata) — 잎이 가장 크고 두꺼우며 뒷면 갈색 밀모, 각두 비늘 길게 늘어짐](https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Quercus_dentata_%28keisaraeik%29_3.jpg/330px-Quercus_dentata_%28keisaraeik%29_3.jpg)\n![⑥ 졸참나무(Quercus serrata) — 도토리 6형제 중 잎과 도토리가 가장 작고 뾰족한 안쪽 톱니](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Quercus_serrata3.jpg/330px-Quercus_serrata3.jpg)\n![자작나무(Betula platyphylla) — 종이처럼 벗겨지는 흰 수피, 아래로 늘어지는 미상화서](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Betula_platyphylla_01-10-2005_14.55.52.JPG/330px-Betula_platyphylla_01-10-2005_14.55.52.JPG)"
       }
     ],
     "practiceQuestions": [
@@ -2808,8 +2844,8 @@
         "desc": "• **진달래**: **잎보다 꽃이 먼저 핌**, 꽃에 털과 끈적임이 없음.<br>• **철쭉**: **잎과 꽃이 동시에 핌**, 잎 끝이 둥근 주걱형 **원두(Obtuse)**, 끈적임 없음.<br>• **산철쭉**: 잎 끝이 뾰족한 **예두(Acute)**, 어린 가지와 꽃자루에 **갈색 거센 털과 끈적이는 점성 분비물** 밀생 (시험 단골!).<br>• **만병초**: 고산지 상록성 가죽질(혁질) 관목."
       },
       {
-        "label": "📸 [실물 사진] 오아과아강 대표: 십자화과(십자화관) & 제비꽃과",
-        "desc": "![십자화과(Brassicaceae) — 꽃잎 4장이 열십(+)자 모양으로 배열, 4강수술(긴 4 + 짧은 2)](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Barbarea_vulgaris_002.JPG/330px-Barbarea_vulgaris_002.JPG)\n![제비꽃(Viola mandshurica) — 좌우대칭 꽃잎 5장, 뒤쪽으로 꿀주머니인 거(距) 발달](https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Viola_mandshurica_%28200704%29.jpg/330px-Viola_mandshurica_%28200704%29.jpg)"
+        "label": "📸 [실물 사진 도감] 오아과아강 7대 대표종 (모란·동백·무궁화·십자화·냉이·제비꽃·진달래·때죽)",
+        "desc": "![모란(Paeonia suffruticosa) — 다수의 수술이 원심성(바깥쪽)으로 성숙](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/%E6%B4%9B%E9%98%B3%E7%89%A1%E4%B8%B9.jpg/330px-%E6%B4%9B%E9%98%B3%E7%89%A1%E4%B8%B9.jpg)\n![동백나무(Camellia japonica) — 두꺼운 광택 상록엽, 다수의 수술이 밑에서 합착](https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Camellia_japonica_%27Pink_Perfection%27.jpg/330px-Camellia_japonica_%27Pink_Perfection%27.jpg)\n![십자화과(Barbarea vulgaris) — 꽃잎 4장 십(+)자 배열, 4강수술(긴 4 + 짧은 2)](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Barbarea_vulgaris_002.JPG/330px-Barbarea_vulgaris_002.JPG)\n![냉이(Capsella bursa-pastoris) — 십자화과 대표, 삼각형 모양의 단각과(실리클)](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/A_Field_of_Shepherd%E2%80%99s-purse.jpg/330px-A_Field_of_Shepherd%E2%80%99s-purse.jpg)\n![제비꽃(Viola mandshurica) — 좌우대칭 꽃잎 5장, 뒤쪽으로 꿀주머니(거) 발달](https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Viola_mandshurica_%28200704%29.jpg/330px-Viola_mandshurica_%28200704%29.jpg)\n![진달래(Rhododendron mucronulatum, 한국) — 합판화관, 꽃밥 끝이 구멍으로 열리는 공열 약](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Korea-Jindallae-Rhododendron_mucronulatum-01.jpg/330px-Korea-Jindallae-Rhododendron_mucronulatum-01.jpg)\n![때죽나무(Styrax japonicus) — 흰 종 모양 꽃이 아래로 늘어짐, 열매에 사포닌(어독)](https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Styrax_japonicus_01.JPG/330px-Styrax_japonicus_01.JPG)"
       }
     ],
     "practiceQuestions": [
@@ -2897,8 +2933,8 @@
         "desc": "• **회나무속 (Euonymus)**: 삭과 껍질에 4~5개 **날개(Wing)** 돌출.<br>• **화살나무**: 줄기 가지에 2~4줄의 코르크질 날개 발달."
       },
       {
-        "label": "📸 [실물 사진] 장미아강 대표: 콩과(나비형 화관) & 산형과(복산형화서)",
-        "desc": "![콩과(Fabaceae) — 기판·익판·용골판으로 이루어진 나비모양 접형화관](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Flowering_kudzu.jpg/330px-Flowering_kudzu.jpg)\n![산형과(Apiaceae, 당근) — 우산살처럼 퍼지는 전형적인 복산형화서(Compound umbel)](https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Daucus_carota_May_2008-1_edit.jpg/330px-Daucus_carota_May_2008-1_edit.jpg)"
+        "label": "📸 [실물 사진 도감] 장미아강 대표종 (찔레꽃·콩과·아까시·산형과·달맞이꽃·쥐손이풀)",
+        "desc": "![찔레꽃(Rosa multiflora) — 장미과 대표: 탁엽 발달, 5수성 꽃, 다수의 수술](https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/2020-05-20_08_05_42_Multiflora_Rose_flowers_along_a_walking_path_within_Horsepen_Run_Stream_Valley_Park_in_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg/330px-2020-05-20_08_05_42_Multiflora_Rose_flowers_along_a_walking_path_within_Horsepen_Run_Stream_Valley_Park_in_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg)\n![콩과(칡, Pueraria) — 기판·익판·용골판으로 이루어진 나비모양 접형화관](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Flowering_kudzu.jpg/330px-Flowering_kudzu.jpg)\n![아까시나무(Robinia pseudoacacia) — 우상복엽, 탁엽이 가시로 변형, 총상화서](https://upload.wikimedia.org/wikipedia/commons/8/86/Robina9146.JPG)\n![산형과(Daucus carota, 당근) — 우산살처럼 퍼지는 복산형화서(Compound umbel)](https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Daucus_carota_May_2008-1_edit.jpg/330px-Daucus_carota_May_2008-1_edit.jpg)\n![달맞이꽃(Oenothera biennis, 바늘꽃과) — 4수성 꽃, 4갈래 십자 암술머리, 하위씨방](https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Oenothera_biennis%2C_Vic-la-Gardiole_01.jpg/330px-Oenothera_biennis%2C_Vic-la-Gardiole_01.jpg)\n![쥐손이풀속(Geranium) — 손바닥 모양 잎, 5수성 꽃, 새 부리처럼 길어지는 삭과](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Geranium_February_2008-1.jpg/330px-Geranium_February_2008-1.jpg)"
       }
     ],
     "practiceQuestions": [
@@ -2970,8 +3006,8 @@
         "desc": "줄기 단면 4각, **밑으로 향한 거센 갈고리 가시**로 기어오름. 잎은 **4개 윤생(돌려나기)** (실제는 정상 잎 2 + 탁엽 2)."
       },
       {
-        "label": "📸 [실물 사진] 국화아강 대표: 국화과(두상화서) & 꿀풀과(순형화관)",
-        "desc": "![국화과(Asteraceae) 두상화서(Capitulum) — 가장자리 설상화(혀꽃)와 중앙 관상화(대롱꽃)](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Capitulum_from_Silphium_integrifolium.jpg/960px-Capitulum_from_Silphium_integrifolium.jpg)\n![꿀풀과(Lamiaceae, 광대나물류) — 사각형 줄기, 마주나는 잎, 입술 모양 순형화관](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Lamium_purpureum_jamestown1.jpg/330px-Lamium_purpureum_jamestown1.jpg)"
+        "label": "📸 [실물 사진 도감] 국화아강 대표종 (용담·까마중·개나리·꿀풀과·국화과·민들레)",
+        "desc": "![용담과(Gentiana) — 마주나는 잎(대생), 종 모양의 푸른 합판화관](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Gentiana-verna2.jpg/330px-Gentiana-verna2.jpg)\n![까마중(Solanum nigrum, 가지과) — 수술 꽃밥이 모여 원뿔을 이루고 끝 구멍으로 열림(공열)](https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Solanum_nigrum_flower.jpg/330px-Solanum_nigrum_flower.jpg)\n![개나리(Forsythia, 물푸레나무과) — 4갈래 노란 합판화관, 수술 2개!](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Forsythia_flower.JPG/330px-Forsythia_flower.JPG)\n![광대나물류(Lamium purpureum, 꿀풀과) — 사각형 줄기, 마주나는 잎, 입술형 순형화관](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Lamium_purpureum_jamestown1.jpg/330px-Lamium_purpureum_jamestown1.jpg)\n![국화과 두상화서(Capitulum) — 가장자리 설상화(혀꽃)와 중앙 관상화(대롱꽃)](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Capitulum_from_Silphium_integrifolium.jpg/960px-Capitulum_from_Silphium_integrifolium.jpg)\n![서양민들레(Taraxacum officinale) — 모든 소화가 설상화로만 구성된 두상화서 + 관모(갓털)](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Taraxacum_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-135.jpg/330px-Taraxacum_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-135.jpg)"
       }
     ],
     "practiceQuestions": [
@@ -3055,8 +3091,8 @@
         "desc": "• **택사아강 (Alismatidae)**: 가장 원시적인 단자엽, 이생심피 수생/습생식물 (택사, 자라풀).<br>• **종려아강 (Arecidae)**: **육수화서(Spadix)**에 소형 꽃 밀생, 거대한 **불염포(Spathe)**가 둘러쌈 (천남성과, 야자과)."
       },
       {
-        "label": "📸 [실물 사진] 단자엽식물 대표: 사초과(삼릉형 줄기) & 난초과",
-        "desc": "![사초과(Carex) — 속이 차 있고 단면이 삼각형(삼릉형)인 줄기가 벼과(원통형·속빔)와의 핵심 차이](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Carex_appressa_stem_%288668692096%29.jpg/960px-Carex_appressa_stem_%288668692096%29.jpg)\n![난초과(Orchidaceae, 보춘화류) — 좌우대칭 꽃, 화려한 순판(입술꽃잎), 수술·암술 합착(예주)](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg/330px-Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg)"
+        "label": "📸 [실물 사진 도감] 단자엽식물 9대 대표종 (벗풀·천남성·달개비·갈대·사초·참나리·붓꽃·청미래덩굴·난초)",
+        "desc": "![벗풀(Sagittaria trifolia, 택사아강) — 화살촉 모양 잎, 3수성 흰 꽃, 수생 단자엽](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/%E9%87%8E%E6%85%88%E5%A7%91_Sagittaria_trifolia_-%E9%AB%98%E9%9B%84%E5%8E%9F%E7%94%9F%E6%A4%8D%E7%89%A9%E5%9C%92_Kaohsiung_Original_Botanical_Garden%2C_Taiwan-_%2826111914217%29.jpg/330px-%E9%87%8E%E6%85%88%E5%A7%91_Sagittaria_trifolia_-%E9%AB%98%E9%9B%84%E5%8E%9F%E7%94%9F%E6%A4%8D%E7%89%A9%E5%9C%92_Kaohsiung_Original_Botanical_Garden%2C_Taiwan-_%2826111914217%29.jpg)\n![천남성속(Arisaema, 천남성과) — 육수화서를 불염포(佛焰苞)가 감싸는 독특한 구조](https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Arisaema_triphyllum.jpg/330px-Arisaema_triphyllum.jpg)\n![닭의장풀(Commelina communis, 달개비) — 파란 꽃잎 2장 크고 1장 작음, 불염포에 싸임](https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Tagblume_Commelina_communis_stack25_2019-08-05-RM-8050218-PSD.jpg/330px-Tagblume_Commelina_communis_stack25_2019-08-05-RM-8050218-PSD.jpg)\n![갈대(Phragmites australis, 벼과) — 속이 빈 원통형 줄기, 원추화서(영과)](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Reed_panicle_at_Brodalen_1.jpg/330px-Reed_panicle_at_Brodalen_1.jpg)\n![사초과(Carex) — 속이 차 있고 단면이 삼각형(삼릉형)인 줄기 (벼과와의 핵심 차이!)](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Carex_appressa_stem_%288668692096%29.jpg/960px-Carex_appressa_stem_%288668692096%29.jpg)\n![참나리(Lilium lancifolium, 백합과) — 3수성 화피 6장(꽃받침·꽃잎 동일), 잎겨드랑이 주아](https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Lilium_lancifolium_7757.jpg/330px-Lilium_lancifolium_7757.jpg)\n![붓꽃(Iris sanguinea, 붓꽃과) — 검 모양 잎, 수술 3개, 암술대가 꽃잎처럼 넓어짐, 하위씨방](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Iris_sanguinea.JPG/330px-Iris_sanguinea.JPG)\n![청미래덩굴(Smilax china) — 단자엽 예외! 그물맥(망상맥)과 턱잎이 변한 덩굴손 보유](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Smilax_china_%28Montage_s3%29.jpg/330px-Smilax_china_%28Montage_s3%29.jpg)\n![난초과(Cymbidium, 보춘화류) — 좌우대칭 꽃, 화려한 순판, 수술·암술 합착(예주)](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg/330px-Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg)"
       }
     ],
     "practiceQuestions": [
