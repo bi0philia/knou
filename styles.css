@@ -58,10 +58,16 @@ body {
   overflow-x: auto;
 }
 
-.concept-body svg,
+.concept-body > svg,
 .concept-body img {
   max-width: 100%;
   height: auto;
+}
+
+/* Protect KaTeX tall square-root / bracket SVGs from responsive SVG rules */
+.katex svg {
+  max-width: none !important;
+  height: inherit !important;
 }
 
 .concept-body .katex-display {
