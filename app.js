@@ -1421,7 +1421,7 @@
     text = text.replace(/`([^`\n]+?)`/g, '<code class="px-1.5 py-0.5 rounded bg-slate-800 text-amber-300 font-mono text-[11px] border border-slate-700/60">$1</code>');
 
     // 6.5 Markdown Images ![alt](url)
-    text = text.replace(/!\[(.*?)\]\((.*?)\)/g, '<div class="my-3 text-center"><img src="$2" alt="$1" class="mx-auto rounded-xl border border-slate-700 max-h-72 w-auto object-contain bg-slate-900/60 p-2 shadow-sm" loading="lazy"><p class="text-[11px] text-slate-400 mt-1.5 font-medium">$1</p></div>');
+    text = text.replace(/!\[(.*?)\]\((.*?)\)/g, '<div class="my-3 text-center"><img src="$2" alt="$1" referrerpolicy="no-referrer" class="mx-auto rounded-xl border border-slate-700 max-h-72 w-auto object-contain bg-white/95 p-1.5 shadow-sm cursor-pointer hover:opacity-95 transition" loading="lazy" onclick="const m=document.getElementById(\'modalImageZoom\'),t=document.getElementById(\'zoomImageTarget\');if(m&&t){t.src=this.src;m.classList.remove(\'hidden\');}"><p class="text-[11px] text-slate-400 mt-1.5 font-medium">$1</p></div>');
 
     // 6.8 Markdown Tables
     text = text.replace(/\|\s*<br\s*\/?>\s*\|/gi, '|\n|');
